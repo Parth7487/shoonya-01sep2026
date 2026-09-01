@@ -454,6 +454,7 @@
                 <video class="hero-bg-video" id="hero-product-video" autoplay muted loop playsinline preload="auto">
                     <source src="Product_page.mp4" type="video/mp4">
                 </video>
+                <audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.m4a" loop preload="auto"></audio>
                 <div class="hero-video-overlay-tint"></div>
             </div>
 
@@ -1115,10 +1116,20 @@
         window.addEventListener('scroll', updateHeroScroll, { passive: true });
 
         // 3. Hero Sound Toggle
-        if (soundBtn && heroVideo) {
+        const alchemyAudio = document.getElementById('hero-alchemy-audio');
+        if (soundBtn) {
             soundBtn.addEventListener('click', () => {
-                heroVideo.muted = !heroVideo.muted;
-                soundStateText.innerText = heroVideo.muted ? "SOUND: OFF" : "SOUND: ON";
+                if (!alchemyAudio) return;
+                if (alchemyAudio.paused) {
+                    alchemyAudio.play().then(() => {
+                        soundStateText.innerText = "SOUND: ON";
+                        soundBtn.classList.add('playing');
+                    }).catch(() => {});
+                } else {
+                    alchemyAudio.pause();
+                    soundStateText.innerText = "SOUND: OFF";
+                    soundBtn.classList.remove('playing');
+                }
             });
         }
 

@@ -1754,6 +1754,7 @@
                     <source src="TRibe.mp4" type="video/mp4">
                     <source src="../content/TRibe.mp4" type="video/mp4">
                 </video>
+                <audio id="hero-ambient-audio" src="assets/tribe_soundtrack.m4a" loop preload="auto"></audio>
                 <div class="hero-video-scrim" id="hero-video-scrim"></div>
                 <div class="hero-video-vignette"></div>
             </div>
@@ -2227,16 +2228,18 @@
         updateHeroScrollLock();
 
         // Sound Toggle for Hero Video
-        if (heroSoundBtn && heroVideo) {
+        const heroAudio = id('hero-ambient-audio');
+        if (heroSoundBtn) {
             heroSoundBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                if (heroVideo.muted) {
-                    heroVideo.muted = false;
-                    heroSoundBtn.classList.add('playing');
-                    heroSoundBtn.title = 'Mute Sound';
-                    heroVideo.play().catch(() => {});
+                if (!heroAudio) return;
+                if (heroAudio.paused) {
+                    heroAudio.play().then(() => {
+                        heroSoundBtn.classList.add('playing');
+                        heroSoundBtn.title = 'Mute Sound';
+                    }).catch(() => {});
                 } else {
-                    heroVideo.muted = true;
+                    heroAudio.pause();
                     heroSoundBtn.classList.remove('playing');
                     heroSoundBtn.title = 'Play Sound';
                 }
