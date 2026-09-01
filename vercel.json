@@ -1,0 +1,29 @@
+{
+  "cleanUrls": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/shopify.html",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/shopify",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/ritual",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/tribe",
+      "destination": "/shoonya_tribe.html"
+    },
+    {
+      "source": "/alchemy",
+      "destination": "/shoonya_alchemy.html"
+    }
+  ]
+}
