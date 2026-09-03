@@ -125,7 +125,7 @@
             z-index: 0;
         }
 
-        /* Fixed Navigation Header */
+        /* Fixed Navigation Header - Starts hidden on initial full-screen video load */
         header {
             position: fixed;
             top: 0;
@@ -138,6 +138,10 @@
             z-index: 100;
             background: linear-gradient(to bottom, rgba(250, 248, 235, 0.96), rgba(250, 248, 235, 0));
             transition: background 0.4s ease;
+            opacity: 0;
+            transform: translateY(-24px);
+            pointer-events: none;
+            will-change: transform, opacity;
         }
 
         .header-top-row {
@@ -222,7 +226,7 @@
            ------------------------------------------------------------- */
         .hero-scroll-track {
             position: relative;
-            height: 240vh;
+            height: 340vh;
             width: 100%;
             z-index: 10;
         }
@@ -257,23 +261,29 @@
             object-fit: cover;
             object-position: center;
             display: block;
-            opacity: 0.92;
+            opacity: 1; /* 100% crystal clear natural vibrancy */
         }
 
+        /* Dynamic Cinematic Scrim (Starts at 0 opacity, fades in dynamically with text) */
         .hero-video-scrim {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(20, 18, 16, 0.4) 0%, rgba(20, 18, 16, 0.8) 100%);
+            background: radial-gradient(circle at center, rgba(20, 18, 16, 0.35) 0%, rgba(20, 18, 16, 0.75) 100%);
             z-index: 2;
             pointer-events: none;
+            opacity: 0;
+            will-change: opacity;
         }
 
+        /* Dynamic Cinematic Bottom Vignette (Blends into #FAF8EB on exit) */
         .hero-video-vignette {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to bottom, rgba(20, 18, 16, 0.6) 0%, transparent 25%, transparent 75%, rgba(250, 248, 235, 0.95) 100%);
+            background: linear-gradient(to bottom, rgba(20, 18, 16, 0.4) 0%, transparent 25%, transparent 70%, #FAF8EB 100%);
             z-index: 3;
             pointer-events: none;
+            opacity: 0;
+            will-change: opacity;
         }
 
         .hero-locked-content {
@@ -296,10 +306,12 @@
             pointer-events: auto;
         }
 
-        .hero-stage-secondary {
+        /* Sequential entry elements starting at opacity: 0 for pure video initial view */
+        .hero-kicker-pill,
+        .hero-title-giant,
+        .hero-subtitle-wrap {
             opacity: 0;
-            transform: translateY(40px) scale(0.96);
-            pointer-events: none;
+            will-change: transform, opacity;
         }
 
         .hero-manifesto-grid {
@@ -572,7 +584,7 @@
             position: relative;
             z-index: 20;
             background: var(--bg-canvas);
-            padding: 7rem 0 6rem;
+            padding: 3rem 0 5rem;
             text-align: center;
             overflow: hidden;
             user-select: none;
@@ -582,8 +594,8 @@
             position: relative;
             width: 100%;
             max-width: 1300px;
-            height: 620px;
-            margin: 3rem auto 3.5rem;
+            height: 660px;
+            margin: 2rem auto 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -631,7 +643,8 @@
 
         @media (max-width: 900px) {
             .circular-gallery-stage {
-                height: 540px;
+                height: 560px;
+                margin: 1.5rem auto 1.5rem;
             }
             .circular-card {
                 width: 240px;
@@ -640,11 +653,15 @@
                 margin-top: -213px;
                 border-radius: 20px;
             }
+            .gallery-controls-bar {
+                margin-top: 4.5rem;
+            }
         }
 
         @media (max-width: 600px) {
             .circular-gallery-stage {
-                height: 460px;
+                height: 480px;
+                margin: 1rem auto 1rem;
             }
             .circular-card {
                 width: 200px;
@@ -652,6 +669,10 @@
                 margin-left: -100px;
                 margin-top: -177.5px;
                 border-radius: 18px;
+            }
+            .gallery-controls-bar {
+                margin-top: 3.75rem;
+                gap: 1rem;
             }
         }
 
@@ -825,8 +846,8 @@
             align-items: center;
             justify-content: center;
             gap: 1.5rem;
-            margin-top: 3.5rem;
-            margin-bottom: 1rem;
+            margin-top: 5.5rem;
+            margin-bottom: 1.5rem;
             z-index: 20;
             position: relative;
         }
@@ -1006,7 +1027,7 @@
            ------------------------------------------------------------- */
         .jam-stories-section {
             position: relative;
-            padding: 8rem 0 6rem;
+            padding: 6rem 0 3rem;
             text-align: center;
         }
 
@@ -1507,7 +1528,18 @@
             font-size: 0.98rem;
             font-style: italic;
             color: var(--color-text-dark);
-        }, 29, 0.3);
+        }
+
+        .instagram-portal-cta-btn {
+            background: var(--color-forest-green);
+            color: #FFFFFF;
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            padding: 1.1rem 2.2rem;
+            border-radius: 40px;
+            box-shadow: 0 10px 25px rgba(67, 107, 29, 0.3);
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             display: inline-flex;
             align-items: center;
@@ -1714,9 +1746,1113 @@
             .soil-mandala-frame {
                 height: 290px;
             }
-            .soil-mandala-visual {
-                width: 140px;
-                height: 140px;
+        }
+
+        /* =========================================================
+           TANYA SYNC: SHUNYAGAR INTRO, SACRED TRIAD & PAST EVENTS
+           ========================================================= */
+        
+        /* =========================================================
+           SECTION 2: SHUNYAGAR DRAMATIC CINEMATIC SEQUENCE
+           ========================================================= */
+        .shunyagar-intro-section {
+            position: relative;
+            padding: 5rem 2rem 5rem;
+            text-align: center;
+            max-width: 1120px;
+            margin: 0 auto;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1400px;
+        }
+
+        .shunyagar-cinematic-theater {
+            position: relative;
+            width: 100%;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Burst Stage (Acts 1 & 2) */
+        .shunyagar-burst-stage {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .cinematic-word-layer {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(2.8) translateY(25px);
+            filter: blur(14px);
+            will-change: transform, opacity, filter;
+            pointer-events: none;
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cinematic-word-layer.active-fly-in {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0px);
+        }
+
+        .cinematic-word-layer.active-exit {
+            opacity: 0;
+            transform: scale(0.88) translateY(-20px);
+            filter: blur(8px);
+        }
+
+        .cinematic-word-layer.bursting {
+            opacity: 0;
+            transform: scale(2.4);
+            filter: blur(18px);
+            transition: transform 0.45s ease-out, opacity 0.45s ease-out, filter 0.45s ease-out;
+        }
+
+        /* Typography Styles for Dramatic Words */
+        .burst-micro-kicker {
+            font-family: var(--font-micrographics);
+            font-size: 0.82rem;
+            letter-spacing: 0.25em;
+            color: var(--color-forest-green);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .burst-glyph-title {
+            font-family: var(--font-title-advercase);
+            font-size: clamp(2.8rem, 7.5vw, 5.8rem);
+            letter-spacing: 0.12em;
+            color: var(--color-forest-green);
+            line-height: 1.05;
+            text-shadow: 0 4px 30px rgba(67, 107, 29, 0.18);
+        }
+
+        .burst-devanagari-ancient {
+            font-family: var(--font-heading-aamiya);
+            font-size: clamp(3.2rem, 8.5vw, 6.2rem);
+            color: var(--color-gold);
+            line-height: 1;
+            letter-spacing: 0.08em;
+            text-shadow: 0 4px 30px rgba(200, 157, 107, 0.3);
+        }
+
+        .burst-latin-sub {
+            font-family: var(--font-subheading-gotham);
+            font-size: clamp(0.95rem, 2vw, 1.3rem);
+            letter-spacing: 0.32em;
+            color: var(--color-text-dark);
+            margin-top: 0.6rem;
+            font-weight: 900;
+        }
+
+        .home-burst-cluster {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        .home-glyph-hindi {
+            font-family: var(--font-heading-aamiya);
+            font-size: clamp(4.8rem, 12vw, 8.8rem);
+            font-weight: 700;
+            color: var(--color-forest-green);
+            line-height: 1;
+            text-shadow: 0 6px 35px rgba(67, 107, 29, 0.25);
+        }
+
+        .home-glyph-en {
+            font-family: var(--font-subheading-gotham);
+            font-size: clamp(1.2rem, 3vw, 2.2rem);
+            font-weight: 900;
+            letter-spacing: 0.4em;
+            color: var(--color-gold);
+        }
+
+        /* Shockwave & Flash */
+        .shunyagar-shockwave-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 240px;
+            height: 240px;
+            margin-top: -120px;
+            margin-left: -120px;
+            border-radius: 50%;
+            border: 2.5px solid var(--color-gold);
+            box-shadow: 0 0 40px rgba(200, 157, 107, 0.7), inset 0 0 25px rgba(67, 107, 29, 0.4);
+            opacity: 0;
+            transform: scale(0.1);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .shunyagar-shockwave-ring.trigger-shockwave {
+            animation: shunyagarShockwaveAnim 0.75s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+        }
+
+        @keyframes shunyagarShockwaveAnim {
+            0% {
+                opacity: 0.95;
+                transform: scale(0.2);
+            }
+            60% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(3.4);
+                border-width: 1px;
+            }
+        }
+
+        .shunyagar-light-flash {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 320px;
+            height: 320px;
+            margin-top: -160px;
+            margin-left: -160px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 157, 107, 0.5) 0%, rgba(67, 107, 29, 0.22) 50%, transparent 75%);
+            opacity: 0;
+            transform: scale(0.4);
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .shunyagar-light-flash.trigger-flash {
+            animation: shunyagarFlashAnim 0.65s ease-out forwards;
+        }
+
+        @keyframes shunyagarFlashAnim {
+            0% {
+                opacity: 0;
+                transform: scale(0.4);
+            }
+            30% {
+                opacity: 0.88;
+                transform: scale(1.4);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(2.5);
+            }
+        }
+
+        /* Manifesto Stage (Act 3) */
+        .shunyagar-manifesto-stage {
+            width: 100%;
+            opacity: 0;
+            transform: scale(0.94) translateY(30px);
+            filter: blur(10px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .shunyagar-manifesto-stage.revealed {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0px);
+            pointer-events: auto;
+        }
+
+        .shunyagar-intro-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1.5px solid rgba(67, 107, 29, 0.24);
+            border-radius: 28px;
+            padding: 3.5rem 3.5rem 3rem;
+            box-shadow: 0 20px 50px rgba(67, 107, 29, 0.08), 0 2px 10px rgba(0, 0, 0, 0.03);
+            backdrop-filter: blur(18px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Cursor-tracking Specular Light Sheen */
+        .shunyagar-specular-sheen {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            background: radial-gradient(circle 380px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.72), rgba(200, 157, 107, 0.10) 50%, transparent 80%);
+            z-index: 10;
+        }
+
+        .shunyagar-intro-card:hover .shunyagar-specular-sheen {
+            opacity: 1;
+        }
+
+        .shunyagar-intro-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--color-forest-green), transparent);
+            border-radius: 2px;
+        }
+
+        .shunyagar-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .shunyagar-actions-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .shunyagar-replay-btn {
+            background: rgba(200, 157, 107, 0.12);
+            border: 1px solid rgba(200, 157, 107, 0.35);
+            color: var(--color-text-dark);
+            font-family: var(--font-micrographics);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            padding: 0.32rem 0.75rem;
+            border-radius: 18px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: all 0.25s ease;
+        }
+
+        .shunyagar-replay-btn:hover {
+            background: var(--color-forest-green);
+            color: #fff;
+            border-color: var(--color-forest-green);
+            transform: translateY(-1px);
+        }
+
+        .shunyagar-tag {
+            font-family: var(--font-micrographics);
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            color: var(--color-forest-green);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .shunyagar-sanctuary-pill {
+            font-family: var(--font-micrographics);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            color: var(--color-forest-green);
+            background: rgba(67, 107, 29, 0.08);
+            border: 1px solid rgba(67, 107, 29, 0.2);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .shunyagar-quote {
+            font-family: var(--font-serif-cormorant);
+            font-size: clamp(1.4rem, 2.8vw, 2.1rem);
+            font-style: italic;
+            color: var(--color-text-dark);
+            line-height: 1.5;
+            max-width: 900px;
+            margin: 0 auto 1.75rem;
+            font-weight: 400;
+            position: relative;
+            z-index: 2;
+        }
+
+        .shunyagar-quote strong {
+            font-weight: 600;
+            color: var(--color-forest-green);
+        }
+
+        .shunyagar-desc {
+            font-family: var(--font-body-gotham-rnd);
+            font-size: 0.94rem;
+            color: rgba(28, 25, 23, 0.78);
+            line-height: 1.8;
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .shunyagar-bottom-meta {
+            margin-top: 2.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px dashed rgba(67, 107, 29, 0.18);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-micrographics);
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            color: rgba(28, 25, 23, 0.55);
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .shunyagar-meta-item span {
+            color: var(--color-forest-green);
+        }
+
+        .shunyagar-meta-divider {
+            color: var(--color-gold);
+            font-weight: bold;
+        }
+
+        /* Section 3: The Sacred Triad of Shunyagar */
+        .sacred-triad-section {
+            position: relative;
+            padding: 5rem 2rem 6rem;
+            max-width: 1240px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .triad-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-top: 3.5rem;
+        }
+
+        .triad-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1.5px solid rgba(67, 107, 29, 0.18);
+            border-radius: 24px;
+            padding: 2.25rem 2rem;
+            backdrop-filter: blur(14px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .triad-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transition: opacity 0.3s ease;
+            opacity: 0.85;
+        }
+
+        .triad-card.card-kaya::after { background: #8C502E; }
+        .triad-card.card-prana::after { background: #436B1D; }
+        .triad-card.card-jnana::after { background: #1E3A8A; }
+
+        .triad-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(67, 107, 29, 0.4);
+            box-shadow: 0 20px 45px rgba(67, 107, 29, 0.12);
+            background: #FFFFFF;
+        }
+
+        .triad-top-badge {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .triad-number {
+            font-family: var(--font-micrographics);
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            color: rgba(28, 25, 23, 0.5);
+            font-weight: 700;
+        }
+
+        .triad-pill-label {
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.68rem;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .card-kaya .triad-pill-label { background: rgba(140, 80, 46, 0.12); color: #8C502E; }
+        .card-prana .triad-pill-label { background: rgba(67, 107, 29, 0.12); color: #436B1D; }
+        .card-jnana .triad-pill-label { background: rgba(30, 58, 138, 0.12); color: #1E3A8A; }
+
+        .triad-title {
+            font-family: var(--font-heading-cinzel);
+            font-size: 1.6rem;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.05em;
+            color: var(--color-text-dark);
+            font-weight: 700;
+        }
+
+        .triad-sub {
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.78rem;
+            color: rgba(28, 25, 23, 0.6);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+        }
+
+        .triad-body {
+            font-family: var(--font-body-gotham-rnd);
+            font-size: 0.88rem;
+            color: rgba(28, 25, 23, 0.75);
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .triad-elements-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+            border-top: 1px dashed rgba(67, 107, 29, 0.15);
+            padding-top: 1rem;
+        }
+
+        .triad-elements-list li {
+            font-family: var(--font-body-gotham-rnd);
+            font-size: 0.82rem;
+            color: rgba(28, 25, 23, 0.7);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .triad-elements-list li::before {
+            content: '✦';
+            font-size: 0.65rem;
+            color: var(--color-forest-green);
+        }
+
+        .triad-highlight-box {
+            background: rgba(250, 248, 235, 0.7);
+            border: 1px solid rgba(67, 107, 29, 0.12);
+            border-radius: 12px;
+            padding: 0.75rem 1rem;
+            font-size: 0.76rem;
+            font-family: var(--font-subheading-gotham);
+            color: var(--color-text-dark);
+            line-height: 1.4;
+        }
+
+        /* =========================================================
+           SECTION 4: CHRONOLOGICAL DEEP DIVE TIMELINE (ANIMATED LIKE SHUNYAGAR)
+           ========================================================= */
+        .past-events-section {
+            position: relative;
+            padding: 6rem 2rem 6.5rem;
+            max-width: 1180px;
+            margin: 0 auto;
+            z-index: 2;
+            perspective: 1400px;
+        }
+
+        /* Timeline Navigation Console */
+        .events-timeline-console {
+            position: relative;
+            max-width: 980px;
+            margin: 2.5rem auto 3rem;
+            padding: 0 1rem;
+        }
+
+        .events-timeline-track {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: rgba(67, 107, 29, 0.15);
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .events-timeline-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #1E3A8A, #436B1D, #8C502E);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .events-timeline-nodes {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .timeline-node-pill {
+            background: rgba(255, 255, 255, 0.94);
+            border: 1.5px solid rgba(67, 107, 29, 0.22);
+            border-radius: 24px;
+            padding: 0.6rem 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .timeline-node-pill:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-forest-green);
+            box-shadow: 0 8px 25px rgba(67, 107, 29, 0.12);
+        }
+
+        .timeline-node-pill.active {
+            background: #FFFFFF;
+            transform: scale(1.04) translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-node-pill.active[data-index="0"] { border-color: #1E3A8A; }
+        .timeline-node-pill.active[data-index="1"] { border-color: #436B1D; }
+        .timeline-node-pill.active[data-index="2"] { border-color: #8C502E; }
+
+        .node-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-node-pill.active .node-dot {
+            transform: scale(1.35);
+        }
+
+        .dot-jnana { background: #1E3A8A; box-shadow: 0 0 10px rgba(30, 58, 138, 0.5); }
+        .dot-prana { background: #436B1D; box-shadow: 0 0 10px rgba(67, 107, 29, 0.5); }
+        .dot-kaya { background: #8C502E; box-shadow: 0 0 10px rgba(140, 80, 46, 0.5); }
+
+        .node-pillar-tag {
+            font-family: var(--font-micrographics);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: var(--color-text-muted);
+        }
+
+        .timeline-node-pill.active[data-index="0"] .node-pillar-tag { color: #1E3A8A; }
+        .timeline-node-pill.active[data-index="1"] .node-pillar-tag { color: #436B1D; }
+        .timeline-node-pill.active[data-index="2"] .node-pillar-tag { color: #8C502E; }
+
+        .node-name {
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.76rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            letter-spacing: 0.04em;
+        }
+
+        /* Past Events Cinematic Theater Stage */
+        .past-events-theater {
+            position: relative;
+            width: 100%;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Burst Stage for Events */
+        .events-burst-stage {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .events-word-layer {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(2.6) translateY(25px);
+            filter: blur(14px);
+            will-change: transform, opacity, filter;
+            pointer-events: none;
+            transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .events-word-layer.active-fly-in {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0px);
+        }
+
+        .events-word-layer.active-exit {
+            opacity: 0;
+            transform: scale(0.88) translateY(-20px);
+            filter: blur(8px);
+        }
+
+        .events-word-layer.bursting {
+            opacity: 0;
+            transform: scale(2.4);
+            filter: blur(18px);
+            transition: transform 0.45s ease-out, opacity 0.45s ease-out, filter 0.45s ease-out;
+        }
+
+        .events-burst-kicker {
+            font-family: var(--font-micrographics);
+            font-size: 0.82rem;
+            letter-spacing: 0.25em;
+            color: var(--color-gold);
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+        }
+
+        .events-burst-title {
+            font-family: var(--font-title-advercase);
+            font-size: clamp(2.4rem, 6.5vw, 5.2rem);
+            letter-spacing: 0.1em;
+            line-height: 1.1;
+            text-align: center;
+            color: var(--color-forest-green);
+            text-shadow: 0 4px 30px rgba(67, 107, 29, 0.18);
+        }
+
+        .events-burst-title.theme-jnana { color: #1E3A8A; text-shadow: 0 4px 30px rgba(30, 58, 138, 0.25); }
+        .events-burst-title.theme-prana { color: #436B1D; text-shadow: 0 4px 30px rgba(67, 107, 29, 0.25); }
+        .events-burst-title.theme-kaya { color: #8C502E; text-shadow: 0 4px 30px rgba(140, 80, 46, 0.25); }
+
+        .events-burst-sub {
+            font-family: var(--font-heading-aamiya);
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: var(--color-gold);
+            line-height: 1.1;
+            letter-spacing: 0.08em;
+        }
+
+        .events-burst-anchor {
+            font-family: var(--font-subheading-gotham);
+            font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+            letter-spacing: 0.25em;
+            font-weight: 900;
+            color: var(--color-text-dark);
+            margin-top: 0.4rem;
+        }
+
+        /* Shockwave & Flash for Events */
+        .events-shockwave-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 240px;
+            height: 240px;
+            margin-top: -120px;
+            margin-left: -120px;
+            border-radius: 50%;
+            border: 2.5px solid var(--color-gold);
+            box-shadow: 0 0 40px rgba(200, 157, 107, 0.7);
+            opacity: 0;
+            transform: scale(0.1);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .events-shockwave-ring.trigger-shockwave {
+            animation: eventsShockwaveAnim 0.75s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+        }
+
+        @keyframes eventsShockwaveAnim {
+            0% { opacity: 0.95; transform: scale(0.2); }
+            60% { opacity: 0.7; }
+            100% { opacity: 0; transform: scale(3.4); border-width: 1px; }
+        }
+
+        .events-light-flash {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 320px;
+            height: 320px;
+            margin-top: -160px;
+            margin-left: -160px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 157, 107, 0.5) 0%, rgba(67, 107, 29, 0.2) 50%, transparent 75%);
+            opacity: 0;
+            transform: scale(0.4);
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        .events-light-flash.trigger-flash {
+            animation: eventsFlashAnim 0.65s ease-out forwards;
+        }
+
+        @keyframes eventsFlashAnim {
+            0% { opacity: 0; transform: scale(0.4); }
+            30% { opacity: 0.88; transform: scale(1.4); }
+            100% { opacity: 0; transform: scale(2.5); }
+        }
+
+        /* Revealed Deep Dive Card Stage */
+        .events-manifesto-stage {
+            width: 100%;
+            opacity: 0;
+            transform: scale(0.94) translateY(30px);
+            filter: blur(10px);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .events-manifesto-stage.revealed {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            filter: blur(0px);
+            pointer-events: auto;
+        }
+
+        .events-deepdive-card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1.5px solid rgba(67, 107, 29, 0.24);
+            border-radius: 28px;
+            padding: 3.25rem 3.25rem 2.75rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(18px);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .events-deepdive-card.theme-jnana {
+            border-color: rgba(30, 58, 138, 0.35);
+            box-shadow: 0 24px 60px rgba(30, 58, 138, 0.10);
+        }
+        .events-deepdive-card.theme-prana {
+            border-color: rgba(67, 107, 29, 0.35);
+            box-shadow: 0 24px 60px rgba(67, 107, 29, 0.10);
+        }
+        .events-deepdive-card.theme-kaya {
+            border-color: rgba(140, 80, 46, 0.35);
+            box-shadow: 0 24px 60px rgba(140, 80, 46, 0.10);
+        }
+
+        .card-top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .event-pillar-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--font-micrographics);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            padding: 0.3rem 0.75rem;
+            border-radius: 16px;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .badge-jnana { background: rgba(30, 58, 138, 0.1); color: #1E3A8A; border: 1px solid rgba(30, 58, 138, 0.2); }
+        .badge-prana { background: rgba(67, 107, 29, 0.1); color: #436B1D; border: 1px solid rgba(67, 107, 29, 0.2); }
+        .badge-kaya { background: rgba(140, 80, 46, 0.1); color: #8C502E; border: 1px solid rgba(140, 80, 46, 0.2); }
+
+        .event-card-title {
+            font-family: var(--font-heading-cinzel);
+            font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+            color: var(--color-text-dark);
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .event-card-setting {
+            font-family: var(--font-micrographics);
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            color: var(--color-forest-green);
+            font-weight: 800;
+            margin-bottom: 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .events-highlights-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .highlight-chip {
+            background: rgba(250, 248, 235, 0.85);
+            border: 1px solid rgba(67, 107, 29, 0.18);
+            border-radius: 20px;
+            padding: 0.4rem 0.9rem;
+            font-family: var(--font-micrographics);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--color-text-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease;
+        }
+
+        .highlight-chip:hover {
+            transform: translateY(-1px);
+            background: #FFFFFF;
+            border-color: var(--color-forest-green);
+        }
+
+        .event-quote-highlight {
+            font-family: var(--font-serif-cormorant);
+            font-size: clamp(1.15rem, 2vw, 1.45rem);
+            font-style: italic;
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            margin-bottom: 1.4rem;
+            padding-left: 1.25rem;
+            border-left: 3px solid var(--color-gold);
+        }
+
+        .event-card-narrative {
+            font-family: var(--font-body-gotham-rnd);
+            font-size: 0.94rem;
+            color: rgba(28, 25, 23, 0.8);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        .event-card-footer {
+            border-top: 1px dashed rgba(67, 107, 29, 0.18);
+            padding-top: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        /* Navigation Controls Bar */
+        .events-nav-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .events-nav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(67, 107, 29, 0.22);
+            color: var(--color-text-dark);
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 0.65rem 1.4rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .events-nav-btn:hover {
+            background: var(--color-forest-green);
+            color: #FFFFFF;
+            border-color: var(--color-forest-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(67, 107, 29, 0.2);
+        }
+
+        .events-replay-pill {
+            background: rgba(200, 157, 107, 0.15);
+            border: 1px solid rgba(200, 157, 107, 0.4);
+            color: var(--color-text-dark);
+            font-family: var(--font-micrographics);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            padding: 0.65rem 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            transition: all 0.25s ease;
+        }
+
+        .events-replay-pill:hover {
+            background: var(--color-gold);
+            color: #FFFFFF;
+            border-color: var(--color-gold);
+            transform: translateY(-2px);
+        }
+
+        /* Section 7: Community Reviews Wall (Second-to-last) */
+        .community-reviews-section {
+            position: relative;
+            padding: 6rem 2rem 5rem;
+            max-width: 1240px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1.5px solid rgba(67, 107, 29, 0.15);
+            border-radius: 20px;
+            padding: 2rem 1.8rem;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-forest-green);
+        }
+
+        .review-stars {
+            color: #b08968;
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.15em;
+        }
+
+        .review-quote {
+            font-family: var(--font-serif-cormorant);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--color-text-dark);
+            line-height: 1.55;
+            margin-bottom: 1.25rem;
+        }
+
+        .review-author-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .review-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(67, 107, 29, 0.12);
+            color: var(--color-forest-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.78rem;
+        }
+
+        .review-author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .review-name {
+            font-family: var(--font-subheading-gotham);
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        .review-role {
+            font-family: var(--font-micrographics);
+            font-size: 0.65rem;
+            color: rgba(28, 25, 23, 0.5);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 960px) {
+            .triad-grid, .events-archive-grid, .reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .shunyagar-intro-section {
+                padding: 5rem 1.25rem 4rem;
+            }
+            .shunyagar-intro-card {
+                padding: 2.25rem 1.4rem;
+                border-radius: 22px;
+            }
+            .shunyagar-top-bar {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .shunyagar-bottom-meta {
+                gap: 0.6rem;
+                font-size: 0.64rem;
             }
         }
     </style>
@@ -1756,7 +2892,7 @@
                 </video>
                 <audio id="hero-ambient-audio" src="assets/tribe_soundtrack.m4a" loop preload="auto"></audio>
                 <div class="hero-video-scrim" id="hero-video-scrim"></div>
-                <div class="hero-video-vignette"></div>
+                <div class="hero-video-vignette" id="hero-video-vignette"></div>
             </div>
 
             <!-- Sound Capsule Toggle for Hero Video -->
@@ -1782,114 +2918,297 @@
                 <span>SCROLL TO DIVE INTO THE TRIBE</span>
             </div>
 
-            <!-- Stage 1 Content: Hero Title & Kicker (Visible at 0%-40% scroll) -->
+            <!-- Hero Story Sequence (Controlled sequentially by scroll) -->
             <div class="hero-locked-content hero-stage-primary" id="hero-stage-primary">
-                <div class="hero-kicker-pill">
+                <div class="hero-kicker-pill" id="hero-elem-kicker">
                     <span>✦</span> CONSCIOUS LIVING COMMUNITY <span>✦</span>
                 </div>
 
-                <h1 class="tribe-title-text hero-title-giant">
+                <h1 class="tribe-title-text hero-title-giant" id="hero-elem-title">
                     <span>T</span><span>R</span><span>I</span><span>B</span><span>E</span>
                 </h1>
 
-                <div class="tribe-gold-divider"></div>
-                <div class="tribe-subtitle">WHERE CONSCIOUS HEARTS GATHER & VIBRATE</div>
-            </div>
-
-            <!-- Stage 2 Content: Manifesto Pillars & Immersion (Visible at 60%-100% scroll) -->
-            <div class="hero-locked-content hero-stage-secondary" id="hero-stage-secondary">
-                <div class="tribe-manifesto-cards hero-manifesto-grid">
-                    <div class="tribe-manifesto-card">
-                        <span class="card-tag">[ 01. THE ESSENCE ]</span>
-                        <p class="card-quote-text">
-                            “Shoonya World is a vibe. Hosting rooms that not only look pretty but <strong>embody the essence of conscious living</strong>... If you're still reading, congratulations! You found your tribe. You are totally SW vibes.”
-                        </p>
-                    </div>
-
-                    <div class="tribe-manifesto-card">
-                        <span class="card-tag">[ 02. ART & COMMUNION ]</span>
-                        <p class="card-quote-text">
-                            “Shoonya Friends, connected through the <strong>thread of art</strong>. It was a pleasure having such beautiful, talented humans under one roof.”
-                        </p>
-                    </div>
+                <div class="hero-subtitle-wrap" id="hero-elem-subtitle">
+                    <div class="tribe-gold-divider"></div>
+                    <div class="tribe-subtitle">WHERE CONSCIOUS HEARTS GATHER & VIBRATE</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- =========================================================
-         SECTION 2: CIRCULAR 3D VIDEO REEL GALLERY
+         SECTION 2: SHUNYAGAR CINEMATIC BURST & MANIFESTO
          ========================================================= -->
-    <section class="tribe-section circular-gallery-section" id="circular-reels-gallery">
-        <div class="section-header-wrap" style="text-align: center;">
-            <span class="section-num">[ 02 · LIVING FILM ARCHIVE ]</span>
-            <h2 class="section-title">COMMUNITY REEL VAULT</h2>
-            <p class="section-desc">Drag, swipe, or scroll horizontally to explore unfiltered memoirs, sound jams, and conscious gatherings.</p>
-        </div>
+    <section class="tribe-section shunyagar-intro-section" id="shunyagar-intro">
+        <div class="shunyagar-cinematic-theater" id="shunyagar-theater">
 
-        <div class="circular-gallery-stage" id="circular-gallery-stage">
-            <div class="circular-gallery-cylinder" id="circular-gallery-cylinder">
-                <!-- 3D Cards rendered dynamically by JS -->
-            </div>
-        </div>
+            <!-- ACT 1 & 2: Dramatic Kinetic Fly-In & Burst Sequence -->
+            <div class="shunyagar-burst-stage" id="shunyagar-burst-stage">
+                <!-- Optical Shockwave & Golden Light Flash -->
+                <div class="shunyagar-shockwave-ring" id="shunyagar-shockwave"></div>
+                <div class="shunyagar-light-flash" id="shunyagar-flash"></div>
 
-        <!-- Controls Bar -->
-        <div class="gallery-controls-bar">
-            <button class="gallery-nav-btn" id="cyl-prev-btn" aria-label="Previous Reel">←</button>
-            <div class="gallery-drag-hint">
-                <span>✦</span> DRAG OR SCROLL TO ROTATE <span>✦</span>
+                <!-- Word 1: SHUNYAGAR (Soars in from screen) -->
+                <div class="cinematic-word-layer" id="burst-w1">
+                    <span class="burst-micro-kicker">[ 02 · SANCTUARY ]</span>
+                    <h2 class="burst-glyph-title">SHUNYAGAR</h2>
+                </div>
+
+                <!-- Word 2: ( Shoonya ) -->
+                <div class="cinematic-word-layer" id="burst-w2">
+                    <span class="burst-devanagari-ancient">शून्यागार</span>
+                    <span class="burst-latin-sub">( SHOONYA )</span>
+                </div>
+
+                <!-- Word 3: HOME (घर) - Land, Focus, then BURST! -->
+                <div class="cinematic-word-layer" id="burst-w3">
+                    <div class="home-burst-cluster">
+                        <span class="home-glyph-hindi">घर</span>
+                        <span class="home-glyph-en">H O M E</span>
+                    </div>
+                </div>
             </div>
-            <button class="gallery-nav-btn" id="cyl-next-btn" aria-label="Next Reel">→</button>
+
+            <!-- ACT 3: The Grand Unveil of the Manifesto -->
+            <div class="shunyagar-manifesto-stage" id="shunyagar-manifesto-stage">
+                <div class="shunyagar-intro-card" id="shunyagar-card">
+                    <!-- Cursor-following Specular Light Sheen -->
+                    <div class="shunyagar-specular-sheen" id="shunyagar-sheen"></div>
+
+                    <div class="shunyagar-top-bar">
+                        <span class="shunyagar-tag">[ 02 · SHUNYAGAR · शून्यागार ]</span>
+                        <div class="shunyagar-actions-wrap">
+                            <span class="shunyagar-sanctuary-pill">✦ SACRED HOME ✦</span>
+                            <button type="button" class="shunyagar-replay-btn" id="shunyagar-replay-btn" title="Replay Cinematic Burst">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                                </svg>
+                                <span>REPLAY BURST</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <blockquote class="shunyagar-quote" id="shunyagar-quote-text">
+                        “<strong>Shunyagar (Shoonya घर)</strong> is our space to connect, to learn, to communicate—bringing the wild into everyday life. An open sanctuary for curious minds connected through the thread of conscious awareness.”
+                    </blockquote>
+
+                    <p class="shunyagar-desc">
+                        Rooted in intentional gatherings, acoustic stillness, and ancient plant wisdom, Shunyagar serves as an open home for creative souls, seeker communities, and conscious alchemists to exchange energy without societal roles or artificial pretense.
+                    </p>
+
+                    <!-- Subtle Micro-Telemetry Ribbon -->
+                    <div class="shunyagar-bottom-meta">
+                        <span class="shunyagar-meta-item"><span>✦</span> RANCHI SANCTUARY</span>
+                        <span class="shunyagar-meta-divider">•</span>
+                        <span class="shunyagar-meta-item">SACRED TRIAD GROUND</span>
+                        <span class="shunyagar-meta-divider">•</span>
+                        <span class="shunyagar-meta-item">EST. 2026</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- =========================================================
-         PURE VIDEO POPUP MODAL (Clean Unobstructed Theater View)
+         SECTION 3: THE SACRED TRIAD (PHILOSOPHY BREAKDOWN)
          ========================================================= -->
-    <div class="reel-modal-overlay" id="reel-modal-overlay" aria-hidden="true">
-        <div class="reel-modal-backdrop" id="reel-modal-backdrop"></div>
-        <div class="reel-modal-container">
-            <!-- Close Button -->
-            <button type="button" class="reel-modal-close-btn" id="reel-modal-close-btn" aria-label="Close Video">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
+    <section class="tribe-section sacred-triad-section" id="sacred-triad">
+        <div class="section-header-wrap" style="text-align: center;">
+            <span class="section-num">[ 03 · SACRED TRIAD OF SHOONYA ]</span>
+            <h2 class="section-title">KĀYA · PRĀṆA · JÑĀNA</h2>
+            <p class="section-desc">Every circle, offering, and ritual within Shunyagar is grounded across three foundational pillars. Together, they complete the circle of Shoonya.</p>
+        </div>
 
-            <!-- Video Player (Clean View - No Text Overlay) -->
-            <div class="reel-modal-video-box">
-                <video class="reel-modal-video" id="reel-modal-video" playsinline loop preload="auto"></video>
-                <audio class="reel-modal-audio" id="reel-modal-audio" loop preload="auto"></audio>
+        <div class="triad-grid">
+            <!-- Pillar 1: Kaya -->
+            <div class="triad-card card-kaya">
+                <div>
+                    <div class="triad-top-badge">
+                        <span class="triad-number">[ PILLAR 01 ]</span>
+                        <span class="triad-pill-label">BODILY HEALTH</span>
+                    </div>
+                    <h3 class="triad-title">KĀYA (काया)</h3>
+                    <div class="triad-sub">The Physical & Cellular Vessel</div>
+                    <p class="triad-body">
+                        Grounding bodily health, cellular vitality, and conscious nutrition through direct botanical nourishment. We honor the physical temple through what enters the body.
+                    </p>
+                    <ul class="triad-elements-list">
+                        <li>Wild & single-origin herbal tea infusions</li>
+                        <li>Raw unprocessed forest honey & botanical masks</li>
+                        <li>Cellular hydration & restorative plant alchemies</li>
+                    </ul>
+                </div>
+                <div class="triad-highlight-box">
+                    <strong>Ritual Highlight:</strong> Sanddook Tea Tasting & Brewing Ceremonies (Upcoming Sept 13 & 18).
+                </div>
             </div>
 
-            <!-- Sleek Minimal Play / Audio Capsule Overlay in bottom of modal -->
-            <div class="reel-modal-toolbar">
-                <button type="button" class="reel-modal-tool-btn" id="modal-play-toggle" title="Play / Pause">
-                    <svg class="play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:none;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                    <svg class="pause-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+            <!-- Pillar 2: Prana -->
+            <div class="triad-card card-prana">
+                <div>
+                    <div class="triad-top-badge">
+                        <span class="triad-number">[ PILLAR 02 ]</span>
+                        <span class="triad-pill-label">ENERGY & FLOW</span>
+                    </div>
+                    <h3 class="triad-title">PRĀṆA (प्राण)</h3>
+                    <div class="triad-sub">The Subtle Life Force</div>
+                    <p class="triad-body">
+                        Awakening vital energy, nervous system regulation, and vibrational alignment. Prāṇa moves beyond form into frequency, stillness, and breath.
+                    </p>
+                    <ul class="triad-elements-list">
+                        <li>Tibetan sound bowls & harmonic frequency tuning</li>
+                        <li>High-vibration healing crystal meditation</li>
+                        <li>Conscious breath immersion & ecstatic dance</li>
+                    </ul>
+                </div>
+                <div class="triad-highlight-box">
+                    <strong>Ritual Highlight:</strong> Communal sound baths & deep sonic stillness circles.
+                </div>
+            </div>
+
+            <!-- Pillar 3: Jnana -->
+            <div class="triad-card card-jnana">
+                <div>
+                    <div class="triad-top-badge">
+                        <span class="triad-number">[ PILLAR 03 ]</span>
+                        <span class="triad-pill-label">WISDOM & MIND</span>
+                    </div>
+                    <h3 class="triad-title">JÑĀNA (ज्ञान)</h3>
+                    <div class="triad-sub">Lived Wisdom & Creative Intellect</div>
+                    <p class="triad-body">
+                        Expanding conscious intellect, philosophical inquiry, and unbounded creative dialogue. Transforming raw information into lived spiritual perception.
+                    </p>
+                    <ul class="triad-elements-list">
+                        <li>Masterclass dialogues with world-class creators</li>
+                        <li>Uncensored acoustic jam memoirs & open circles</li>
+                        <li>Ancient Ayurvedic philosophy & botanical sciences</li>
+                    </ul>
+                </div>
+                <div class="triad-highlight-box">
+                    <strong>Ritual Highlight:</strong> Intimate creative sessions with Grammy-winning music producers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 4: WELL-FRAMED PAST EVENTS (CHRONOLOGICAL DEEP DIVE)
+         ========================================================= -->
+    <section class="tribe-section past-events-section" id="past-events">
+        <div class="section-header-wrap" style="text-align: center;">
+            <span class="section-num">[ 04 · LIVING GATHERINGS ARCHIVE ]</span>
+            <h2 class="section-title">PAST SHUNYAGAR GATHERINGS</h2>
+            <p class="section-desc">Interactive chronological timeline deep dive into past transformative gatherings across our three sacred pillars.</p>
+        </div>
+
+        <!-- Interactive Chronological Timeline Scrubber -->
+        <div class="events-timeline-console">
+            <div class="events-timeline-track">
+                <div class="events-timeline-progress" id="events-timeline-progress"></div>
+            </div>
+            <div class="events-timeline-nodes" id="events-timeline-nodes">
+                <button type="button" class="timeline-node-pill active" data-index="0" aria-label="Jñāna Gathering: Aman Mourone">
+                    <span class="node-dot dot-jnana"></span>
+                    <span class="node-pillar-tag">01 · JÑĀNA</span>
+                    <span class="node-name">AMAN MOURONE JAM</span>
                 </button>
-                <button type="button" class="reel-modal-tool-btn" id="modal-audio-toggle" title="Toggle Sound">
-                    <svg class="audio-on-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" fill-opacity="0.25"></polygon>
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                    </svg>
-                    <svg class="audio-off-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                        <line x1="22" y1="9" x2="16" y2="15"></line>
-                        <line x1="16" y1="9" x2="22" y2="15"></line>
-                    </svg>
+                <button type="button" class="timeline-node-pill" data-index="1" aria-label="Prāṇa Gathering: Sonic Stillness">
+                    <span class="node-dot dot-prana"></span>
+                    <span class="node-pillar-tag">02 · PRĀṆA</span>
+                    <span class="node-name">SONIC STILLNESS</span>
+                </button>
+                <button type="button" class="timeline-node-pill" data-index="2" aria-label="Kāya Gathering: Sanddook Tasting">
+                    <span class="node-dot dot-kaya"></span>
+                    <span class="node-pillar-tag">03 · KĀYA</span>
+                    <span class="node-name">SANDDOOK ALCHEMY</span>
                 </button>
             </div>
         </div>
-    </div>
+
+        <!-- Cinematic Theater Stage for Timeline Deep Dive (Animated like Shunyagar) -->
+        <div class="past-events-theater" id="events-theater">
+
+            <!-- Burst Stage: Words Fly In & Burst -->
+            <div class="events-burst-stage" id="events-burst-stage">
+                <div class="events-shockwave-ring" id="events-shockwave"></div>
+                <div class="events-light-flash" id="events-flash"></div>
+
+                <div class="events-word-layer" id="event-burst-w1">
+                    <span class="events-burst-kicker" id="event-kicker">[ 01 · JÑĀNA GATHERING ]</span>
+                    <h3 class="events-burst-title" id="event-title-fly">AMAN MOURONE</h3>
+                </div>
+
+                <div class="events-word-layer" id="event-burst-w2">
+                    <span class="events-burst-sub" id="event-sub-fly">CREATIVE WISDOM</span>
+                    <span class="events-burst-anchor" id="event-anchor-fly">& POST-SESSION JAM</span>
+                </div>
+            </div>
+
+            <!-- Revealed Deep-Dive Archive Card Container -->
+            <div class="events-manifesto-stage" id="events-manifesto-stage">
+                <div class="events-deepdive-card theme-jnana" id="events-deepdive-card">
+                    <div class="card-top-row">
+                        <span class="event-pillar-badge badge-jnana" id="card-pillar-badge">✦ JÑĀNA GATHERING · WISDOM</span>
+                        <div class="shunyagar-actions-wrap">
+                            <span class="shunyagar-sanctuary-pill" id="card-setting-badge">✦ 1 ROOM · 2 HOURS ✦</span>
+                        </div>
+                    </div>
+
+                    <h3 class="event-card-title" id="card-event-title">Aman Mourone Creative Wisdom Session & Post-Session Jam</h3>
+                    <div class="event-card-setting" id="card-event-setting">
+                        <span>✦</span> 2 HOURS · 1 ROOM · CAREER-DEFINING CONVERSATIONS
+                    </div>
+
+                    <!-- Highlights Badge Grid -->
+                    <div class="events-highlights-grid" id="card-highlights-grid">
+                        <span class="highlight-chip">⏱️ 2 HOURS IN 1 ROOM</span>
+                        <span class="highlight-chip">🏆 GRAMMY-WINNING LA PRODUCER</span>
+                        <span class="highlight-chip">⚡ RAW CREATIVE ELECTRICITY</span>
+                        <span class="highlight-chip">🎸 POST-SESSION JAM</span>
+                        <span class="highlight-chip">🌿 CONSCIOUS LIVING CIRCLE</span>
+                    </div>
+
+                    <blockquote class="event-quote-highlight" id="card-quote-highlight">
+                        “Producers were singing, singers were writing, ideas flowed without ego, and everyone exchanged raw creative electricity under one conscious roof.”
+                    </blockquote>
+
+                    <p class="event-card-narrative" id="card-narrative-text">
+                        An intimate gathering hosted with Grammy-winning LA music producer <strong>Aman Mourone</strong>. Transformative dialogue on staying spiritually grounded within high-velocity creative industries, unlocking creative flow without burnout, and dissolving artificial commercial barriers.
+                    </p>
+
+                    <div class="event-card-footer">
+                        <span class="event-impact-tag" id="card-impact-tag">@SHOONYAWORLD CIRCLE · WISDOM DIALOGUE</span>
+                        <span style="font-family: var(--font-micrographics); font-size: 0.72rem; color: #1E3A8A; font-weight: 800;" id="card-status-badge">ARCHIVAL MEMOIR</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Timeline Navigation Controls Bar -->
+        <div class="events-nav-controls">
+            <button type="button" class="events-nav-btn" id="events-prev-btn" aria-label="Previous Gathering">
+                <span>← PREV GATHERING</span>
+            </button>
+            <button type="button" class="events-replay-pill" id="events-replay-btn" aria-label="Replay Chapter Burst">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+                </svg>
+                <span>REPLAY CHAPTER BURST</span>
+            </button>
+            <button type="button" class="events-nav-btn" id="events-next-btn" aria-label="Next Gathering">
+                <span>NEXT GATHERING →</span>
+            </button>
+        </div>
+    </section>
 
     <!-- =========================================================
-         SECTION 3: ORBITAL FREQUENCIES & ACOUSTIC STORIES
+         SECTION 5: ORBITAL FREQUENCIES & ACOUSTIC STORIES
          ========================================================= -->
     <section class="tribe-section jam-stories-section" id="jam-stories">
         <div class="section-header-wrap" style="text-align: center;">
-            <span class="section-num">[ 03 · ACOUSTIC FREQUENCIES ]</span>
+            <span class="section-num">[ 05 · ACOUSTIC FREQUENCIES ]</span>
             <h2 class="section-title">POST-SESSION JAM & STORIES</h2>
             <p class="section-desc">Unfiltered memoirs, acoustic frequencies, and communion shared across our conscious living circles.</p>
         </div>
@@ -1953,7 +3272,7 @@
             <div class="jam-card" data-track-idx="2">
                 <div>
                     <div class="jam-card-header">
-                        <span class="jam-tag">[ 03 · HERITAGE CIRCLE ]</span>
+                        <span class="jam-tag">[ 03 · THE THREAD ]</span>
                         <button type="button" class="jam-audio-pill" title="Listen to Jam Frequency" onclick="toggleJamCardAudio(2)">
                             <svg class="jam-play-ico" viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><polygon points="6 4 19 12 6 20 6 4"></polygon></svg>
                             <svg class="jam-pause-ico" viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="display:none;"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
@@ -1961,11 +3280,11 @@
                     </div>
                     <h3 class="jam-title">Thread of Art</h3>
                     <p class="jam-quote">
-                        “Connected through the <strong>sacred thread of art</strong>. Experiencing KĀYA botanical rituals at @sanddookofficial (Ramada Hotel, Ranchi) with beautiful, conscious humans under one roof.”
+                        “Shoonya Friends, connected through the <strong>thread of art</strong>. It was a pleasure having such beautiful, talented humans under one roof. Let's do this again, soon!”
                     </p>
                 </div>
                 <div class="jam-card-footer">
-                    <span class="jam-author">@SANDDOOKOFFICIAL • RAMADA GATHERING</span>
+                    <span class="jam-author">@SHOONYAWORLD • COMMUNITY MEMOIR</span>
                     <div class="jam-wave-live">
                         <span class="jam-wave-bar"></span>
                         <span class="jam-wave-bar"></span>
@@ -1979,7 +3298,95 @@
     </section>
 
     <!-- =========================================================
-         SECTION 3: ENVIRONMENTAL ALCHEMY (FIX THE SOIL, FRIENDS)
+         SECTION 6: CIRCULAR 3D VIDEO REEL GALLERY (Moved Down per Tanya)
+         ========================================================= -->
+    <section class="tribe-section circular-gallery-section" id="circular-reels-gallery">
+        <div class="section-header-wrap" style="text-align: center;">
+            <span class="section-num">[ 06 · THE TRIBE IN MOTION ]</span>
+            <h2 class="section-title">LIFE AT SHOONYA</h2>
+            <p class="section-desc">Gently turn the circle to discover stories, open mics, and peaceful afternoons shared by the community.</p>
+        </div>
+
+        <div class="circular-gallery-stage" id="circular-gallery-stage">
+            <div class="circular-gallery-cylinder" id="circular-gallery-cylinder">
+                <!-- 3D Cards rendered dynamically by JS -->
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="gallery-controls-bar">
+            <button class="gallery-nav-btn" id="cyl-prev-btn" aria-label="Previous Moment">←</button>
+            <div class="gallery-drag-hint">
+                <span>✦</span> GENTLY TURN THE CIRCLE <span>✦</span>
+            </div>
+            <button class="gallery-nav-btn" id="cyl-next-btn" aria-label="Next Moment">→</button>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         PURE VIDEO POPUP MODAL (Clean Unobstructed Theater View)
+         ========================================================= -->
+    <div class="reel-modal-overlay" id="reel-modal-overlay" aria-hidden="true">
+        <div class="reel-modal-backdrop" id="reel-modal-backdrop"></div>
+        <div class="reel-modal-container">
+            <!-- Close Button -->
+            <button type="button" class="reel-modal-close-btn" id="reel-modal-close-btn" aria-label="Close Video">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+
+            <!-- Video Player (Clean View - No Text Overlay) -->
+            <div class="reel-modal-video-box">
+                <video class="reel-modal-video" id="reel-modal-video" playsinline loop preload="auto"></video>
+                <audio class="reel-modal-audio" id="reel-modal-audio" loop preload="auto"></audio>
+            </div>
+
+            <!-- Sleek Minimal Play / Audio Capsule Overlay in bottom of modal -->
+            <div class="reel-modal-toolbar">
+                <button type="button" class="reel-modal-tool-btn" id="modal-play-toggle" title="Play / Pause">
+                    <svg class="play-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display:none;"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>
+                </button>
+                <button type="button" class="reel-modal-tool-btn" id="modal-audio-toggle" title="Toggle Sound">
+                    <svg class="audio-on-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" fill-opacity="0.25"></polygon>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    </svg>
+                    <svg class="audio-off-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <line x1="22" y1="9" x2="16" y2="15"></line>
+                        <line x1="16" y1="9" x2="22" y2="15"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         SECTION: CONSCIOUS TRIBE MANIFESTO (Moved Above Soil Alchemy per User Request)
+         ========================================================= -->
+    <section class="tribe-section tribe-manifesto-bridge-section" id="tribe-manifesto-bridge" style="position: relative; z-index: 2; padding: 5rem 2rem 2rem; max-width: 1100px; margin: 0 auto;">
+        <div class="tribe-manifesto-cards hero-manifesto-grid">
+            <div class="tribe-manifesto-card">
+                <span class="card-tag">[ 01. THE ESSENCE ]</span>
+                <p class="card-quote-text">
+                    “Shoonya World is a vibe. Hosting rooms that not only look pretty but <strong>embody the essence of conscious living</strong>... If you're still reading, congratulations! You found your tribe. You are totally SW vibes.”
+                </p>
+            </div>
+
+            <div class="tribe-manifesto-card">
+                <span class="card-tag">[ 02. ART & COMMUNION ]</span>
+                <p class="card-quote-text">
+                    “Shoonya Friends, connected through the <strong>thread of art</strong>. It was a pleasure having such beautiful, talented humans under one roof.”
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 7: ENVIRONMENTAL ALCHEMY (FIX THE SOIL, FRIENDS)
          ========================================================= -->
     <section class="tribe-section soil-alchemy-section" id="soil-philosophy">
         <div class="section-header-wrap" style="text-align: center;">
@@ -2048,7 +3455,62 @@
     </section>
 
     <!-- =========================================================
-         SECTION 4: JOIN THE CIRCLE (INSIDE GIANT MOVING SHOONYA BLOB)
+         SECTION 8: COMMUNITY REVIEWS & WALL OF LOVE (Second-to-Last per Tanya Sync)
+         ========================================================= -->
+    <section class="tribe-section community-reviews-section" id="reviews">
+        <div class="section-header-wrap" style="text-align: center;">
+            <span class="section-num">[ 08 · TRIBE REFLECTIONS ]</span>
+            <h2 class="section-title">COMMUNITY WALL OF LOVE</h2>
+            <p class="section-desc">How our conscious gatherings and Shunyagar sanctuary transformed everyday living for our tribe.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <blockquote class="review-quote">
+                    “The energy in Shunyagar is unlike anything else in the city. Walking in feels like leaving the noise behind. You don’t just attend an event—you shed exhaustion and regain stillness.”
+                </blockquote>
+                <div class="review-author-wrap">
+                    <div class="review-avatar">A</div>
+                    <div class="review-author-info">
+                        <span class="review-name">Aarav M.</span>
+                        <span class="review-role">Sound & Meditation Circle Attendee</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <blockquote class="review-quote">
+                    “The Aman Mourone session opened my mind completely. Having creators exchange ideas without ego or hierarchies in one warm room is something money can’t buy.”
+                </blockquote>
+                <div class="review-author-wrap">
+                    <div class="review-avatar">R</div>
+                    <div class="review-author-info">
+                        <span class="review-name">Rhea S.</span>
+                        <span class="review-role">Jñāna Creative Session Member</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <blockquote class="review-quote">
+                    “Tasting the Sanddook single-origin tea while learning ancient brewing rituals shifted my relationship with daily hydration. Shoonya makes the sacred accessible.”
+                </blockquote>
+                <div class="review-author-wrap">
+                    <div class="review-avatar">P</div>
+                    <div class="review-author-info">
+                        <span class="review-name">Pooja K.</span>
+                        <span class="review-role">Kāya Alchemy Tasting Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         SECTION 9: JOIN THE CIRCLE (INSIDE GIANT MOVING SHOONYA BLOB)
          ========================================================= -->
     <section class="tribe-section portal-section" id="portal">
         <div class="portal-blob-container">
@@ -2116,8 +3578,12 @@
         const heroTrack = id('tribe-hero-track');
         const heroVideoWrapper = id('hero-video-wrapper');
         const heroVideoScrim = id('hero-video-scrim');
+        const heroVideoVignette = id('hero-video-vignette');
         const heroStagePrimary = id('hero-stage-primary');
-        const heroStageSecondary = id('hero-stage-secondary');
+        const heroHeader = document.querySelector('header');
+        const heroElemKicker = id('hero-elem-kicker');
+        const heroElemTitle = id('hero-elem-title');
+        const heroElemSubtitle = id('hero-elem-subtitle');
         const heroScrollPrompt = id('hero-scroll-prompt');
         const heroVideo = id('hero-locked-video');
         const heroSoundBtn = id('hero-sound-toggle');
@@ -2174,47 +3640,126 @@
             heroObs.observe(heroTrack);
         }
 
+        // =========================================================
+        // SEQUENTIAL SCROLL CHOREOGRAPHY (User Requested)
+        // 1. Initial load (progress = 0): Pure video full-screen, no header/navbar/text.
+        // 2. Scroll: Navbar & header slides in.
+        // 3. Scroll: CONSCIOUS LIVING COMMUNITY pill arrives.
+        // 4. Scroll: TRIBE arrives in bold dot-matrix typography.
+        // 5. Scroll: WHERE CONSCIOUS HEARTS GATHER & VIBRATE arrives.
+        // 6. After little scroll: Text dissolves smoothly into Shunyagar.
+        // =========================================================
         function updateHeroScrollLock() {
             if (!heroTrack) return;
             const rect = heroTrack.getBoundingClientRect();
             const trackHeight = heroTrack.offsetHeight - window.innerHeight;
             if (trackHeight <= 0) return;
 
-            // Scroll progress 0.0 -> 1.0
+            // Scroll progress within Hero track: 0.0 -> 1.0
             let progress = -rect.top / trackHeight;
             progress = Math.max(0, Math.min(1, progress));
 
-            // 1. Stage Primary (T R I B E Title & Kicker): 0.0 -> 0.4
-            if (heroStagePrimary) {
-                const opacity = 1 - progress * 2.2;
-                const scale = 1 + progress * 0.12;
-                heroStagePrimary.style.opacity = Math.max(0, opacity).toString();
-                heroStagePrimary.style.transform = `scale(${scale}) translateY(${-progress * 40}px)`;
-                heroStagePrimary.style.pointerEvents = opacity <= 0.1 ? 'none' : 'auto';
+            // When scrolled completely past the hero track, keep header permanently visible
+            if (rect.top <= -trackHeight) {
+                if (heroHeader) {
+                    heroHeader.style.opacity = '1';
+                    heroHeader.style.transform = 'translateY(0)';
+                    heroHeader.style.pointerEvents = 'auto';
+                }
+                return;
             }
 
-            // 2. Stage Secondary (Manifesto Quote Cards): 0.4 -> 1.0
-            if (heroStageSecondary) {
-                if (progress >= 0.35) {
-                    const sNorm = Math.min(1, Math.max(0, (progress - 0.35) / 0.35));
-                    const exitNorm = Math.max(0, (progress - 0.85) / 0.15);
-                    const finalOpacity = sNorm * (1 - exitNorm * 0.7);
-
-                    heroStageSecondary.style.opacity = finalOpacity.toString();
-                    heroStageSecondary.style.transform = `translateY(${(1 - sNorm) * 30}px)`;
-                    heroStageSecondary.style.pointerEvents = finalOpacity > 0.2 ? 'auto' : 'none';
+            // --- STEP 1: Navbar / Header emerges smoothly as scroll begins (0.02 -> 0.16) ---
+            if (heroHeader) {
+                if (progress <= 0.02) {
+                    heroHeader.style.opacity = '0';
+                    heroHeader.style.transform = 'translateY(-24px)';
+                    heroHeader.style.pointerEvents = 'none';
                 } else {
-                    heroStageSecondary.style.opacity = '0';
-                    heroStageSecondary.style.pointerEvents = 'none';
+                    const hProg = Math.min(1, (progress - 0.02) / 0.14);
+                    heroHeader.style.opacity = hProg.toString();
+                    heroHeader.style.transform = `translateY(${(1 - hProg) * -24}px)`;
+                    heroHeader.style.pointerEvents = hProg > 0.4 ? 'auto' : 'none';
                 }
             }
 
-            // 3. Scroll Prompt Visibility
-            if (heroScrollPrompt) {
-                heroScrollPrompt.style.opacity = Math.max(0, (1 - progress * 4)).toString();
+            // --- DYNAMIC CINEMATIC OVERLAY CONTROLLER (Option 1) ---
+            // Initial load (progress <= 0.04): 100% pure, crystal-clear, raw video with 0 overlay
+            // As text arrives (progress 0.08 -> 0.72): subtle radial scrim fades in to provide contrast for white typography
+            // Toward transition (progress 0.70 -> 1.0): bottom vignette smoothly blends video into #FAF8EB ivory
+            if (heroVideoScrim) {
+                if (progress <= 0.04) {
+                    heroVideoScrim.style.opacity = '0';
+                } else if (progress <= 0.74) {
+                    const sProg = Math.min(1, (progress - 0.04) / 0.28);
+                    heroVideoScrim.style.opacity = (sProg * 0.85).toString();
+                } else {
+                    const exitScrim = Math.min(1, (progress - 0.74) / 0.22);
+                    heroVideoScrim.style.opacity = (0.85 * (1 - exitScrim)).toString();
+                }
             }
 
-            // 4. Viewport video culling (saves CPU/GPU when out of view)
+            if (heroVideoVignette) {
+                if (progress <= 0.65) {
+                    heroVideoVignette.style.opacity = '0';
+                } else {
+                    const blendProg = Math.min(1, (progress - 0.65) / 0.32);
+                    heroVideoVignette.style.opacity = blendProg.toString();
+                }
+            }
+
+            // Exit fade factor before entering Section 2 Shunyagar (0.76 -> 0.98)
+            let exitFactor = 1;
+            let exitTranslate = 0;
+            if (progress >= 0.76) {
+                const exitProg = Math.min(1, (progress - 0.76) / 0.20);
+                exitFactor = Math.max(0, 1 - exitProg);
+                exitTranslate = -exitProg * 35; // gentle upward drift as it dissolves
+            }
+
+            // --- STEP 2: CONSCIOUS LIVING COMMUNITY arrives (0.12 -> 0.32) ---
+            if (heroElemKicker) {
+                if (progress < 0.12) {
+                    heroElemKicker.style.opacity = '0';
+                    heroElemKicker.style.transform = 'translateY(24px)';
+                } else {
+                    const kProg = Math.min(1, (progress - 0.12) / 0.18);
+                    heroElemKicker.style.opacity = (kProg * exitFactor).toString();
+                    heroElemKicker.style.transform = `translateY(${(1 - kProg) * 24 + exitTranslate}px)`;
+                }
+            }
+
+            // --- STEP 3: TRIBE title arrives (0.28 -> 0.50) ---
+            if (heroElemTitle) {
+                if (progress < 0.28) {
+                    heroElemTitle.style.opacity = '0';
+                    heroElemTitle.style.transform = 'scale(0.92) translateY(20px)';
+                } else {
+                    const tProg = Math.min(1, (progress - 0.28) / 0.20);
+                    heroElemTitle.style.opacity = (tProg * exitFactor).toString();
+                    const currentScale = 0.92 + tProg * 0.08 + (1 - exitFactor) * 0.05;
+                    heroElemTitle.style.transform = `scale(${currentScale}) translateY(${(1 - tProg) * 20 + exitTranslate}px)`;
+                }
+            }
+
+            // --- STEP 4: WHERE CONSCIOUS HEARTS GATHER & VIBRATE arrives (0.46 -> 0.70) ---
+            if (heroElemSubtitle) {
+                if (progress < 0.46) {
+                    heroElemSubtitle.style.opacity = '0';
+                    heroElemSubtitle.style.transform = 'translateY(24px)';
+                } else {
+                    const sProg = Math.min(1, (progress - 0.46) / 0.22);
+                    heroElemSubtitle.style.opacity = (sProg * exitFactor).toString();
+                    heroElemSubtitle.style.transform = `translateY(${(1 - sProg) * 24 + exitTranslate}px)`;
+                }
+            }
+
+            // Scroll Prompt (mouse icon): Visible on initial full-screen video, fades out as scroll starts
+            if (heroScrollPrompt) {
+                heroScrollPrompt.style.opacity = Math.max(0, 1 - progress * 5).toString();
+            }
+
+            // Viewport video culling
             if (heroVideo) {
                 if (rect.bottom < 0 || rect.top > window.innerHeight) {
                     if (!heroVideo.paused) heroVideo.pause();
@@ -2244,6 +3789,369 @@
                     heroSoundBtn.title = 'Play Sound';
                 }
             });
+        }
+
+        // =========================================================
+        // SECTION 2: SHUNYAGAR DRAMATIC CINEMATIC BURST ENGINE
+        // =========================================================
+        const shunyagarTheater = id('shunyagar-theater');
+        const burstW1 = id('burst-w1');
+        const burstW2 = id('burst-w2');
+        const burstW3 = id('burst-w3');
+        const shockwave = id('shunyagar-shockwave');
+        const flash = id('shunyagar-flash');
+        const manifestoStage = id('shunyagar-manifesto-stage');
+        const replayBtn = id('shunyagar-replay-btn');
+        const shunyagarCard = id('shunyagar-card');
+        let hasBurstPlayed = false;
+        let burstTimeoutIds = [];
+
+        function clearBurstTimeouts() {
+            burstTimeoutIds.forEach(t => clearTimeout(t));
+            burstTimeoutIds = [];
+        }
+
+        function playShunyagarDramaticBurst() {
+            clearBurstTimeouts();
+
+            // 1. Hide manifesto, reset shockwaves & words
+            if (manifestoStage) {
+                manifestoStage.classList.remove('revealed');
+            }
+            if (shockwave) {
+                shockwave.classList.remove('trigger-shockwave');
+                void shockwave.offsetWidth; // force reflow
+            }
+            if (flash) {
+                flash.classList.remove('trigger-flash');
+                void flash.offsetWidth;
+            }
+
+            [burstW1, burstW2, burstW3].forEach(w => {
+                if (w) {
+                    w.className = 'cinematic-word-layer';
+                }
+            });
+
+            // Act 1: "SHUNYAGAR" soars in from screen (0ms -> 750ms)
+            burstTimeoutIds.push(setTimeout(() => {
+                if (burstW1) burstW1.classList.add('active-fly-in');
+            }, 60));
+
+            // Act 2: "शून्यागार ( SHOONYA )" rushes in (750ms -> 1550ms)
+            burstTimeoutIds.push(setTimeout(() => {
+                if (burstW1) {
+                    burstW1.classList.remove('active-fly-in');
+                    burstW1.classList.add('active-exit');
+                }
+                if (burstW2) burstW2.classList.add('active-fly-in');
+            }, 800));
+
+            // Act 3: "घर · HOME" rushes in monumental (1550ms -> 2350ms)
+            burstTimeoutIds.push(setTimeout(() => {
+                if (burstW2) {
+                    burstW2.classList.remove('active-fly-in');
+                    burstW2.classList.add('active-exit');
+                }
+                if (burstW3) burstW3.classList.add('active-fly-in');
+            }, 1600));
+
+            // Act 4: THE BURST! Golden shockwave & light flash explosion (2350ms)
+            burstTimeoutIds.push(setTimeout(() => {
+                if (shockwave) shockwave.classList.add('trigger-shockwave');
+                if (flash) flash.classList.add('trigger-flash');
+                if (burstW3) {
+                    burstW3.classList.remove('active-fly-in');
+                    burstW3.classList.add('bursting');
+                }
+            }, 2450));
+
+            // Act 5: Grand Unveil of the Complete Manifesto (2850ms)
+            burstTimeoutIds.push(setTimeout(() => {
+                if (manifestoStage) manifestoStage.classList.add('revealed');
+                hasBurstPlayed = true;
+            }, 2850));
+        }
+
+        // Trigger burst on scroll into view
+        if (shunyagarTheater && 'IntersectionObserver' in window) {
+            const burstObs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasBurstPlayed) {
+                        playShunyagarDramaticBurst();
+                    }
+                });
+            }, { threshold: 0.18 });
+            burstObs.observe(shunyagarTheater);
+        }
+
+        // Interactive Replay Button
+        if (replayBtn) {
+            replayBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                playShunyagarDramaticBurst();
+            });
+        }
+
+        // Cursor Specular Light Sheen tracking on revealed card
+        if (shunyagarCard) {
+            shunyagarCard.addEventListener('mousemove', (e) => {
+                const rect = shunyagarCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                shunyagarCard.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
+                shunyagarCard.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
+            });
+        }
+
+        // =========================================================
+        // SECTION 4: PAST EVENTS CHRONOLOGICAL DEEP DIVE ENGINE
+        // =========================================================
+        const eventsData = [
+            {
+                pillarBadge: '✦ JÑĀNA GATHERING · WISDOM',
+                badgeClass: 'badge-jnana',
+                themeClass: 'theme-jnana',
+                kicker: '[ 01 · JÑĀNA GATHERING ]',
+                flyWord1: 'AMAN MOURONE',
+                flyWord2: 'CREATIVE WISDOM',
+                flyWordAnchor: '& POST-SESSION JAM',
+                title: 'Aman Mourone Creative Wisdom Session & Post-Session Jam',
+                setting: '2 HOURS · 1 ROOM · CAREER-DEFINING CONVERSATIONS',
+                settingBadge: '✦ 1 ROOM · 2 HOURS ✦',
+                highlights: [
+                    '⏱️ 2 HOURS IN 1 ROOM',
+                    '🏆 GRAMMY-WINNING LA PRODUCER',
+                    '⚡ RAW CREATIVE ELECTRICITY',
+                    '🎸 POST-SESSION JAM',
+                    '🌿 CONSCIOUS LIVING CIRCLE'
+                ],
+                quote: '“Producers were singing, singers were writing, ideas flowed without ego, and everyone exchanged raw creative electricity under one conscious roof.”',
+                narrative: 'An intimate gathering hosted with Grammy-winning LA music producer <strong>Aman Mourone</strong>. Transformative dialogue on staying spiritually grounded within high-velocity creative industries, unlocking creative flow without burnout, and dissolving artificial commercial barriers.',
+                impactTag: '@SHOONYAWORLD CIRCLE · WISDOM DIALOGUE',
+                statusBadge: 'ARCHIVAL MEMOIR',
+                statusColor: '#1E3A8A'
+            },
+            {
+                pillarBadge: '✦ PRĀṆA GATHERING · ENERGY',
+                badgeClass: 'badge-prana',
+                themeClass: 'theme-prana',
+                kicker: '[ 02 · PRĀṆA GATHERING ]',
+                flyWord1: 'PRANIC HEALING',
+                flyWord2: 'SONIC STILLNESS',
+                flyWordAnchor: '& FREQUENCY IMMERSION',
+                title: 'Pranic Healing & Sonic Stillness Immersion',
+                setting: 'COMMUNITY MEDITATION · SOUND BOWLS · SOMATIC BREATH',
+                settingBadge: '✦ FREQUENCY IMMERSION ✦',
+                highlights: [
+                    '🥣 TIBETAN CRYSTAL BOWLS',
+                    '🧘 GUIDED PRANIC MEDITATION',
+                    '🫁 SOMATIC BREATHWORK IMMERSION',
+                    '🌊 NERVOUS SYSTEM HARMONIZATION',
+                    '✨ FREQUENCY ALIGNMENT'
+                ],
+                quote: '“Moving beyond form into frequency, stillness, and vibrational alignment. Quieting hyperactive nervous systems and reconnecting the physical vessel to deep natural rhythm.”',
+                narrative: 'A restorative immersion into frequency healing and somatic breathwork. Attendees were guided through vibrational crystal bowl resonance, quieting hyperactive nervous systems and reconnecting the physical body to deep natural rhythm.',
+                impactTag: 'SANCTUARY STILLNESS · ENERGY & FLOW',
+                statusBadge: 'ARCHIVAL MEMOIR',
+                statusColor: '#436B1D'
+            },
+            {
+                pillarBadge: '✦ KĀYA GATHERING · TEMPLE',
+                badgeClass: 'badge-kaya',
+                themeClass: 'theme-kaya',
+                kicker: '[ 03 · KĀYA GATHERING ]',
+                flyWord1: 'SANDDOOK ALCHEMY',
+                flyWord2: 'TEA CEREMONY',
+                flyWordAnchor: '& EDIBLE BOTANICALS',
+                title: 'Sanddook Alchemy Tasting & Tea Ceremony',
+                setting: 'RITUAL BREWING · EDIBLE BOTANICALS · SEPT 1–2 & UPCOMING SEPT 13/18',
+                settingBadge: '✦ SEPT 1–2 & UPCOMING SEPT 13/18 ✦',
+                highlights: [
+                    '🍵 SINGLE-ORIGIN TEA BREWING',
+                    '🍯 RAW UNPROCESSED FOREST HONEY',
+                    '🌿 EDIBLE BOTANICAL SAMPLINGS',
+                    '📅 SEPT 1–2 & UPCOMING SEPT 13/18',
+                    '🌱 CELLULAR HYDRATION'
+                ],
+                quote: '“Grounding bodily health, cellular vitality, and conscious nutrition through direct botanical nourishment. We honor the physical temple through what enters the vessel.”',
+                narrative: 'An exploration of physical nourishing botanicals. Interactive whole-leaf tea brewing ceremonies, pure forest honey tastings, and edible wild plant formulations—educating the tribe on single-origin sourcing and deep cellular vitality.',
+                impactTag: 'BOTANICAL ALCHEMY · BODILY HEALTH',
+                statusBadge: 'RITUAL ARCHIVE',
+                statusColor: '#8C502E'
+            }
+        ];
+
+        let currentEventIdx = 0;
+        let eventBurstTimeoutIds = [];
+        let hasEventsBurstPlayed = false;
+
+        const eventsTheater = id('events-theater');
+        const eventBurstW1 = id('event-burst-w1');
+        const eventBurstW2 = id('event-burst-w2');
+        const eventsShockwave = id('events-shockwave');
+        const eventsFlash = id('events-flash');
+        const eventsManifestoStage = id('events-manifesto-stage');
+        const eventsDeepdiveCard = id('events-deepdive-card');
+        const eventsTimelineProgress = id('events-timeline-progress');
+        const timelineNodePills = document.querySelectorAll('.timeline-node-pill');
+        const eventsPrevBtn = id('events-prev-btn');
+        const eventsNextBtn = id('events-next-btn');
+        const eventsReplayBtn = id('events-replay-btn');
+
+        function clearEventBurstTimeouts() {
+            eventBurstTimeoutIds.forEach(t => clearTimeout(t));
+            eventBurstTimeoutIds = [];
+        }
+
+        function populateEventCard(idx) {
+            const data = eventsData[idx];
+            if (!eventsDeepdiveCard) return;
+
+            eventsDeepdiveCard.className = `events-deepdive-card ${data.themeClass}`;
+            eventsDeepdiveCard.innerHTML = `
+                <div class="card-top-row">
+                    <span class="event-pillar-badge ${data.badgeClass}">${data.pillarBadge}</span>
+                    <div class="shunyagar-actions-wrap">
+                        <span class="shunyagar-sanctuary-pill">${data.settingBadge}</span>
+                    </div>
+                </div>
+
+                <h3 class="event-card-title">${data.title}</h3>
+                <div class="event-card-setting">
+                    <span>✦</span> ${data.setting}
+                </div>
+
+                <div class="events-highlights-grid">
+                    ${data.highlights.map(h => `<span class="highlight-chip">${h}</span>`).join('')}
+                </div>
+
+                <blockquote class="event-quote-highlight">
+                    ${data.quote}
+                </blockquote>
+
+                <p class="event-card-narrative">
+                    ${data.narrative}
+                </p>
+
+                <div class="event-card-footer">
+                    <span class="event-impact-tag">${data.impactTag}</span>
+                    <span style="font-family: var(--font-micrographics); font-size: 0.72rem; color: ${data.statusColor}; font-weight: 800;">${data.statusBadge}</span>
+                </div>
+            `;
+        }
+
+        function playEventChapterBurst(idx) {
+            clearEventBurstTimeouts();
+            currentEventIdx = idx;
+            const data = eventsData[idx];
+
+            // Update Timeline Navigation Nodes & Progress
+            timelineNodePills.forEach((pill, i) => {
+                pill.classList.toggle('active', i === idx);
+            });
+            if (eventsTimelineProgress) {
+                eventsTimelineProgress.style.width = idx === 0 ? '0%' : idx === 1 ? '50%' : '100%';
+            }
+
+            // Update Fly-In Text
+            const kicker = id('event-kicker');
+            const titleFly = id('event-title-fly');
+            const subFly = id('event-sub-fly');
+            const anchorFly = id('event-anchor-fly');
+
+            if (kicker) kicker.textContent = data.kicker;
+            if (titleFly) {
+                titleFly.textContent = data.flyWord1;
+                titleFly.className = `events-burst-title ${data.themeClass}`;
+            }
+            if (subFly) subFly.textContent = data.flyWord2;
+            if (anchorFly) anchorFly.textContent = data.flyWordAnchor;
+
+            // Reset Animation Classes
+            if (eventsManifestoStage) eventsManifestoStage.classList.remove('revealed');
+            if (eventsShockwave) {
+                eventsShockwave.classList.remove('trigger-shockwave');
+                void eventsShockwave.offsetWidth;
+            }
+            if (eventsFlash) {
+                eventsFlash.classList.remove('trigger-flash');
+                void eventsFlash.offsetWidth;
+            }
+
+            [eventBurstW1, eventBurstW2].forEach(w => {
+                if (w) w.className = 'events-word-layer';
+            });
+
+            // Act 1: Word 1 flies in (0ms -> 750ms)
+            eventBurstTimeoutIds.push(setTimeout(() => {
+                if (eventBurstW1) eventBurstW1.classList.add('active-fly-in');
+            }, 60));
+
+            // Act 2: Word 2 rushes in (750ms -> 1550ms)
+            eventBurstTimeoutIds.push(setTimeout(() => {
+                if (eventBurstW1) {
+                    eventBurstW1.classList.remove('active-fly-in');
+                    eventBurstW1.classList.add('active-exit');
+                }
+                if (eventBurstW2) eventBurstW2.classList.add('active-fly-in');
+            }, 750));
+
+            // Act 3: THE BURST! (1550ms)
+            eventBurstTimeoutIds.push(setTimeout(() => {
+                if (eventsShockwave) eventsShockwave.classList.add('trigger-shockwave');
+                if (eventsFlash) eventsFlash.classList.add('trigger-flash');
+                if (eventBurstW2) {
+                    eventBurstW2.classList.remove('active-fly-in');
+                    eventBurstW2.classList.add('bursting');
+                }
+            }, 1550));
+
+            // Act 4: Populate & Unveil Deep-Dive Dossier (1950ms)
+            eventBurstTimeoutIds.push(setTimeout(() => {
+                populateEventCard(idx);
+                if (eventsManifestoStage) eventsManifestoStage.classList.add('revealed');
+                hasEventsBurstPlayed = true;
+            }, 1950));
+        }
+
+        // Timeline Node click handlers
+        timelineNodePills.forEach((pill) => {
+            pill.addEventListener('click', () => {
+                const idx = parseInt(pill.getAttribute('data-index'), 10);
+                playEventChapterBurst(idx);
+            });
+        });
+
+        // Prev / Next / Replay buttons
+        if (eventsPrevBtn) {
+            eventsPrevBtn.addEventListener('click', () => {
+                const nextIdx = (currentEventIdx - 1 + eventsData.length) % eventsData.length;
+                playEventChapterBurst(nextIdx);
+            });
+        }
+        if (eventsNextBtn) {
+            eventsNextBtn.addEventListener('click', () => {
+                const nextIdx = (currentEventIdx + 1) % eventsData.length;
+                playEventChapterBurst(nextIdx);
+            });
+        }
+        if (eventsReplayBtn) {
+            eventsReplayBtn.addEventListener('click', () => {
+                playEventChapterBurst(currentEventIdx);
+            });
+        }
+
+        // Trigger on scroll into Section 4
+        if (eventsTheater && 'IntersectionObserver' in window) {
+            const eventObs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !hasEventsBurstPlayed) {
+                        playEventChapterBurst(0);
+                    }
+                });
+            }, { threshold: 0.18 });
+            eventObs.observe(eventsTheater);
         }
 
         // 2. Zero-Gravity Antigravity Particles Engine (Optimized for cool, silent CPU/GPU performance)
