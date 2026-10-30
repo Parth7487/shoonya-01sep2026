@@ -4522,3 +4522,29 @@ Comprehensive fix for mobile (iOS Safari / Android Chrome) volume button audio p
    - Committed and pushed to both GitHub repositories (`origin/main`).
    - Verified live on production at https://shoonya.world/ALCHEMY%20SHOP and https://www.shoonya.world/ALCHEMY%20SHOP.
 ================================================================================
+
+[242] USER:
+----------------------------------------
+/Users/parth/Downloads/IMG_1390.mov
+(Audio message: "In desktop mode can you add this as a video in Alchemy page. Make sure not to change anything else at all. Just add this video, okay?")
+
+================================================================================
+
+[243] ASSISTANT:
+----------------------------------------
+Added IMG_1390 as the desktop hero video on https://shoonya.world/ALCHEMY%20SHOP:
+
+1. Media Optimization Pipeline:
+   - Encoded `/Users/parth/Downloads/IMG_1390.mov` into web-optimized H.264 video: `assets/IMG_1390.mp4` (1080x604 landscape widescreen, yuv420p, high profile, faststart moov atom at beginning of stream for instantaneous streaming).
+   - Generated high-resolution first frame poster `assets/IMG_1390_poster.jpg` for instant zero-flicker rendering during media initialization.
+
+2. Integration into `shoonya_alchemy.html`:
+   - Updated desktop video preload link in `<head>`: `<link rel="preload" href="assets/IMG_1390.mp4?v=fast_20261031_v1" as="video" type="video/mp4" media="(min-width: 901px)">`.
+   - Updated desktop hero video in `.hero-video-box`: `assets/IMG_1390.mp4?v=fast_20261031_v1` and desktop poster `assets/IMG_1390_poster.jpg`.
+   - Preserved all other layouts, audio systems, mobile video (`IMG_1370_mobile.mp4`), and styles with zero modifications.
+
+3. Multi-Remote Synchronization & Deployment:
+   - Mirrored across `shoonya_alchemy.html` and `Dashboard/ready to deploy /shoonya_alchemy.html`.
+   - Pushed commits to both GitHub remotes (`Shoonya.git` and `shoonya-01sep2026.git`).
+   - Verified live deployment at https://shoonya.world/ALCHEMY%20SHOP and https://www.shoonya.world/ALCHEMY%20SHOP.
+================================================================================
