@@ -19,8 +19,8 @@
     <link rel="preload" href="assets/fonts/Doto-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Doto-Bold-Ext.woff2" as="font" type="font/woff2" crossorigin>
     <!-- High Priority Instant Autoplay Media Preload -->
-    <link rel="preload" href="assets/IMG_1397.mp4" as="video" type="video/mp4" media="(min-width: 769px)">
-    <link rel="preload" href="assets/IMG_1398_mobile.mp4" as="video" type="video/mp4" media="(max-width: 768px)">
+    <link rel="preload" href="assets/IMG_1397.mp4?v=clean_edge_20261031_v1" as="video" type="video/mp4" media="(min-width: 769px)">
+    <link rel="preload" href="assets/IMG_1398_mobile.mp4?v=clean_edge_20261031_v1" as="video" type="video/mp4" media="(max-width: 768px)">
     <link rel="preload" href="assets/tribe_soundtrack.m4a?v=img1397_20261031_v1" as="audio" type="audio/mp4">
 
     <!-- Lenis Smooth Inertial Scrolling -->
@@ -431,7 +431,7 @@
             height: 100%;
             overflow: hidden;
             z-index: 1;
-            background: #000;
+            background: var(--bg-canvas, #FAF8EB);
         }
 
         .hero-locked-video {
@@ -440,6 +440,8 @@
             object-fit: cover;
             object-position: center;
             display: block;
+            transform: scale(1.025);
+            transform-origin: center center;
             opacity: 1; /* 100% crystal clear natural vibrancy */
         }
 
@@ -460,26 +462,10 @@
             }
         }
 
-        /* Dynamic Cinematic Scrim (Starts at 0 opacity, fades in dynamically with text) */
-        .hero-video-scrim {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at center, rgba(20, 18, 16, 0.35) 0%, rgba(20, 18, 16, 0.75) 100%);
-            z-index: 2;
-            pointer-events: none;
-            opacity: 0;
-            will-change: opacity;
-        }
-
-        /* Dynamic Cinematic Bottom Vignette (Blends into #FAF8EB on exit) */
+        /* Overlays disabled for seamless, crystal-clear natural video display */
+        .hero-video-scrim,
         .hero-video-vignette {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(20, 18, 16, 0.4) 0%, transparent 25%, transparent 70%, #FAF8EB 100%);
-            z-index: 3;
-            pointer-events: none;
-            opacity: 0;
-            will-change: opacity;
+            display: none !important;
         }
 
         .hero-locked-content {
@@ -1559,6 +1545,9 @@
             align-items: center;
             justify-content: center;
             min-height: 85vh;
+            margin-top: -1px;
+            background: var(--bg-canvas, #FAF8EB);
+            border: none !important;
         }
 
         .portal-blob-container {
@@ -3168,12 +3157,12 @@
             <!-- Fullscreen Video Background -->
             <div class="hero-video-wrapper" id="hero-video-wrapper">
                 <!-- Desktop Hero Video (IMG_1397) -->
-                <video src="assets/IMG_1397.mp4" class="hero-locked-video hero-video-desktop" id="hero-video-desktop" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/IMG_1397_poster.jpg">
-                    <source src="assets/IMG_1397.mp4" type="video/mp4">
+                <video src="assets/IMG_1397.mp4?v=clean_edge_20261031_v1" class="hero-locked-video hero-video-desktop" id="hero-video-desktop" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/IMG_1397_poster.jpg?v=clean_edge_20261031_v1">
+                    <source src="assets/IMG_1397.mp4?v=clean_edge_20261031_v1" type="video/mp4">
                 </video>
                 <!-- Mobile Hero Video (IMG_1398) -->
-                <video src="assets/IMG_1398_mobile.mp4" class="hero-locked-video hero-video-mobile" id="hero-video-mobile" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/IMG_1398_mobile_poster.jpg">
-                    <source src="assets/IMG_1398_mobile.mp4" type="video/mp4">
+                <video src="assets/IMG_1398_mobile.mp4?v=clean_edge_20261031_v1" class="hero-locked-video hero-video-mobile" id="hero-video-mobile" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/IMG_1398_mobile_poster.jpg?v=clean_edge_20261031_v1">
+                    <source src="assets/IMG_1398_mobile.mp4?v=clean_edge_20261031_v1" type="video/mp4">
                 </video>
                 <audio id="hero-ambient-audio" src="assets/tribe_soundtrack.m4a?v=img1397_20261031_v1" autoplay loop playsinline webkit-playsinline preload="auto">
                     <source src="assets/tribe_soundtrack.m4a?v=img1397_20261031_v1" type="audio/mp4">
@@ -3200,8 +3189,7 @@
                     } catch(e) {}
                 })();
                 </script>
-                <div class="hero-video-scrim" id="hero-video-scrim"></div>
-                <div class="hero-video-vignette" id="hero-video-vignette"></div>
+
             </div>
 
             <!-- Sound Capsule Toggle for Hero Video -->

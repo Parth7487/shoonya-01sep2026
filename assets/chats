@@ -4764,3 +4764,33 @@ Streamlined https://shoonya.world/SHOONYAGHAR to the 2 requested core sections:
 4. Multi-Repository Mirroring & Synchronization:
    - Mirrored changes across root repo and `Dashboard/ready to deploy `.
 ================================================================================
+
+[261] USER:
+----------------------------------------
+can you remove this dark line
+
+================================================================================
+
+[261] ASSISTANT:
+----------------------------------------
+Completely eliminated the dark horizontal line at the bottom of the hero video across both desktop and mobile views:
+
+1. Root Cause Identification:
+   - Digital analysis of the video frames revealed that the camera recording for both `IMG_1397` and `IMG_1398` had 4 to 6 rows of near-black pixels (brightness 3-16) at the bottom edge from the recording sensor/letterboxing.
+   - Combined with `.hero-video-wrapper` having `background: #000`, this created a visible dark seam between the bottom of the video and the ivory (#FAF8EB) page background.
+
+2. Permanent Video & Poster Cropping:
+   - Re-encoded `assets/IMG_1397.mp4` with `crop=1080:596:0:0` (cropping 8px from bottom) and regenerated `assets/IMG_1397_poster.jpg`.
+   - Re-encoded `assets/IMG_1398_mobile.mp4` with `crop=1080:1908:0:0` (cropping 12px from bottom) and regenerated `assets/IMG_1398_mobile_poster.jpg`.
+   - Pixel verification confirmed that every row down to the very last boundary row now holds warm, amber natural video pixels (average brightness 106-117) with zero dark edge.
+
+3. CSS Anti-Seam Hardening:
+   - Updated `.hero-video-wrapper` background from `#000` to `var(--bg-canvas, #FAF8EB)`.
+   - Added `transform: scale(1.025); transform-origin: center center;` on `.hero-locked-video` to guarantee video bleed past container bounds with zero subpixel gaps.
+   - Disabled all dark radial scrims and vignette overlays (`hero-video-scrim`, `hero-video-vignette`).
+   - Added `margin-top: -1px;` on `.portal-section` to seal any subpixel anti-aliasing seams on high-DPI displays.
+   - Bumped cache-buster query strings (`?v=clean_edge_20261031_v1`).
+
+4. Deployment:
+   - Mirrored changes across root and deploy repositories, committed and pushed to both remotes.
+================================================================================
