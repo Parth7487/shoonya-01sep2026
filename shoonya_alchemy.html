@@ -20,7 +20,7 @@
 <!-- High Priority Instant Autoplay Media Preload -->
 <link rel="preload" href="assets/IMG_1364.mp4?v=fast_20261030_v2" as="video" type="video/mp4" media="(min-width: 901px)">
 <link rel="preload" href="assets/IMG_1370_mobile.mp4?v=fast_20261030_v2" as="video" type="video/mp4" media="(max-width: 900px)">
-<link rel="preload" href="assets/alchemy_soundtrack.mp3?v=jazz_20261030" as="audio" type="audio/mpeg">
+<link rel="preload" href="assets/alchemy_soundtrack.mp3?v=jazz_20261030_v3" as="audio" type="audio/mpeg">
 <!-- Lenis Smooth Scroll -->
 <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 <style>
@@ -1108,11 +1108,11 @@
         }
 
         .kit-card-tagline {
-            font-family: var(--font-heading-aamiya);
+            font-family: var(--font-editor-regular);
             font-size: 1.05rem;
             font-style: italic;
             font-weight: 400;
-            letter-spacing: 0.03em;
+            letter-spacing: 0.04em;
             color: var(--color-forest-green);
             margin-bottom: 0.9rem;
             line-height: 1.5;
@@ -1346,6 +1346,11 @@
         <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
     </svg>
 </button>
+<!-- Background Audio Soundtrack (Strictly invisible, zero UI footprint) -->
+<audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.mp3?v=jazz_20261030_v3" loop preload="auto" playsinline webkit-playsinline style="display:none!important;visibility:hidden!important;width:0!important;height:0!important;opacity:0!important;position:absolute!important;pointer-events:none!important;">
+    <source src="assets/alchemy_soundtrack.mp3?v=jazz_20261030_v3" type="audio/mpeg"/>
+    <source src="assets/alchemy_soundtrack.m4a?v=jazz_20261030_v3" type="audio/mp4"/>
+</audio>
 </div>
 </div>
 
@@ -2193,7 +2198,9 @@
         }, 1000);
 
         // 3. Hero Sound & Audio Playback Engine (Lag-Free & Zero-Play-Button)
-        const alchemyAudio = document.getElementById('hero-alchemy-audio');
+        function getAlchemyAudio() {
+            return document.getElementById('hero-alchemy-audio');
+        }
         let soundIsActive = false;
         let userExplicitlyMuted = false;
 
@@ -2211,14 +2218,7 @@
             }
         }
 
-        function unmuteSound() {
-            if (userExplicitlyMuted) return;
-
-            // Videos stay completely muted in the background (no clash with jazz soundtrack)
-            if (heroVideoDesktop) heroVideoDesktop.muted = true;
-            if (heroVideoMobile) heroVideoMobile.muted = true;
-
-            // Unlock Web Audio Context for iOS & Android
+        function unlockAudioContext() {
             const AudioCtx = window.AudioContext || window.webkitAudioContext;
             if (AudioCtx) {
                 try {
@@ -2230,23 +2230,31 @@
                     }
                 } catch(e) {}
             }
+        }
 
-            // Play the jazz soundtrack element
-            if (alchemyAudio) {
-                alchemyAudio.volume = 1.0;
-                alchemyAudio.muted = false;
-                alchemyAudio.loop = true;
-                const ap = alchemyAudio.play();
+        function unmuteSound() {
+            if (userExplicitlyMuted) return;
+
+            // Videos stay completely muted in the background (no clash with jazz soundtrack)
+            if (heroVideoDesktop) heroVideoDesktop.muted = true;
+            if (heroVideoMobile) heroVideoMobile.muted = true;
+
+            unlockAudioContext();
+
+            // Play the jazz soundtrack element on loop
+            const audio = getAlchemyAudio();
+            if (audio) {
+                audio.volume = 1.0;
+                audio.muted = false;
+                audio.loop = true;
+                const ap = audio.play();
                 if (ap && typeof ap.then === 'function') {
                     ap.then(() => {
-                        soundIsActive = true;
                         setSoundBtnState(true);
                     }).catch(() => {
-                        soundIsActive = false;
                         setSoundBtnState(false);
                     });
                 } else {
-                    soundIsActive = true;
                     setSoundBtnState(true);
                 }
             }
@@ -2254,28 +2262,65 @@
 
         function muteSound() {
             userExplicitlyMuted = true;
-            soundIsActive = false;
             if (heroVideoDesktop) heroVideoDesktop.muted = true;
             if (heroVideoMobile) heroVideoMobile.muted = true;
-            if (alchemyAudio && !alchemyAudio.paused) alchemyAudio.pause();
+            const audio = getAlchemyAudio();
+            if (audio && !audio.paused) {
+                audio.pause();
+            }
             setSoundBtnState(false);
         }
 
-        // Real-time audio element synchronization to prevent desync
-        if (alchemyAudio) {
-            alchemyAudio.addEventListener('playing', () => {
-                soundIsActive = true;
+        function toggleSound(e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            }
+            const audio = getAlchemyAudio();
+            if (!audio) return;
+
+            unlockAudioContext();
+
+            // If audio is currently playing and unmuted, toggle to mute
+            if (!audio.paused && !audio.muted && soundIsActive) {
+                muteSound();
+            } else {
+                // Otherwise unmute and play on continuous loop
+                userExplicitlyMuted = false;
+                audio.muted = false;
+                audio.volume = 1.0;
+                audio.loop = true;
+                const ap = audio.play();
+                if (ap && typeof ap.then === 'function') {
+                    ap.then(() => {
+                        setSoundBtnState(true);
+                    }).catch(err => {
+                        console.warn('[Shoonya Sound] Play error:', err);
+                        setSoundBtnState(false);
+                    });
+                } else {
+                    setSoundBtnState(true);
+                }
+            }
+        }
+
+        // Real-time audio element synchronization and loop guarantee
+        const initAudio = getAlchemyAudio();
+        if (initAudio) {
+            initAudio.loop = true;
+            initAudio.addEventListener('playing', () => {
                 setSoundBtnState(true);
             });
-            alchemyAudio.addEventListener('pause', () => {
-                if (!alchemyAudio.seeking) {
-                    soundIsActive = false;
+            initAudio.addEventListener('pause', () => {
+                if (!initAudio.seeking) {
                     setSoundBtnState(false);
                 }
             });
-            alchemyAudio.addEventListener('ended', () => {
-                soundIsActive = false;
-                setSoundBtnState(false);
+            initAudio.addEventListener('ended', () => {
+                // Hardware AV continuous loop guarantee
+                initAudio.currentTime = 0;
+                initAudio.play().catch(() => {});
             });
         }
 
@@ -2334,7 +2379,11 @@
         }, 200);
 
         // Comprehensive micro-signal triggers for mobile browsers
-        const onInstantSignal = () => {
+        const onInstantSignal = (e) => {
+            // Guard: Never intercept interactions targeted at the sound button
+            if (e && e.target && e.target.closest && e.target.closest('#hero-sound-btn')) {
+                return;
+            }
             const activeVid = getActiveHeroVideo();
             if (activeVid) {
                 const vp = activeVid.play();
@@ -2342,7 +2391,8 @@
                     vp.then(() => activeVid.classList.remove('autoplay-blocked')).catch(() => {});
                 }
             }
-            if (!userExplicitlyMuted && alchemyAudio && alchemyAudio.paused) {
+            const audio = getAlchemyAudio();
+            if (!userExplicitlyMuted && audio && audio.paused) {
                 unmuteSound();
             }
         };
@@ -2351,10 +2401,13 @@
             document.addEventListener(evt, onInstantSignal, { passive: true, capture: true });
         });
 
-        // Clicking anywhere on the hero section unmutes if muted and ensures video plays
+        // Clicking anywhere on the hero section unmutes if muted and ensures video plays (except sound button)
         if (heroWrapper) {
             ['click', 'touchstart', 'pointerdown'].forEach(ev => {
-                heroWrapper.addEventListener(ev, () => {
+                heroWrapper.addEventListener(ev, (e) => {
+                    if (e && e.target && e.target.closest && e.target.closest('#hero-sound-btn')) {
+                        return;
+                    }
                     const activeVid = getActiveHeroVideo();
                     if (activeVid) {
                         const vp = activeVid.play();
@@ -2376,40 +2429,13 @@
 
         // Speaker Icon Click Toggle (Mute / Unmute)
         if (soundBtn) {
-            soundBtn.addEventListener('click', (e) => {
+            soundBtn.addEventListener('click', toggleSound);
+            soundBtn.addEventListener('pointerdown', (e) => {
                 e.stopPropagation();
-                if (soundIsActive || (alchemyAudio && !alchemyAudio.paused)) {
-                    muteSound();
-                } else {
-                    userExplicitlyMuted = false;
-                    // Direct user gesture stack execution for Android Chrome & iOS Web Audio unlock
-                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
-                    if (AudioCtx) {
-                        try {
-                            if (!window._shoonyaAudioCtx) {
-                                window._shoonyaAudioCtx = new AudioCtx();
-                            }
-                            if (window._shoonyaAudioCtx.state === 'suspended') {
-                                window._shoonyaAudioCtx.resume().catch(() => {});
-                            }
-                        } catch(err) {}
-                    }
-                    if (alchemyAudio) {
-                        alchemyAudio.muted = false;
-                        alchemyAudio.volume = 1.0;
-                        alchemyAudio.loop = true;
-                        alchemyAudio.play().then(() => {
-                            soundIsActive = true;
-                            setSoundBtnState(true);
-                        }).catch(() => {
-                            soundIsActive = false;
-                            setSoundBtnState(false);
-                        });
-                    } else {
-                        unmuteSound();
-                    }
-                }
             });
+            soundBtn.addEventListener('touchstart', (e) => {
+                e.stopPropagation();
+            }, { passive: true });
         }
 
         // 4. Dual-Sided Flip Card Trigger
@@ -2527,10 +2553,5 @@
         window.addEventListener('load', initFeaturedKitCards);
         initFeaturedKitCards();
     </script>
-    <!-- Background Audio Soundtrack (Strictly invisible, zero UI footprint) -->
-    <audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.mp3?v=jazz_20261030" autoplay loop preload="auto" playsinline style="display:none!important;visibility:hidden!important;width:0!important;height:0!important;opacity:0!important;position:absolute!important;pointer-events:none!important;">
-        <source src="assets/alchemy_soundtrack.mp3?v=jazz_20261030" type="audio/mpeg"/>
-        <source src="assets/alchemy_soundtrack.m4a?v=jazz_20261030" type="audio/mp4"/>
-    </audio>
 </body>
 </html>
