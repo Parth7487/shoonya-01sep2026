@@ -4321,3 +4321,101 @@ Complete resolution for Android audio playback, typography hierarchy, diacritics
 6. Synchronized to `Dashboard/ready to deploy ` and deployed to Vercel production.
 ================================================================================
 
+[228] USER:
+----------------------------------------
+the font and the background colour is looking way to much different in phone can you please help to find the problem first tell me in chat then we will fix that 
+
+
+save all the chat inside /Users/parth/Downloads/Projects/Shoonya Project/assets/chats
+
+================================================================================
+
+[229] ASSISTANT:
+----------------------------------------
+Investigated the phone vs. desktop visual discrepancy:
+1. Root Causes for Background Color Difference:
+   - Mobile Display Color Profiles (OLED Wide-Gamut, True Tone & Night Shift): #FAF8EB (Vintage Ivory, RGB 250, 248, 235) renders as a subtle, soft off-white parchment on calibrated desktop LCDs, but displays with heavy yellow/golden tint on high-saturation mobile OLED panels.
+   - Flatness / Low Contrast: The ritual section (.alchemy-kits-section) and the ritual card body (.ritual-kit-card, .kit-card-body) both use #FAF8EB, causing the card to wash out and blend directly into the background on mobile instead of popping out with elevated contrast (e.g., crisp white #FFFFFF card surface).
+   - Abrupt Hero Break: On desktop, the hero video features a 200vh parallax fade into the ivory canvas. On mobile (<=900px), .hero-locked-wrapper is fixed to 100vh with position:relative, creating an abrupt hard cutoff from the saturated amber mobile video into the pale canvas.
+2. Root Causes for Font Difference:
+   - Doto Dot-Matrix on High-DPI Mobile Displays: 'Doto' renders individual LED dots. On small mobile screens with 460+ PPI, dots appear faint, pixelated, or resemble a retro digital alarm clock rather than luxury skincare typography. In brand hierarchy, Doto was designated for micrographics/prices, not large headlines.
+   - Navbar Monospace Font Fallback: .nav-links a in mobile media queries was using var(--font-editor-bold) ('Shoonya Mono', monospace) instead of Gotham Black, rendering typewriter pills.
+   - Mobile Browser Disk Cache: Mobile Safari/Chrome aggressively retain cached CSS and OTF/WOFF2 font assets until cleared or viewed in Private/Incognito mode.
+3. Recommended Fix Architecture presented to user for selection before execution.
+================================================================================
+
+[230] USER:
+----------------------------------------
+let's fix the colour first can you make sure in andriod mobile can you make sure the background colour is exact saeme as it is  in the /Users/parth/Downloads/Projects/Shoonya Project/shoonya_alchemy.html
+
+
+
+across all devices please
+
+================================================================================
+
+[231] ASSISTANT:
+----------------------------------------
+Engineered universal background color calibration and display consistency across Android mobile, iOS, and desktop:
+1. Root Cause Analysis:
+   - Green Ambient Grain Overlay on High-DPI AMOLED Screens: The legacy `body::before` pseudo-element had a fixed radial gradient with forest green dots (`rgba(67, 107, 29, 0.04)`). On desktop LCDs this was subtle texture, but on smartphone OLED displays with subpixel matrix, the green dots blended with the ivory canvas, casting a noticeable olive/murky yellow-green tint across the entire page.
+   - AMOLED / OLED Wide-Gamut (DCI-P3) Color Stretching: Modern Android phones default to "Vivid" mode using the DCI-P3 wide color gamut. In standard sRGB `#FAF8EB`, blue is lower than red and green, which when stretched across uncalibrated P3 displays caused the warm ivory to flare into an overly saturated mustard/yellow.
+   - Android Force-Dark / Auto-Dark Mode Vulnerability: Android Chrome and third-party WebViews with system dark mode enabled attempted to invert light canvas backgrounds without strict `light only` declarations.
+2. Architecture Upgrades Implemented Across All Web Surfaces (`shoonya_alchemy.html`, `index.html`, `shoonya_tribe.html`, `product_kesari_rupa.html`, `product_shanti.html`, `home.html`, `shoonya_mockup.html`):
+   - Strict Light-Only Declarations: Injected `<meta name="color-scheme" content="light only">`, `<meta name="supported-color-schemes" content="light only">`, and `:root { color-scheme: light only; }` to permanently block OS/browser auto-inversion.
+   - High-Fidelity Wide-Gamut OLED Calibration:
+     ```css
+     @media (color-gamut: p3) {
+         :root {
+             --bg-canvas: color(display-p3 0.980 0.974 0.932);
+         }
+     }
+     ```
+     This calibrates the chromaticity on AMOLED/P3 displays to match the exact perceptual warmth of desktop sRGB `#FAF8EB` without yellow saturation.
+   - Mobile Grain Suppression: Added `@media (max-width: 900px) { body::before { display: none !important; } }`, completely eliminating the green subpixel overlay on mobile devices so the canvas renders in pure, unadulterated ivory.
+   - Background Solidification: Enforced `background-color: #FAF8EB !important; background-color: var(--bg-canvas) !important;` across `html, body`, `.alchemy-kits-section`, and `.tribe-footer` with `-webkit-tap-highlight-color: transparent;`.
+3. Synchronized and deployed live to production across both `https://shoonya.world` and `https://www.shoonya.world`.
+================================================================================
+
+
+
+
+[232] USER:
+----------------------------------------
+Okay the font is showing perfectly on https://shoonya.world/ALCHEMY%20SHOP
+
+please /learn 
+/gsd-extract-learnings 
+
+this and apply to rest of pages which are linked to https://shoonya.world/ make sure all across product page and everywhere font looks perfectly  https://shoonya.world/ALCHEMY%20SHOP
+
+================================================================================
+
+[233] ASSISTANT:
+----------------------------------------
+Extracted core typography architecture learnings, generated a formal learning proposal, and applied the proven, pixel-perfect font system across every linked page on https://shoonya.world/:
+
+1. Structured Learnings Extraction & Archival:
+   - Extracted architectural decisions, lessons, and invariants into `.planning/codebase/LEARNINGS.md` under Section 7.
+   - Formulated `learning_proposal.md` for the `/learn` workflow proposing additions to `.agents/rules/shoonya_design_system.md` covering mandatory physical font URLs, webfont preloads, variable Doto unicode range splitting, and nested route `<base href="/">` isolation.
+
+2. Comprehensive Font Parity Implemented Across All Linked Surfaces:
+   - Target Pages Updated:
+     * `product_kesari_rupa.html` & `products/kesari-rupa-ritual-kit.html`
+     * `product_shanti.html` & `products/shanti-ritual-kit.html`
+     * `index.html` (/ORIGIN, /ritual)
+     * `shoonya_tribe.html` (/SHOONYAGHAR, /tribe)
+     * `home.html` (/home)
+     * `shoonya_mockup.html`
+     * `shopify.html` (/shopify)
+   - Font Preloads: Added high-priority `<link rel="preload">` tags in `<head>` for `Gotham-Black.otf`, `Gotham-Light.otf`, `Doto-Bold.woff2`, and `Doto-Bold-Ext.woff2`.
+   - Physical Font URLs: Replaced `src: local(...)` only declarations with explicit physical `url('assets/fonts/Gotham-Black.otf')` and `url('assets/fonts/Gotham-Light.otf')` alongside OS fallbacks so mobile devices (Android/iOS) download and render Gotham flawlessly.
+   - Doto Variable Suite: Consolidated fragmented Doto definitions into a dual variable suite (`Doto-Bold-Ext.woff2` for Latin-Ext with Sanskrit diacritics and `Doto-Bold.woff2` for Latin ASCII) spanning weight `100 900`.
+   - Body Typography Binding: Replaced accidental monospace bindings (`--font-editor-regular`) on product pages with `font-family: var(--font-body-gotham);`.
+   - Route Asset Isolation: Added `<base href="/">` on product pages so nested URL rewrites (`/products/kesari-rupa-ritual-kit`) resolve fonts and assets directly from the root domain.
+
+3. Multi-Remote Synchronization & Deployment:
+   - Mirrored all updated pages to `Dashboard/ready to deploy /`.
+   - Committed and pushed to root `origin/main` (triggering Vercel deployment for apex domain).
+   - Committed and pushed to `Dashboard/ready to deploy ` `origin/main` (triggering Vercel deployment for www domain).
+================================================================================

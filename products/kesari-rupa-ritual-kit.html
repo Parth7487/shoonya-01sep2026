@@ -2,14 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    <meta content="#FAF8EB" name="theme-color"/>
+    <meta name="color-scheme" content="light only"/>
+    <meta name="supported-color-schemes" content="light only"/>
+    <base href="/"/>
     <title>KÉṢARĪ RŪPA RITUAL · SHOONYA WORLD — Living Skincare Ceremony</title>
     <meta content="Kéṣarī Rūpa Ritual brings together Karanj forest honey from Jharkhand and Kashmiri saffron-infused aloe vera in a sacred botanical skincare ceremony." name="description"/>
     
     <!-- Google & Brand Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;family=Doto:wght@100..900&amp;family=Montserrat:wght@300;400;600;700;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <!-- Webfont Preloads for Android & High-Speed Mobile Delivery -->
+    <link rel="preload" href="assets/fonts/Gotham-Black.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="assets/fonts/Gotham-Light.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="assets/fonts/Doto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/Doto-Bold-Ext.woff2" as="font" type="font/woff2" crossorigin>
     
     <!-- Smooth Scroll -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -18,11 +27,62 @@
         /* =========================================================
            AUTHENTIC SHOONYA BRAND TYPOGRAPHY HIERARCHY
            ========================================================= */
-        @font-face { font-family: 'Proxima Nova Black'; src: local('Proxima Nova Black'), local('ProximaNova-Black'), local('Montserrat'); font-weight: 900; }
-        @font-face { font-family: 'Aamiya Thin'; src: local('Aamiya Thin'), local('Aamiya-Thin'), local('Cormorant Garamond'), serif; font-weight: 300; }
-        @font-face { font-family: 'Gotham Black'; src: local('Gotham Black'), local('Gotham-Black'), local('Montserrat'), sans-serif; font-weight: 900; }
-        @font-face { font-family: 'Gotham RND Light'; src: local('Gotham Rounded Light'), local('Gotham-Light'), local('Plus Jakarta Sans'), sans-serif; font-weight: 300; }
-        @font-face { font-family: 'Advercase'; src: local('Advercase'), local('Cinzel'), serif; font-weight: 400; }
+        @font-face {
+            font-family: 'Proxima Nova Black';
+            src: url('assets/fonts/ProximaNova-Black.otf') format('opentype'),
+                 local('Proxima Nova Black'), local('ProximaNova-Black');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Aamiya Thin';
+            src: url('assets/fonts/Aamiya.woff') format('woff'),
+                 local('Aamiya Thin'), local('Aamiya-Thin'), local('Aamiya');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Aamiya';
+            src: url('assets/fonts/Aamiya.woff') format('woff'),
+                 local('Aamiya Thin'), local('Aamiya-Thin'), local('Aamiya');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Gotham Black';
+            src: url('assets/fonts/Gotham-Black.otf') format('opentype'),
+                 local('Gotham Black'), local('Gotham-Black'), local('Gotham Bold'), local('Gotham');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Gotham RND Light';
+            src: url('assets/fonts/Gotham-Light.otf') format('opentype'),
+                 local('Gotham Rounded Light'), local('Gotham RND Light'), local('Gotham-Light'), local('Gotham Rounded');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Advercase';
+            src: url('assets/fonts/Advercase-Regular.otf') format('opentype'),
+                 local('Advercase');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Advercase';
+            src: url('assets/fonts/Advercase-Bold.otf') format('opentype'),
+                 local('Advercase-Bold'), local('Advercase Bold');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
         /* EDITOR TYPEFACE FAMILY (SHOONYA MONO SUITE) */
         @font-face {
@@ -115,35 +175,29 @@
             font-display: swap;
         }
 
-        /* =========================================================
-           DOTO TYPEFACE (LOCAL WOFF2 + CDN DUAL-SOURCE)
-           ========================================================= */
+        /* DOTO TYPEFACE (LOCAL VARIABLE WOFF2 SUITE) */
+        /* Doto Latin-Ext (contains macrons Ī, Ū, etc.) */
         @font-face {
             font-family: 'Doto';
             src: url('assets/fonts/Doto-Bold-Ext.woff2') format('woff2');
-            font-weight: 700 900;
+            font-weight: 100 900;
             font-style: normal;
             font-display: swap;
             unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
         }
+
+        /* Doto Latin (standard ASCII & Western) */
         @font-face {
             font-family: 'Doto';
-            src: url('assets/fonts/Doto-Bold.woff2') format('woff2'),
-                 url('https://fonts.gstatic.com/s/doto/v3/t5t6IRMbNJ6TQG7Il_EKPqP9zTnvqouBWho.woff2') format('woff2');
-            font-weight: 600 900;
+            src: url('assets/fonts/Doto-Bold.woff2') format('woff2');
+            font-weight: 100 900;
             font-style: normal;
             font-display: swap;
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
-        @font-face {
-            font-family: 'Doto';
-            src: url('assets/fonts/Doto-Regular.woff2') format('woff2');
-            font-weight: 300 500;
-            font-style: normal;
-            font-display: swap;
-        }
 
         :root {
+            color-scheme: light only;
             --bg-canvas: #FAF8EB;
             --color-forest-green: #436B1D;
             --color-forest-green-light: #5A8F29;
@@ -162,23 +216,32 @@
             --font-heading-aamiya: 'Aamiya Thin', 'Cormorant Garamond', serif;
             --font-subheading-gotham: 'Gotham Black', 'Montserrat', sans-serif;
             --font-body-gotham: 'Gotham RND Light', 'Plus Jakarta Sans', sans-serif;
-            --font-micrographics: 'Doto', sans-serif;
-            --font-doto: 'Doto', sans-serif;
+            --font-micrographics: 'Doto', monospace;
+            --font-doto: 'Doto', monospace;
             --font-title-advercase: 'Advercase', 'Cinzel', serif;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        /* High-Fidelity Mobile OLED Wide-Gamut (P3) Color Calibration */
+        @media (color-gamut: p3) {
+            :root {
+                --bg-canvas: color(display-p3 0.980 0.974 0.932);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         
-        body {
-            background-color: var(--bg-canvas);
+        html, body {
+            color-scheme: light only;
+            background-color: #FAF8EB !important;
+            background-color: var(--bg-canvas) !important;
             color: var(--color-text-dark);
-            font-family: var(--font-editor-regular);
+            font-family: var(--font-body-gotham);
             overflow-x: hidden;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Grain Texture */
+        /* Ambient Grain Texture (Suppressed on Mobile to prevent green subpixel tinting on AMOLED screens) */
         body::before {
             content: '';
             position: fixed;
@@ -187,6 +250,11 @@
             background-size: 26px 26px;
             pointer-events: none;
             z-index: 1;
+        }
+        @media (max-width: 900px) {
+            body::before {
+                display: none !important;
+            }
         }
 
         /* =========================================================
@@ -1298,15 +1366,28 @@
             color: var(--color-text-muted);
             background: var(--bg-canvas);
             margin-top: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        .tribe-footer .footer-brand-logo {
-            height: 20px;
-            margin-bottom: 1.4rem;
+        .tribe-footer a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.4rem auto;
+            text-decoration: none;
+        }
+
+        .tribe-footer .footer-brand-logo,
+        .footer-brand-logo {
+            height: 18px;
+            width: auto;
+            margin: 0 auto !important;
             filter: none !important;
             display: block;
-            margin-left: auto;
-            margin-right: auto;
+            text-align: center;
         }
 
 
