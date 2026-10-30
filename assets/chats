@@ -4447,3 +4447,47 @@ Resolved the desktop black gap issue on https://shoonya.world/ALCHEMY%20SHOP:
    - Mirrored changes to `Dashboard/ready to deploy /shoonya_alchemy.html` and `assets/chats`.
    - Pushed commit to root `origin/main` and `Dashboard/ready to deploy ` `origin/main`.
 ================================================================================
+
+[236] USER:
+----------------------------------------
+the volume button is not working please make sure this is working on loop witht he audio i provided
+
+================================================================================
+
+[237] ASSISTANT:
+----------------------------------------
+Resolved the volume button audio playback and continuous looping:
+
+1. Root Cause Analysis:
+   - DOM Parsing Sequence: The `<audio id="hero-alchemy-audio">` soundtrack element was situated at the very bottom of the document after the closing `</script>` tag. When the script executed synchronously upon initial HTML parse, `document.getElementById("hero-alchemy-audio")` returned `null`, binding all audio methods (`unmuteSound()`, `muteSound()`, toggle listeners) to a permanently `null` reference.
+   - Event Capturing Race Condition: Capturing micro-gesture event listeners (`pointerdown`, `touchstart`) on `window`/`document` executed `onInstantSignal()` before button click handlers finished. This caused any click on `#hero-sound-btn` to prematurely toggle state and immediately mute itself back upon the subsequent `click` event.
+
+2. Architecture Fix Implemented in `shoonya_alchemy.html`:
+   - Repositioned `<audio id="hero-alchemy-audio">` directly inside `.hero-locked-sticky` immediately adjacent to the volume button, ensuring synchronous availability before any script executes.
+   - Replaced static variable references with dynamic DOM getter `getAlchemyAudio()`.
+   - Engineered dedicated `toggleSound(e)` with Web Audio Context unlocking and event isolation (`e.stopPropagation()` and `e.stopImmediatePropagation()`).
+   - Added target guards in `onInstantSignal` and `heroWrapper` to ignore events originating from `#hero-sound-btn`, eliminating event collisions.
+   - Added an explicit `ended` listener to reset `currentTime = 0` and resume `play()`, providing a bulletproof fail-safe on top of native HTML5 `loop` for continuous playback of the user-provided jazz soundtrack (`jazz is for ordinary people.mp3` / `assets/alchemy_soundtrack.mp3`).
+   - Bound real-time `playing` and `pause` events to dynamically update button visual states (green illuminated playing state vs neutral muted state).
+
+================================================================================
+
+[238] USER:
+----------------------------------------
+can you please change the font of this this one to Editor quickly
+
+================================================================================
+
+[239] ASSISTANT:
+----------------------------------------
+Updated tagline typography to Editor Regular:
+
+1. Styling Correction in `shoonya_alchemy.html`:
+   - Updated `.kit-card-tagline` from `font-family: var(--font-heading-aamiya);` (which rendered the green cursive script font) to `font-family: var(--font-editor-regular); font-style: italic; letter-spacing: 0.04em;`.
+   - Taglines across all ritual kit cards (“Healing in a bowl. Nourishment in a bottle.” & “A ritual to slow down and soften into the present.”) now render with exact brand consistency in Editor Regular italic, matching the product detail pages (`product_shanti.html` and `product_kesari_rupa.html`).
+
+2. Multi-Remote Synchronization & Deployment:
+   - Mirrored changes across `shoonya_alchemy.html` in root and `Dashboard/ready to deploy /shoonya_alchemy.html`.
+   - Committed and pushed to `origin/main` across both GitHub repositories (`Shoonya` apex and `shoonya-01sep2026` www).
+   - Verified live on production at https://shoonya.world/ALCHEMY%20SHOP and https://www.shoonya.world/ALCHEMY%20SHOP.
+================================================================================
