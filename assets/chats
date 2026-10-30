@@ -4548,3 +4548,29 @@ Added IMG_1390 as the desktop hero video on https://shoonya.world/ALCHEMY%20SHOP
    - Pushed commits to both GitHub remotes (`Shoonya.git` and `shoonya-01sep2026.git`).
    - Verified live deployment at https://shoonya.world/ALCHEMY%20SHOP and https://www.shoonya.world/ALCHEMY%20SHOP.
 ================================================================================
+
+[244] USER:
+----------------------------------------
+/Users/parth/Downloads/Mobile Alchemy.MP4
+(Audio message: "Add this as in mobile version in Alchemy page. Quick.")
+
+================================================================================
+
+[245] ASSISTANT:
+----------------------------------------
+Added Mobile Alchemy as the mobile hero video on https://shoonya.world/ALCHEMY%20SHOP:
+
+1. Media Optimization Pipeline:
+   - Encoded `/Users/parth/Downloads/Mobile Alchemy.MP4` into web-optimized H.264 video: `assets/mobile_alchemy.mp4` (1080x1920 portrait 9:16, yuv420p, High Profile, with the faststart moov atom at the front of the file for instant streaming on mobile networks).
+   - Generated high-resolution first frame poster `assets/mobile_alchemy_poster.jpg` for zero-flicker background rendering while the video stream prepares.
+
+2. Integration into `shoonya_alchemy.html`:
+   - Updated mobile video preload in `<head>`: `<link rel="preload" href="assets/mobile_alchemy.mp4?v=fast_20261031_v1" as="video" type="video/mp4" media="(max-width: 900px)">`.
+   - Updated mobile hero video in `.hero-video-box`: `assets/mobile_alchemy.mp4?v=fast_20261031_v1` and mobile poster `assets/mobile_alchemy_poster.jpg`.
+   - Preserved all other layouts, audio systems, desktop video (`IMG_1390.mp4`), and styles with zero modifications.
+
+3. Multi-Remote Synchronization & Deployment:
+   - Mirrored across `shoonya_alchemy.html` and `Dashboard/ready to deploy /shoonya_alchemy.html`.
+   - Pushed commits to both GitHub remotes (`Shoonya.git` and `shoonya-01sep2026.git`).
+   - Verified live deployment at https://shoonya.world/ALCHEMY%20SHOP and https://www.shoonya.world/ALCHEMY%20SHOP.
+================================================================================
