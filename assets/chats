@@ -4617,3 +4617,35 @@ Updated desktop version of https://shoonya.world/SHOONYAGHAR (shoonya_tribe.html
    - Mirrored across root repo (`Shoonya.git`) and deploy directory (`shoonya-01sep2026.git`).
    - Verified live on production at https://shoonya.world/SHOONYAGHAR.
 ================================================================================
+
+[250] USER:
+----------------------------------------
+https://shoonya.world/SHOONYAGHAR
+
+/Users/parth/Downloads/IMG_1398.MP4
+
+
+please add this version in mobile view 
+
+quickly
+
+================================================================================
+
+[251] ASSISTANT:
+----------------------------------------
+Added IMG_1398 as the mobile hero video on https://shoonya.world/SHOONYAGHAR (shoonya_tribe.html):
+
+1. Video Transcoding & Web Optimization:
+   - Converted `/Users/parth/Downloads/IMG_1398.MP4` into web-optimized H.264 video: `assets/IMG_1398_mobile.mp4` (1080x1920 portrait 9:16, yuv420p, High Profile, faststart moov atom at file start for zero-latency mobile playback).
+   - Generated high-resolution mobile poster `assets/IMG_1398_mobile_poster.jpg`.
+
+2. Mobile Integration in `shoonya_tribe.html`:
+   - Updated mobile preload in `<head>`: `<link rel="preload" href="assets/IMG_1398_mobile.mp4" as="video" type="video/mp4" media="(max-width: 768px)">`.
+   - Updated `.hero-video-mobile` element to `assets/IMG_1398_mobile.mp4` with poster `assets/IMG_1398_mobile_poster.jpg`.
+   - Preserved desktop video (`IMG_1397.mp4`), soundtrack, and all page interactions.
+
+3. Multi-Remote Synchronization & Deployment:
+   - Mirrored changes across root repo and `Dashboard/ready to deploy `.
+   - Pushed commits to both GitHub remotes (`Shoonya.git` and `shoonya-01sep2026.git`).
+   - Verified live in production on https://shoonya.world/SHOONYAGHAR and https://www.shoonya.world/SHOONYAGHAR.
+================================================================================
