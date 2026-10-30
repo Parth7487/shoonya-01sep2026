@@ -21,7 +21,7 @@
     <!-- High Priority Instant Autoplay Media Preload -->
     <link rel="preload" href="assets/IMG_1397.mp4" as="video" type="video/mp4" media="(min-width: 769px)">
     <link rel="preload" href="assets/IMG_1398_mobile.mp4" as="video" type="video/mp4" media="(max-width: 768px)">
-    <link rel="preload" href="assets/tribe_soundtrack.m4a" as="audio" type="audio/mp4">
+    <link rel="preload" href="assets/tribe_soundtrack.m4a?v=img1397_20261031_v1" as="audio" type="audio/mp4">
 
     <!-- Lenis Smooth Inertial Scrolling -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
@@ -3172,7 +3172,10 @@
                 <video src="assets/IMG_1398_mobile.mp4" class="hero-locked-video hero-video-mobile" id="hero-video-mobile" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/IMG_1398_mobile_poster.jpg">
                     <source src="assets/IMG_1398_mobile.mp4" type="video/mp4">
                 </video>
-                <audio id="hero-ambient-audio" src="assets/tribe_soundtrack.m4a" autoplay loop playsinline webkit-playsinline preload="auto"></audio>
+                <audio id="hero-ambient-audio" src="assets/tribe_soundtrack.m4a?v=img1397_20261031_v1" autoplay loop playsinline webkit-playsinline preload="auto">
+                    <source src="assets/tribe_soundtrack.m4a?v=img1397_20261031_v1" type="audio/mp4">
+                    <source src="assets/tribe_soundtrack.mp3?v=img1397_20261031_v1" type="audio/mpeg">
+                </audio>
                 <script>
                 (function() {
                     try {

@@ -4681,3 +4681,18 @@ Replaced the connected audio track on https://shoonya.world/ALCHEMY%20SHOP with 
 - Dual repository sync: Pushed to both `Shoonya.git` and `shoonya-01sep2026.git`.
 - Verified live deployment in production.
 ================================================================================
+
+[256] USER:
+----------------------------------------
+Switch to the audio from your video (IMG_1397 / IMG_1398) so visitors hear the sound from the new footage? yes and play the audio of this video  /Users/parth/Downloads/IMG_1397.mov
+
+================================================================================
+
+[257] ASSISTANT:
+----------------------------------------
+Switched https://shoonya.world/SHOONYAGHAR soundtrack to the audio directly extracted from `/Users/parth/Downloads/IMG_1397.mov`:
+- Formats: High fidelity AAC (`assets/tribe_soundtrack.m4a`) and MP3 (`assets/tribe_soundtrack.mp3`) at 192kbps stereo.
+- Cache-busting: Updated `shoonya_tribe.html` with query `?v=img1397_20261031_v1`.
+- Dual repository sync: Pushed to both `Shoonya.git` and `shoonya-01sep2026.git`.
+- Verified live deployment in production.
+================================================================================
