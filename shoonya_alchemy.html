@@ -1,20 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOONYA WORLD · ALCHEMY — Botanical Essences & Rituals</title>
-    <meta name="description" content="Explore single-origin botanical essences, pure Ayurvedic formulations, and conscious living rituals from Shoonya World.">
-
-    <!-- Brand Fonts: Cinzel (Advercase fallback), Cormorant Garamond (Aamiya fallback), Doto, Montserrat (Proxima/Gotham Black fallback), Plus Jakarta Sans (Gotham RND fallback) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Doto:wght@400;700;900&family=Montserrat:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Lenis Smooth Scroll -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
-    <style>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="#FAF8EB" name="theme-color"/>
+<meta name="color-scheme" content="light only"/>
+<meta name="supported-color-schemes" content="light only"/>
+<title>SHOONYA WORLD · ALCHEMY — Botanical Essences &amp; Rituals</title>
+<meta content="Explore single-origin botanical essences, pure Ayurvedic formulations, and conscious living rituals from Shoonya World." name="description"/>
+<!-- Brand Fonts: Cinzel (Advercase fallback), Cormorant Garamond (Aamiya fallback), Doto, Montserrat (Proxima/Gotham Black fallback), Plus Jakarta Sans (Gotham RND fallback) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&amp;family=Doto:wght@100..900&amp;family=Montserrat:wght@300;400;600;700;900&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Webfont Preloads for Android & High-Speed Mobile Delivery -->
+<link rel="preload" href="assets/fonts/Gotham-Black.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/Gotham-Light.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="assets/fonts/Doto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Doto-Bold-Ext.woff2" as="font" type="font/woff2" crossorigin>
+<!-- High Priority Instant Autoplay Media Preload -->
+<link rel="preload" href="assets/IMG_1364.mp4?v=fast_20261030_v2" as="video" type="video/mp4" media="(min-width: 901px)">
+<link rel="preload" href="assets/IMG_1370_mobile.mp4?v=fast_20261030_v2" as="video" type="video/mp4" media="(max-width: 900px)">
+<link rel="preload" href="assets/alchemy_soundtrack.mp3?v=jazz_20261030" as="audio" type="audio/mpeg">
+<!-- Lenis Smooth Scroll -->
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<style>
         /* =========================================================
            STRICT BRAND TYPOGRAPHY HIERARCHY
            1. Proxima Nova Black   -> Logo (SHOONYA)
@@ -25,19 +34,201 @@
            6. Advercase            -> Titles (CHAPTER ONE, Product Names)
            ========================================================= */
 
-        @font-face { font-family: 'Proxima Nova Black'; src: local('Proxima Nova Black'), local('ProximaNova-Black'), local('Montserrat'); font-weight: 900; }
-        @font-face { font-family: 'Aamiya Thin'; src: local('Aamiya Thin'), local('Aamiya-Thin'), local('Cormorant Garamond'), serif; font-weight: 300; }
-        @font-face { font-family: 'Gotham Black'; src: local('Gotham Black'), local('Gotham-Black'), local('Montserrat'), sans-serif; font-weight: 900; }
-        @font-face { font-family: 'Gotham RND Light'; src: local('Gotham Rounded Light'), local('Gotham-Light'), local('Plus Jakarta Sans'), sans-serif; font-weight: 300; }
-        @font-face { font-family: 'Advercase'; src: local('Advercase'), local('Cinzel'), serif; font-weight: 400; }
+        @font-face {
+            font-family: 'Proxima Nova Black';
+            src: url('assets/fonts/ProximaNova-Black.otf') format('opentype'),
+                 local('Proxima Nova Black'), local('ProximaNova-Black');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Aamiya Thin';
+            src: url('assets/fonts/Aamiya.woff') format('woff'),
+                 local('Aamiya Thin'), local('Aamiya-Thin'), local('Aamiya');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Aamiya';
+            src: url('assets/fonts/Aamiya.woff') format('woff'),
+                 local('Aamiya Thin'), local('Aamiya-Thin'), local('Aamiya');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Gotham Black';
+            src: url('assets/fonts/Gotham-Black.otf') format('opentype'),
+                 local('Gotham Black'), local('Gotham-Black'), local('Gotham Bold'), local('Gotham');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Gotham RND Light';
+            src: url('assets/fonts/Gotham-Light.otf') format('opentype'),
+                 local('Gotham Rounded Light'), local('Gotham RND Light'), local('Gotham-Light'), local('Gotham Rounded');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Advercase';
+            src: url('assets/fonts/Advercase-Regular.otf') format('opentype'),
+                 local('Advercase');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Advercase';
+            src: url('assets/fonts/Advercase-Bold.otf') format('opentype'),
+                 local('Advercase-Bold'), local('Advercase Bold');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* =========================================================
+           EDITOR TYPEFACE FAMILY (SHOONYA MONO SUITE)
+           ========================================================= */
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Regular.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Regular.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor Regular';
+            src: url('assets/fonts/ShoonyaMono-Regular.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Regular.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Italic.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Italic.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Italic.ttf') format('truetype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor Bold';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor Bold';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-BoldItalic.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-BoldItalic.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-BoldItalic.ttf') format('truetype');
+            font-weight: 700;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Black.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Black.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Shoonya Mono';
+            src: url('assets/fonts/ShoonyaMono-Regular.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Regular.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Shoonya Mono';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* =========================================================
+           DOTO TYPEFACE (LOCAL VARIABLE WOFF2 SUITE)
+           ========================================================= */
+        /* Doto Latin-Ext (contains macrons Ī, Ū, etc.) */
+        @font-face {
+            font-family: 'Doto';
+            src: url('assets/fonts/Doto-Bold-Ext.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+
+        /* Doto Latin (standard ASCII & Western) */
+        @font-face {
+            font-family: 'Doto';
+            src: url('assets/fonts/Doto-Bold.woff2') format('woff2');
+            font-weight: 100 900;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
 
         :root {
+            color-scheme: light only;
             --bg-canvas: #FAF8EB;
             --color-forest-green: #436B1D;
             --color-forest-green-light: #5A8F29;
             --color-text-dark: #1C1917;
             --color-text-muted: #57534E;
             --color-gold: #C89D6B;
+
+            /* Editor Suite Variables */
+            --font-editor-bold: 'Editor Bold', 'Editor', 'Shoonya Mono', monospace;
+            --font-editor-regular: 'Editor Regular', 'Editor', 'Shoonya Mono', monospace;
 
             /* Strict Hierarchy Variables */
             --font-logo-proxima: 'Proxima Nova Black', 'Montserrat', sans-serif;
@@ -48,9 +239,19 @@
             --font-title-advercase: 'Advercase', 'Cinzel', serif;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            background-color: var(--bg-canvas);
+        /* High-Fidelity Mobile OLED Wide-Gamut (P3) Color Calibration */
+        @media (color-gamut: p3) {
+            :root {
+                /* Calibrated Display P3: Matches exact perceptual desktop sRGB #FAF8EB, preventing OLED oversaturation into yellow/mustard */
+                --bg-canvas: color(display-p3 0.980 0.974 0.932);
+            }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        html, body {
+            color-scheme: light only;
+            background-color: #FAF8EB !important;
+            background-color: var(--bg-canvas) !important;
             color: var(--color-text-dark);
             font-family: var(--font-body-gotham);
             overflow-x: hidden;
@@ -58,11 +259,16 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Ambient Grain */
+        /* Ambient Grain (Active on desktop, strictly disabled on mobile to prevent subpixel green tinting on AMOLED screens) */
         body::before {
             content: ''; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background-image: radial-gradient(rgba(67, 107, 29, 0.04) 1px, transparent 0);
             background-size: 26px 26px; pointer-events: none; z-index: 1;
+        }
+        @media (max-width: 900px) {
+            body::before {
+                display: none !important;
+            }
         }
 
         /* Fixed Navigation Header */
@@ -76,8 +282,15 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: linear-gradient(to bottom, rgba(250, 248, 235, 0.96), rgba(250, 248, 235, 0));
-            transition: background 0.4s ease;
+            background: transparent;
+            transition: background 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+        }
+
+        header.scrolled {
+            background: rgba(250, 248, 235, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(67, 107, 29, 0.12);
         }
 
         .header-top-row {
@@ -88,7 +301,12 @@
             height: 24px;
             width: auto;
             display: block;
+            filter: brightness(0) invert(1);
             transition: transform 0.2s ease, filter 0.4s ease;
+        }
+
+        header.scrolled .brand-logo-img {
+            filter: none;
         }
 
         .brand-logo-img:hover {
@@ -96,36 +314,68 @@
         }
 
         .nav-links {
-            position: absolute;
+            position: fixed;
+            top: 1.25rem;
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             display: flex;
-            gap: 2.5rem;
+            gap: 0.75rem;
             list-style: none;
             align-items: center;
             justify-content: center;
-            z-index: 10;
+            z-index: 1001;
+            margin: 0;
+            pointer-events: auto;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--color-text-dark);
-            font-family: var(--font-subheading-gotham);
-            font-weight: 900;
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
+            color: #FAF8EB;
+            font-family: var(--font-editor-bold);
+            font-weight: 700;
+            font-size: 0.76rem;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            transition: color 0.2s ease;
+            padding: 0.35rem 1.05rem;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(250, 248, 235, 0.22);
+            transition: all 0.25s ease;
             display: inline-block;
+            white-space: nowrap;
         }
 
         .nav-links a.active {
-            color: var(--color-forest-green);
+            background: rgba(230, 200, 117, 0.32) !important;
+            border-color: #E6C875 !important;
+            color: #E6C875 !important;
+            box-shadow: 0 0 12px rgba(230, 200, 117, 0.2);
         }
 
         .nav-links a:hover {
+            border-color: #FAF8EB;
+            color: #FAF8EB !important;
+        }
+
+        header.scrolled .nav-links a {
+            background: rgba(44, 42, 37, 0.06);
+            border-color: rgba(67, 107, 29, 0.2);
+            color: var(--color-text-dark);
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        header.scrolled .nav-links a.active {
+            background: rgba(67, 107, 29, 0.12) !important;
+            border-color: var(--color-forest-green) !important;
             color: var(--color-forest-green) !important;
+        }
+
+        header.scrolled .nav-links a:hover {
+            color: var(--color-forest-green) !important;
+            border-color: var(--color-forest-green) !important;
         }
 
         .header-cta {
@@ -156,25 +406,100 @@
            SCROLL-LOCKED VIDEO HERO (21st.dev Style)
            ========================================================= */
         .hero-locked-wrapper {
-            position: relative; width: 100%; height: 220svh;
-            background-color: var(--bg-canvas); z-index: 10;
+            position: relative; width: 100%; height: 200vh; height: 200dvh;
+            background-color: #000; z-index: 10;
         }
         .hero-locked-sticky {
-            position: sticky; top: 0; left: 0; width: 100%; height: 100svh;
+            position: sticky; top: 0; left: 0; width: 100%;
+            height: 100vh; height: 100dvh; min-height: -webkit-fill-available;
             overflow: hidden; display: flex; align-items: center; justify-content: center;
         }
         .hero-video-box {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 1; overflow: hidden; background: #000;
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            z-index: 1; overflow: hidden;
+            background: #000;
         }
         .hero-bg-video {
-            width: 100%; height: 100%; object-fit: cover; object-position: center;
-            opacity: 0.88; transition: filter 0.3s ease;
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center center;
+            pointer-events: none !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            -webkit-touch-callout: none !important;
+        }
+        audio, #hero-alchemy-audio {
+            display: none !important;
+            visibility: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            pointer-events: none !important;
+        }
+        /* Suppress iOS Safari and WebKit play button overlays completely */
+        video::-webkit-media-controls,
+        video::-webkit-media-controls-start-playback-button,
+        video::-webkit-media-controls-overlay-play-button,
+        video::-webkit-media-controls-play-button,
+        video::-webkit-media-controls-enclosure,
+        video::-webkit-media-controls-panel,
+        audio::-webkit-media-controls,
+        audio::-webkit-media-controls-panel,
+        audio::-webkit-media-controls-play-button {
+            display: none !important;
+            -webkit-appearance: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+        *::-webkit-media-controls-start-playback-button {
+            display: none !important;
+            -webkit-appearance: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        .hero-bg-poster {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; object-position: center center;
+            z-index: 1; pointer-events: none;
+        }
+        .hero-poster-desktop { display: block; }
+        .hero-poster-mobile { display: none; }
+        @media (max-width: 900px) {
+            .hero-poster-desktop { display: none !important; }
+            .hero-poster-mobile { display: block !important; }
+        }
+        .hero-video-desktop {
+            display: block;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center center;
+            opacity: 1;
+            filter: none;
+            z-index: 2;
+            transition: opacity 0.25s ease;
+        }
+        .hero-video-mobile {
+            display: none !important;
+            transition: opacity 0.25s ease;
+        }
+        @media (max-width: 900px) {
+            .hero-video-desktop {
+                display: none !important;
+            }
+            .hero-video-mobile {
+                display: block !important;
+                width: 100%; height: 100%;
+                object-fit: cover; object-position: center center;
+                z-index: 2;
+            }
+        }
+        /* When iOS Low Power Mode blocks autoplay, conceal the video element to eliminate native play button */
+        .hero-bg-video.autoplay-blocked {
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
         .hero-video-overlay-tint {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(28, 25, 23, 0.2) 0%, rgba(28, 25, 23, 0.75) 100%);
-            z-index: 2; pointer-events: none;
+            display: none !important;
         }
         .hero-locked-content {
             position: relative; z-index: 10; width: 90%; max-width: 900px;
@@ -211,13 +536,34 @@
 
         .hero-sound-btn {
             position: absolute; bottom: 32px; right: 40px; z-index: 30;
-            display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 1rem;
-            background: rgba(28, 25, 23, 0.6); backdrop-filter: blur(12px);
-            border: 1px solid rgba(250, 248, 235, 0.25); border-radius: 999px;
-            color: #FAF8EB; font-family: var(--font-micrographics); font-size: 0.7rem;
-            letter-spacing: 0.14em; cursor: pointer; transition: all 0.2s;
+            width: 44px; height: 44px; padding: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(28, 25, 23, 0.65); backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(250, 248, 235, 0.28); border-radius: 50%;
+            color: #FAF8EB; cursor: pointer;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .hero-sound-btn:hover { background: rgba(67, 107, 29, 0.85); border-color: #FAF8EB; }
+        .hero-sound-btn:hover {
+            background: rgba(67, 107, 29, 0.9);
+            border-color: #FAF8EB;
+            transform: scale(1.08);
+            box-shadow: 0 6px 24px rgba(67, 107, 29, 0.4);
+        }
+        .hero-sound-btn .speaker-on { display: none; }
+        .hero-sound-btn .speaker-off { display: block; opacity: 0.85; }
+        .hero-sound-btn.playing {
+            background: rgba(67, 107, 29, 0.85);
+            border-color: rgba(250, 248, 235, 0.55);
+            box-shadow: 0 0 20px rgba(67, 107, 29, 0.5);
+        }
+        .hero-sound-btn.playing .speaker-on { display: block; }
+        .hero-sound-btn.playing .speaker-off { display: none; }
+        .hero-sound-btn.playing:hover {
+            background: rgba(85, 138, 36, 0.95);
+            transform: scale(1.08);
+        }
 
         /* =========================================================
            PRODUCTS & INSTRUCTION CARDS CATALOG
@@ -259,14 +605,14 @@
 
         /* 3D Instruction Cards Grid */
         .cards-grid {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2.5rem;
         }
 
         /* Dual-Sided 3D Flip Card Container */
         .instruction-card-item {
             perspective: 1200px;
-            min-height: 520px;
+            min-height: 640px;
         }
         .instruction-card-inner {
             position: relative; width: 100%; height: 100%;
@@ -282,7 +628,7 @@
             position: relative; width: 100%; height: 100%;
             backface-visibility: hidden; -webkit-backface-visibility: hidden;
             background: #FAF8EB; border: 1.5px solid rgba(67, 107, 29, 0.28);
-            border-radius: 12px; padding: 2.2rem 2rem;
+            border-radius: 12px; padding: 1.8rem 1.6rem;
             display: flex; flex-direction: column; justify-content: space-between;
             box-shadow: 0 10px 30px rgba(67, 107, 29, 0.06), 0 1px 3px rgba(0,0,0,0.04);
             transition: border-color 0.3s, box-shadow 0.3s;
@@ -290,6 +636,105 @@
         .instruction-card-item:hover .card-face {
             border-color: var(--color-forest-green);
             box-shadow: 0 18px 45px rgba(67, 107, 29, 0.12);
+        }
+
+        /* Card Product Image Showcase (No Outer Border + Clickable Popup) */
+        .card-image-container {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 0.6rem 0 1rem;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            cursor: pointer;
+        }
+        .card-product-img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+            border-radius: 8px;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s;
+        }
+        .card-image-container:hover .card-product-img {
+            transform: scale(1.05);
+            filter: brightness(1.03);
+        }
+
+        /* Image Lightbox Modal Popup */
+        .image-lightbox-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(24, 22, 20, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .image-lightbox-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: scale(0.92);
+            transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .image-lightbox-modal.active .lightbox-content {
+            transform: scale(1);
+        }
+        .lightbox-content img {
+            max-width: 90vw;
+            max-height: 78vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.55);
+            border: 1px solid rgba(250, 248, 235, 0.2);
+        }
+        .lightbox-caption {
+            font-family: var(--font-title-advercase);
+            font-size: 1.15rem;
+            letter-spacing: 0.22em;
+            color: #FAF8EB;
+            margin-top: 1.2rem;
+            text-transform: uppercase;
+        }
+        .lightbox-close-btn {
+            position: absolute;
+            top: 24px; right: 28px;
+            background: rgba(250, 248, 235, 0.15);
+            border: 1px solid rgba(250, 248, 235, 0.3);
+            color: #FAF8EB;
+            font-size: 1.4rem;
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.25s;
+            z-index: 10000;
+        }
+        .lightbox-close-btn:hover {
+            background: #FAF8EB;
+            color: #1C1917;
+            transform: scale(1.08);
         }
 
         .card-face-back {
@@ -307,45 +752,55 @@
             width: 48px; height: 48px; color: var(--color-forest-green);
             flex-shrink: 0;
         }
-        .card-title-block { text-align: right; }
+        .card-title-block { text-align: right; flex-shrink: 0; }
         .card-brand-label {
-            font-family: var(--font-heading-aamiya); font-size: 0.92rem; font-weight: 300;
-            letter-spacing: 0.28em; color: var(--color-text-dark); display: block;
+            font-family: var(--font-micrographics), 'Doto', monospace; font-size: 0.95rem; font-weight: 700;
+            letter-spacing: 0.18em; color: var(--color-forest-green); display: block; line-height: 1.35;
+            white-space: nowrap;
         }
         .card-product-name {
-            font-family: var(--font-title-advercase); font-size: 1.25rem; font-weight: 700;
-            letter-spacing: 0.18em; color: var(--color-forest-green); margin-top: 0.2rem;
+            font-family: var(--font-micrographics), 'Doto', monospace; font-size: 0.95rem; font-weight: 700;
+            letter-spacing: 0.18em; color: var(--color-forest-green); display: block; margin-top: 0.2rem; line-height: 1.35;
+            white-space: nowrap;
         }
 
-        /* Card Essence Copy (Gotham RND Light) */
+        /* Card Essence Copy (Courier New / Courier Prime Regular from PDF) */
         .card-essence-text {
-            font-family: var(--font-body-gotham); font-size: 0.92rem; font-weight: 300; line-height: 1.65;
-            color: var(--color-text-dark); margin-bottom: 1.8rem;
+            font-family: 'Courier New', 'Courier Prime', Courier, monospace; font-size: 0.88rem; font-weight: 400; line-height: 1.6;
+            color: var(--color-text-dark); margin-bottom: 1.8rem; letter-spacing: 0.01em;
         }
 
-        /* Attribute Matrix (Grid from PDF) */
+        /* Attribute Matrix (Courier New Bold & Regular from PDF) */
         .card-attr-section { margin-bottom: 1rem; }
         .attr-heading {
-            font-family: var(--font-subheading-gotham); font-size: 0.74rem; font-weight: 900;
-            letter-spacing: 0.16em; color: var(--color-forest-green); text-transform: uppercase;
+            font-family: 'Courier New', 'Courier Prime', Courier, monospace; font-size: 0.82rem; font-weight: 700;
+            letter-spacing: 0.14em; color: var(--color-forest-green); text-transform: uppercase;
             margin-bottom: 0.25rem;
         }
         .attr-values-line {
-            font-family: var(--font-body-gotham); font-size: 0.88rem; font-weight: 300; color: var(--color-text-dark);
-            display: flex; flex-wrap: wrap; gap: 0.9rem;
+            font-family: 'Courier New', 'Courier Prime', Courier, monospace; font-size: 0.88rem; font-weight: 400; color: var(--color-forest-green);
+            display: flex; flex-wrap: wrap; gap: 0.9rem; letter-spacing: 0.02em;
         }
 
-        /* Weight / Serving Badge (Doto Micrographics) */
+        /* Weight / Serving Badge (Doto Bold from PDF) */
         .card-weight-center {
-            text-align: center; font-family: var(--font-micrographics);
-            font-size: 0.82rem; font-weight: 700; letter-spacing: 0.2em;
-            color: var(--color-text-dark); margin: 1rem 0;
+            text-align: center;
+            font-family: 'Doto', monospace;
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            color: var(--color-text-dark);
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2em;
         }
 
-        /* Bottom Footer (Doto Micrographics) */
+        /* Bottom Footer (Courier New Regular & Doto from PDF) */
         .card-bottom-bar {
-            display: flex; align-items: center; justify-content: space-between;
-            font-family: var(--font-micrographics); font-size: 0.7rem;
+            display: flex; align-items: center; justify-content: center; gap: 1rem;
+            font-family: 'Courier New', 'Courier Prime', Courier, monospace; font-size: 0.76rem;
             color: var(--color-text-dark); border-top: 1px dashed rgba(67, 107, 29, 0.25);
             padding-top: 0.8rem;
         }
@@ -354,20 +809,20 @@
         .card-flip-btn {
             display: inline-flex; align-items: center; gap: 0.4rem;
             background: none; border: none; cursor: pointer;
-            font-family: var(--font-micrographics); font-size: 0.72rem;
+            font-family: var(--font-micrographics), 'Doto', monospace; font-size: 0.72rem;
             letter-spacing: 0.14em; color: var(--color-forest-green);
             font-weight: 700; text-transform: uppercase; transition: color 0.2s;
         }
         .card-flip-btn:hover { color: var(--color-forest-green-light); text-decoration: underline; }
 
-        /* Back Card Content (Ritual Protocol - Gotham RND Light & Gotham Black) */
+        /* Back Card Content (Ritual Protocol - Courier New Bold & Regular from PDF) */
         .ritual-details-list {
-            font-family: var(--font-body-gotham); font-size: 0.86rem; font-weight: 300; line-height: 1.6;
+            font-family: 'Courier New', 'Courier Prime', Courier, monospace; font-size: 0.86rem; font-weight: 400; line-height: 1.6;
             color: var(--color-text-dark); display: flex; flex-direction: column; gap: 0.9rem;
         }
         .ritual-item strong {
-            font-family: var(--font-subheading-gotham); font-weight: 900;
-            color: var(--color-forest-green); letter-spacing: 0.06em;
+            font-family: 'Courier New', 'Courier Prime', Courier, monospace; font-weight: 700;
+            color: var(--color-forest-green); letter-spacing: 0.08em;
         }
 
         /* Footer */
@@ -379,9 +834,15 @@
         /* Responsive Breakpoints (393px to 1920px) */
         @media (max-width: 900px) {
             header {
-                padding: 0.75rem 1rem 0.55rem;
+                padding: max(0.85rem, env(safe-area-inset-top, 0.85rem)) 1.25rem 0.65rem;
                 flex-direction: column;
-                gap: 0.4rem;
+                gap: 1rem;
+                background: transparent;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                border-bottom: none;
+            }
+            header.scrolled {
                 background: rgba(250, 248, 235, 0.96);
                 backdrop-filter: blur(20px);
                 -webkit-backdrop-filter: blur(20px);
@@ -391,10 +852,10 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
             }
             .brand-logo-img {
-                height: 19px;
+                height: 18px;
             }
             .header-cta {
                 padding: 0.32rem 0.85rem;
@@ -404,695 +865,1228 @@
                 position: static;
                 transform: none;
                 display: flex;
-                gap: 0.35rem;
+                gap: 0.45rem;
                 justify-content: center;
                 width: 100%;
-                padding-top: 0.3rem;
-                border-top: 1px solid rgba(67, 107, 29, 0.08);
+                padding-top: 0;
+                border-top: none;
             }
             .nav-links a {
-                font-size: 0.68rem;
-                letter-spacing: 0.06em;
-                padding: 0.22rem 0.65rem;
+                font-family: var(--font-editor-bold);
+                font-weight: 700;
+                font-size: 0.72rem;
+                letter-spacing: 0.08em;
+                padding: 0.28rem 0.75rem;
                 border-radius: 999px;
+                background: rgba(0, 0, 0, 0.3);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                border: 1px solid rgba(250, 248, 235, 0.2);
+                color: #FAF8EB;
                 white-space: nowrap;
             }
             .nav-links a.active {
+                background: rgba(230, 200, 117, 0.3);
+                border-color: #E6C875;
+                color: #E6C875 !important;
+            }
+            header.scrolled .nav-links a {
+                background: transparent;
+                border: none;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                color: var(--color-text-dark);
+            }
+            header.scrolled .nav-links a.active {
                 background: rgba(67, 107, 29, 0.12);
                 color: var(--color-forest-green) !important;
             }
-            .hero-locked-wrapper { height: 160svh; }
+            .hero-locked-wrapper {
+                height: 100vh !important;
+                height: 100dvh !important;
+            }
+            .hero-locked-sticky {
+                position: relative !important;
+                height: 100% !important;
+                min-height: 100vh !important;
+                min-height: 100dvh !important;
+            }
+            .hero-video-mobile {
+                display: block !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center center !important;
+                opacity: 1 !important;
+                filter: none !important;
+            }
+            .hero-sound-btn {
+                bottom: max(24px, env(safe-area-inset-bottom, 24px));
+                right: 20px;
+            }
             .cards-grid { grid-template-columns: 1fr; gap: 1.8rem; }
-            .card-face { padding: 1.6rem 1.3rem; }
-            .hero-sound-btn { bottom: 20px; right: 20px; }
+            .instruction-card-item { min-height: auto; }
+            .card-face { padding: 1.4rem 1.2rem; }
+            .card-image-container { height: 220px; margin: 0.6rem 0 1rem; }
+        }
+
+        /* =========================================================
+           USER REQUEST: HIDE CATALOG, FILTER BAR, CARDS & LIGHTBOX
+           - Real-Time Category Filter Bar (.catalog-filter-bar)
+           - Dual-Sided 3D Flip Instruction Cards (#cards-grid, .instruction-card-item)
+           - Product Catalog Section (#catalog)
+           - Fullscreen Lightbox Modal (#image-lightbox-modal)
+           ========================================================= */
+        #catalog,
+        .catalog-filter-bar,
+        #cards-grid,
+        .instruction-card-item,
+        #image-lightbox-modal {
+            display: none !important;
+        }
+
+        /* =========================================================
+           FEATURED RITUAL KITS SHOWCASE (2 Luxury Cards)
+           ========================================================= */
+        .alchemy-kits-section {
+            background-color: #FAF8EB !important;
+            background-color: var(--bg-canvas) !important;
+            padding: 7rem 2rem 9rem;
+            position: relative;
+            z-index: 20;
+            border-top: 1px solid rgba(67, 107, 29, 0.12);
+        }
+
+        .kits-container {
+            max-width: 1180px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .kits-header {
+            text-align: center;
+            margin-bottom: 4.5rem;
+        }
+
+        .kits-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Doto', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            color: var(--color-forest-green);
+            text-transform: uppercase;
+            padding: 0.4rem 1.1rem;
+            border-radius: 999px;
+            background: rgba(67, 107, 29, 0.08);
+            border: 1px solid rgba(67, 107, 29, 0.2);
+            margin-bottom: 1.2rem;
+        }
+
+        .kits-title {
+            font-family: 'Doto', sans-serif;
+            font-size: clamp(2rem, 3.8vw, 3rem);
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: var(--color-text-dark);
+            margin-bottom: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .kits-subtitle {
+            font-family: var(--font-body-gotham);
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            color: var(--color-text-muted);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* 2-Column Responsive Luxury Grid */
+        .kits-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            align-items: stretch;
+        }
+
+        /* Ritual Kit Card */
+        .ritual-kit-card {
+            background: #FAF8EB;
+            border: 1.5px solid rgba(67, 107, 29, 0.2);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 16px 45px rgba(67, 107, 29, 0.08), 0 4px 12px rgba(28, 25, 23, 0.04);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.4s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(40px) scale(0.97);
+        }
+
+        .ritual-kit-card.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .ritual-kit-card:nth-child(2) {
+            transition-delay: 0.15s;
+        }
+
+        .ritual-kit-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 28px 75px rgba(67, 107, 29, 0.22), 0 8px 24px rgba(28, 25, 23, 0.06);
+            border-color: rgba(67, 107, 29, 0.45);
+        }
+
+        /* Video Media Frame (4:5 Aspect Ratio) */
+        .kit-card-media-wrap {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            background: #1C1917;
+            border-bottom: 1.5px solid rgba(67, 107, 29, 0.15);
+        }
+
+        .kit-card-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .ritual-kit-card:hover .kit-card-video {
+            transform: scale(1.05);
+        }
+
+        .kit-media-vignette {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 25, 23, 0.4) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Card Content Body */
+        .kit-card-body {
+            padding: 2.4rem 2.4rem 2.4rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background: #FAF8EB;
+        }
+
+        .kit-card-title {
+            font-family: 'Doto', sans-serif;
+            font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--color-text-dark);
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+            line-height: 1.3;
+            transition: color 0.3s ease;
+        }
+
+        .ritual-kit-card:hover .kit-card-title {
+            color: var(--color-forest-green);
+        }
+
+        .kit-card-tagline {
+            font-family: var(--font-heading-aamiya);
+            font-size: 1.05rem;
+            font-style: italic;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            color: var(--color-forest-green);
+            margin-bottom: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .kit-card-desc {
+            font-family: var(--font-body-gotham);
+            font-size: 0.92rem;
+            font-weight: 300;
+            line-height: 1.65;
+            color: var(--color-text-muted);
+            margin-bottom: 2.2rem;
+            flex: 1;
+        }
+
+        /* Card Footer & Single CTA Buy Now Button */
+        .kit-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(67, 107, 29, 0.16);
+            margin-top: auto;
+        }
+
+        .kit-card-price-wrap {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .kit-price-label {
+            font-family: var(--font-body-gotham);
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            color: var(--color-text-muted);
+            font-weight: 500;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+
+        .kit-card-price {
+            font-family: 'Doto', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+
+        .kit-buy-btn {
+            background: var(--color-forest-green);
+            color: #FAF8EB;
+            font-family: 'Doto', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 0.95rem 2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            box-shadow: 0 8px 24px rgba(67, 107, 29, 0.3);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .kit-buy-btn:hover {
+            background: #335316;
+            transform: translateY(-2px) scale(1.04);
+            box-shadow: 0 14px 35px rgba(67, 107, 29, 0.45);
+            color: #FAF8EB;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 860px) {
+            .alchemy-kits-section {
+                padding: 4.5rem 1.25rem 6rem;
+            }
+            .kits-header {
+                margin-bottom: 3rem;
+            }
+            .kits-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 2.25rem;
+            }
+            .kit-card-body {
+                padding: 1.75rem 1.5rem 1.85rem;
+            }
+            .kit-card-footer {
+                padding-top: 1.2rem;
+            }
+            .kit-buy-btn {
+                padding: 0.85rem 1.6rem;
+                font-size: 0.82rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kit-card-title {
+                font-size: 1.2rem;
+            }
+            .kit-card-price {
+                font-size: 1.45rem;
+            }
+            .kit-buy-btn {
+                padding: 0.8rem 1.3rem;
+                font-size: 0.78rem;
+                letter-spacing: 0.12em;
+            }
+        }
+
+        /* Footer (Identical to SHOONYA GHAR) */
+        .tribe-footer {
+            border-top: 1px solid rgba(67, 107, 29, 0.15);
+            padding: 3rem 2rem;
+            text-align: center;
+            font-family: var(--font-micrographics);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            color: var(--color-text-muted);
+            background: #FAF8EB !important;
+            background: var(--bg-canvas) !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 20;
+        }
+
+        .tribe-footer a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1.2rem auto;
+            text-decoration: none;
+        }
+
+        .tribe-footer .footer-brand-logo,
+        .footer-brand-logo {
+            display: block;
+            height: 18px;
+            width: auto;
+            margin: 0 auto !important;
+            filter: none !important;
+            text-align: center;
         }
     </style>
 </head>
 <body>
+<!-- Fixed Header with Pure Vector Logo -->
+<header>
+<div class="header-top-row">
+<a aria-label="SHOONYA WORLD" href="/ORIGIN">
+<img alt="SHOONYA WORLD" class="brand-logo-img" src="assets/Shoonya_World_pure_vector.svg"/>
+</a>
+</div>
+<ul class="nav-links">
+<li><a class="active" href="/ALCHEMY%20SHOP">ALCHEMY SHOP</a></li>
+<li><a href="/ORIGIN">ORIGIN</a></li>
+<li><a href="/SHOONYAGHAR">SHOONYA GHAR</a></li>
+</ul>
+</header>
+<!-- Scroll-Locked Hero Section (Responsive: Desktop=IMG_1364 landscape, Mobile=IMG_1363 portrait) -->
+<div class="hero-locked-wrapper" id="hero-locked-wrapper">
+<div class="hero-locked-sticky">
+<div class="hero-video-box">
+<!-- High-res posters displayed if Low Power Mode prevents autoplay -->
+<img src="assets/IMG_1364_poster.jpg" alt="Shoonya World" class="hero-bg-poster hero-poster-desktop" id="hero-poster-desktop"/>
+<img src="assets/IMG_1370_poster.jpg" alt="Shoonya World" class="hero-bg-poster hero-poster-mobile" id="hero-poster-mobile"/>
 
-    <!-- Fixed Header with Pure Vector Logo -->
-    <header>
-        <div class="header-top-row">
-            <a href="shoonya_mockup.html" aria-label="SHOONYA WORLD">
-                <img src="assets/Shoonya_World_pure_vector.svg" alt="SHOONYA WORLD" class="brand-logo-img">
-            </a>
+<!-- Desktop: Landscape video (1920×1058) — full bleed — hidden on mobile -->
+<video src="assets/IMG_1364.mp4?v=fast_20261030_v2" autoplay loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" class="hero-bg-video hero-video-desktop" id="hero-video-desktop">
+    <source src="assets/IMG_1364.mp4?v=fast_20261030_v2" type="video/mp4"/>
+</video>
+<!-- Mobile: Portrait video (720×1280, 9:16) — hidden on desktop -->
+<video src="assets/IMG_1370_mobile.mp4?v=fast_20261030_v2" autoplay loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" class="hero-bg-video hero-video-mobile" id="hero-video-mobile">
+    <source src="assets/IMG_1370_mobile.mp4?v=fast_20261030_v2" type="video/mp4"/>
+</video>
+<script>
+(function() {
+    try {
+        var isMob = (window.innerWidth <= 900) || (/iPhone|iPod|Android/i.test(navigator.userAgent) && window.innerWidth < window.innerHeight);
+        var activeVid = document.getElementById(isMob ? 'hero-video-mobile' : 'hero-video-desktop');
+        var inactiveVid = document.getElementById(isMob ? 'hero-video-desktop' : 'hero-video-mobile');
+        if (inactiveVid) {
+            inactiveVid.pause();
+            inactiveVid.style.display = 'none';
+        }
+        if (activeVid) {
+            activeVid.style.display = 'block';
+            activeVid.muted = true;
+            activeVid.defaultMuted = true;
+            activeVid.playsInline = true;
+            activeVid.setAttribute('muted', '');
+            activeVid.setAttribute('playsinline', '');
+            activeVid.setAttribute('webkit-playsinline', '');
+            activeVid.setAttribute('x5-playsinline', '');
+            activeVid.setAttribute('loop', '');
+            activeVid.setAttribute('autoplay', '');
+            var vp = activeVid.play();
+            if (vp && typeof vp.then === 'function') {
+                vp.then(function() {
+                    activeVid.classList.remove('autoplay-blocked');
+                }).catch(function() {
+                    activeVid.classList.add('autoplay-blocked');
+                });
+            }
+        }
+    } catch(e) {}
+})();
+</script>
+</div>
+<div class="hero-locked-content" id="hero-main-content">
+</div>
+<button aria-label="Turn On Sound" class="hero-sound-btn" id="hero-sound-btn" title="Sound: Off (Click to Play)" type="button">
+    <!-- Sound Off (Muted) Icon -->
+    <svg aria-hidden="true" class="speaker-icon speaker-off" fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="19">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="22" x2="16" y1="9" y2="15"></line>
+        <line x1="16" x2="22" y1="9" y2="15"></line>
+    </svg>
+    <!-- Sound On (Playing) Icon -->
+    <svg aria-hidden="true" class="speaker-icon speaker-on" fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="19">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+</button>
+</div>
+</div>
 
-            <a href="https://www.instagram.com/shoonya.world/" target="_blank" rel="noopener noreferrer" class="header-cta">Join</a>
+<!-- =========================================================
+     FEATURED RITUAL KITS SHOWCASE (2 Luxury Cards)
+     ========================================================= -->
+<section class="alchemy-kits-section" id="featured-kits">
+    <div class="kits-container">
+        <!-- Section Header -->
+        <div class="kits-header">
+            <h2 class="kits-title">SHOONYA RITUALS</h2>
+            <p class="kits-subtitle">Plants tell stories. We've only begun to listen.</p>
         </div>
 
-        <ul class="nav-links">
-            <li><a href="shoonya_mockup.html">The Ritual</a></li>
-            <li><a href="shoonya_tribe.html">Tribe</a></li>
-            <li><a href="shoonya_alchemy.html" class="active">Alchemy</a></li>
-        </ul>
-    </header>
+        <!-- 2-Column Responsive Luxury Grid -->
+        <div class="kits-cards-grid">
 
-    <!-- Scroll-Locked Hero Section (Video: Product page.MP4) -->
-    <div class="hero-locked-wrapper" id="hero-locked-wrapper">
-        <div class="hero-locked-sticky">
-            <div class="hero-video-box">
-                <video class="hero-bg-video" id="hero-product-video" autoplay muted loop playsinline preload="auto">
-                    <source src="Product_page.mp4" type="video/mp4">
-                </video>
-                <audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.m4a" loop preload="auto"></audio>
-                <div class="hero-video-overlay-tint"></div>
-            </div>
-
-            <div class="hero-locked-content" id="hero-main-content">
-                <span class="hero-badge-pill">✦ [ SW.BOTANICAL.ALCHEMIES ] ✦</span>
-                <h1 class="hero-main-title">SHOONYA ALCHEMY</h1>
-                <p class="hero-quote-heading">“Single-origin botanicals, untamed florals, and pure Ayurvedic care for kāya, prāṇa & jñāna.”</p>
-                <div class="hero-scroll-hint">
-                    <span>SCROLL TO EXPLORE ESSENCES</span>
-                    <div class="hero-scroll-indicator"></div>
+            <!-- Card 1: Kéṣarī Rūpa Ritual Kit -->
+            <article class="ritual-kit-card" onclick="window.location.href='/product_kesari_rupa'">
+                <div class="kit-card-media-wrap">
+                    <video class="kit-card-video" autoplay loop muted playsinline preload="auto">
+                        <source src="assets/SHOONYA KITS/Kéṣarī Rūpa Ritual Kit/IMG_2795_web.mp4" type="video/mp4"/>
+                        <source src="assets/SHOONYA KITS/Kéṣarī Rūpa Ritual Kit/IMG_2795.mp4" type="video/mp4"/>
+                    </video>
+                    <div class="kit-media-vignette"></div>
                 </div>
-            </div>
 
-            <button type="button" class="hero-sound-btn" id="hero-sound-btn" aria-label="Toggle Sound">
-                <span id="hero-sound-state">SOUND: OFF</span>
-            </button>
+                <div class="kit-card-body">
+                    <h3 class="kit-card-title">KÉSARĪ RŪPA RITUAL</h3>
+                    <p class="kit-card-tagline">“Healing in a bowl. Nourishment in a bottle.”</p>
+                    <p class="kit-card-desc">A botanical ritual bringing together Karanj forest honey from Jharkhand and Kashmiri saffron-infused aloe vera.</p>
+                    
+                    <div class="kit-card-footer">
+                        <div class="kit-card-price-wrap">
+                            <span class="kit-price-label">RITUAL</span>
+                            <div class="kit-card-price"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1,750</div>
+                        </div>
+                        <a href="https://shoonya-world.myshopify.com/cart/68140599640343:1" class="kit-buy-btn" onclick="event.stopPropagation()">
+                            <span>BUY NOW</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: Shanti Ritual Kit -->
+            <article class="ritual-kit-card" onclick="window.location.href='/product_shanti'">
+                <div class="kit-card-media-wrap">
+                    <video class="kit-card-video" autoplay loop muted playsinline preload="auto">
+                        <source src="assets/SHOONYA KITS/Shanti Ritual Kit/VID_shanti_web.mp4" type="video/mp4"/>
+                        <source src="assets/SHOONYA KITS/Shanti Ritual Kit/VID_20261028_063614_705.mp4" type="video/mp4"/>
+                    </video>
+                    <div class="kit-media-vignette"></div>
+                </div>
+
+                <div class="kit-card-body">
+                    <h3 class="kit-card-title">SHANTI RITUAL</h3>
+                    <p class="kit-card-tagline">“A ritual to slow down and soften into the present.”</p>
+                    <p class="kit-card-desc">Shanti brings together wild botanicals, plant waters, forest honey, and thoughtfully crafted tools to create a moment of pause and reconnection.</p>
+                    
+                    <div class="kit-card-footer">
+                        <div class="kit-card-price-wrap">
+                            <span class="kit-price-label">RITUAL</span>
+                            <div class="kit-card-price"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>2,550</div>
+                        </div>
+                        <a href="https://shoonya-world.myshopify.com/cart/68140598231319:1" class="kit-buy-btn" onclick="event.stopPropagation()">
+                            <span>BUY NOW</span>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
         </div>
     </div>
+</section>
 
-    <!-- Product Instruction Cards Catalog -->
-    <main class="alchemy-catalog-section" id="catalog">
-        <div class="section-header-wrap">
-            <span class="section-num">[ 01 · LIVING BOTANICAL ARCHIVE ]</span>
-            <h2 class="section-title">THE INSTRUCTION CARDS</h2>
-            <p class="section-desc">Tap any card to flip between the raw botanical essence and its sacred everyday ritual protocol.</p>
-        </div>
+<!-- Product Instruction Cards Catalog -->
+<main class="alchemy-catalog-section" id="catalog">
+<!-- 21st.dev Animated Filter Pill Bar -->
+<div class="catalog-filter-bar">
+<button class="filter-tab-btn active" onclick="filterCatalog('all', event)" type="button">ALL ESSENCES</button>
+<button class="filter-tab-btn" onclick="filterCatalog('kaya', event)" type="button">KĀYA (BODY &amp; SKIN)</button>
+<button class="filter-tab-btn" onclick="filterCatalog('prana', event)" type="button">PRĀṆA (TEA &amp; ELIXIRS)</button>
+<button class="filter-tab-btn" onclick="filterCatalog('jnana', event)" type="button">JÑĀNA (MIND &amp; SLEEP)</button>
+<button class="filter-tab-btn" onclick="filterCatalog('tools', event)" type="button">LIVING TOOLS</button>
+</div>
+<!-- Instruction Cards Grid (Rendered from PDF) -->
+<div class="cards-grid" id="cards-grid"><div class="instruction-card-item" data-category="jnana">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354">
+<path d="M201.903 0.000143034C204.283 0.00514303 206.61 0.0801441 209.042 0.255144C211.474 0.430144 213.957 0.694143 216.493 1.04814C219.028 1.40214 221.616 1.83114 224.255 2.37814C226.895 2.92614 229.638 3.56814 232.329 4.33214C235.021 5.09614 237.712 5.96014 240.403 6.96514C243.095 7.97014 245.786 9.09314 248.477 10.3631C251.169 11.6321 253.869 13.0241 256.551 14.5811C259.233 16.1381 261.929 17.8461 264.569 19.7061C267.208 21.5651 269.852 23.5941 272.388 25.7361C274.923 27.8781 277.416 30.1861 279.782 32.5591C282.148 34.9331 284.433 37.4391 286.581 39.9771C288.73 42.5161 290.755 45.1541 292.672 47.7911C294.589 50.4291 296.369 53.1241 298.083 55.8041C299.797 58.4841 301.374 61.1831 302.956 63.8731C304.538 66.5621 306.034 69.2521 307.574 71.9421C309.113 74.6311 310.624 77.3211 312.191 80.0111C313.759 82.7001 315.341 85.3901 316.979 88.0801C318.618 90.7691 320.294 93.4591 322.022 96.1491C323.75 98.8381 325.544 101.528 327.348 104.218C329.152 106.907 331.021 109.597 332.844 112.287C334.667 114.976 336.517 117.666 338.283 120.356C340.049 123.045 341.801 125.735 343.439 128.425C345.078 131.114 346.664 133.804 348.114 136.494C349.563 139.183 350.919 141.873 352.137 144.563C353.355 147.252 354.45 149.942 355.423 152.632C356.396 155.321 357.236 158.011 357.973 160.701C358.709 163.39 359.328 166.08 359.843 168.77C360.357 171.459 360.759 174.149 361.061 176.839C361.363 179.528 361.561 182.218 361.656 184.908C361.75 187.597 361.741 190.287 361.627 192.977C361.514 195.666 361.297 198.356 360.976 201.046C360.655 203.735 360.234 206.425 359.701 209.115C359.167 211.804 358.53 214.494 357.774 217.184C357.019 219.873 356.16 222.568 355.168 225.253C354.177 227.938 353.072 230.618 351.825 233.293C350.579 235.969 349.209 238.654 347.689 241.306C346.169 243.958 344.507 246.605 342.703 249.205C340.899 251.805 338.94 254.395 336.867 256.906C334.794 259.416 332.57 261.875 330.266 264.267C327.962 266.659 325.521 268.995 323.042 271.26C320.563 273.525 317.985 275.7 315.393 277.857C312.801 280.013 310.133 282.104 307.489 284.199C304.845 286.294 302.182 288.328 299.528 290.428C296.874 292.527 294.211 294.632 291.567 296.798C288.923 298.964 286.293 301.158 283.663 303.423C281.033 305.688 278.408 308.033 275.787 310.388C273.167 312.742 270.561 315.168 267.94 317.551C265.32 319.934 262.699 322.364 260.064 324.685C257.43 327.007 254.785 329.319 252.132 331.48C249.478 333.641 246.811 335.751 244.143 337.652C241.475 339.554 238.803 341.333 236.125 342.89C233.448 344.447 230.766 345.816 228.08 346.995C225.393 348.175 222.697 349.147 220.006 349.968C217.314 350.789 214.623 351.412 211.932 351.922C209.24 352.431 206.549 352.766 203.858 353.026C201.166 353.285 198.475 353.399 195.784 353.479C193.092 353.559 190.401 353.554 187.71 353.507C185.018 353.46 182.327 353.356 179.635 353.196C176.944 353.035 174.253 352.814 171.561 352.545C168.87 352.276 166.179 351.95 163.487 351.582C160.796 351.214 158.105 350.803 155.413 350.336C152.722 349.869 150.031 349.359 147.339 348.779C144.648 348.199 141.957 347.576 139.265 346.854C136.574 346.132 133.883 345.353 131.191 344.447C128.5 343.541 125.808 342.546 123.117 341.418C120.426 340.29 117.734 339.035 115.043 337.681C112.352 336.326 109.66 334.835 106.969 333.292C104.278 331.749 101.586 330.098 98.8952 328.423C96.2042 326.747 93.5122 324.987 90.8212 323.241C88.1302 321.495 85.4382 319.717 82.7472 317.947C80.0562 316.178 77.3642 314.399 74.6732 312.624C71.9822 310.85 69.2852 309.104 66.5992 307.302C63.9122 305.499 61.2212 303.692 58.5532 301.809C55.8852 299.926 53.2132 298.02 50.5922 296.005C47.9722 293.99 45.3612 291.9 42.8302 289.72C40.2992 287.54 37.7972 285.275 35.4082 282.925C33.0182 280.575 30.6912 278.121 28.4952 275.62C26.2992 273.119 24.1892 270.524 22.2342 267.919C20.2792 265.315 18.4522 262.648 16.7662 259.992C15.0812 257.335 13.5272 254.655 12.1202 251.979C10.7132 249.304 9.46221 246.624 8.32421 243.939C7.18621 241.254 6.17621 238.559 5.29321 235.87C4.41021 233.18 3.67321 230.49 3.02621 227.801C2.37921 225.111 1.84121 222.421 1.41221 219.732C0.982207 217.042 0.680208 214.352 0.448208 211.663C0.217208 208.973 0.0802069 206.283 0.0232069 203.594C-0.0327931 200.904 0.0192079 198.214 0.108208 195.525C0.198208 192.835 0.359208 190.145 0.562208 187.456C0.765208 184.766 1.03921 182.076 1.32721 179.387C1.61521 176.697 1.94521 174.007 2.29021 171.318C2.63421 168.628 3.01221 165.938 3.39521 163.249C3.77721 160.559 4.17421 157.869 4.58421 155.18C4.99521 152.49 5.42021 149.8 5.85921 147.111C6.29821 144.421 6.75221 141.731 7.21921 139.042C7.68721 136.352 8.16421 133.662 8.66421 130.973C9.16421 128.283 9.67421 125.593 10.2222 122.904C10.7702 120.214 11.3322 117.524 11.9502 114.835C12.5692 112.145 13.2112 109.455 13.9332 106.766C14.6562 104.076 15.4212 101.386 16.2852 98.6971C17.1492 96.0071 18.0702 93.3171 19.1182 90.6281C20.1662 87.9381 21.2992 85.2441 22.5742 82.5591C23.8492 79.8741 25.2282 77.1891 26.7672 74.5181C28.3062 71.8471 29.9872 69.1621 31.8102 66.5341C33.6322 63.9061 35.6062 61.2821 37.7022 58.7481C39.7992 56.2141 42.0562 53.7041 44.3882 51.3301C46.7212 48.9571 49.1852 46.6641 51.6972 44.5071C54.2092 42.3511 56.8342 40.2891 59.4602 38.3921C62.0852 36.4951 64.7722 34.7391 67.4492 33.1261C70.1262 31.5121 72.8312 30.0441 75.5232 28.7091C78.2142 27.3731 80.9052 26.2081 83.5972 25.1131C86.2882 24.0181 88.9802 23.0461 91.6712 22.1401C94.3622 21.2341 97.0542 20.4461 99.7452 19.6771C102.436 18.9081 105.128 18.2101 107.819 17.5261C110.51 16.8411 113.202 16.2141 115.893 15.5721C118.584 14.9301 121.276 14.2981 123.967 13.6751C126.658 13.0521 129.35 12.4431 132.041 11.8351C134.732 11.2261 137.424 10.6171 140.115 10.0231C142.806 9.42814 145.498 8.84814 148.189 8.26714C150.881 7.68714 153.572 7.10714 156.263 6.54014C158.955 5.97414 161.646 5.40814 164.337 4.87014C167.029 4.33214 169.772 3.79914 172.411 3.31314C175.051 2.82714 177.638 2.35514 180.174 1.95414C182.709 1.55314 185.193 1.19414 187.625 0.906143C190.056 0.618143 192.384 0.378142 194.764 0.227142C197.143 0.0761423 199.523 -0.00385697 201.903 0.000143034Z"></path>
+</svg>
+<div class="card-title-block"><span class="card-brand-label">S H Ā N T I</span><span class="card-product-name">T E A &nbsp;&nbsp; R I T U A L</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHĀNTI RITUAL TEA" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shanti_ritual_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">A calming ritual of herbal tea, Shoonya madhu, and floral waters—made for slower evenings, softer pauses, and a quiet moment of stillness to regulate your nervous system.</p>
 
-        <!-- 21st.dev Animated Filter Pill Bar -->
-        <div class="catalog-filter-bar">
-            <button type="button" class="filter-tab-btn active" onclick="filterCatalog('all', event)">ALL ESSENCES</button>
-            <button type="button" class="filter-tab-btn" onclick="filterCatalog('kaya', event)">KĀYA (BODY & SKIN)</button>
-            <button type="button" class="filter-tab-btn" onclick="filterCatalog('prana', event)">PRĀṆA (TEA & ELIXIRS)</button>
-            <button type="button" class="filter-tab-btn" onclick="filterCatalog('jnana', event)">JÑĀNA (MIND & SLEEP)</button>
-            <button type="button" class="filter-tab-btn" onclick="filterCatalog('tools', event)">LIVING TOOLS</button>
-        </div>
 
-        <!-- Instruction Cards Grid (Rendered from PDF) -->
-        <div class="cards-grid" id="cards-grid">
 
-            <!-- Card 1: SHOONYA KESARI -->
-            <div class="instruction-card-item" data-category="kaya">
-                <div class="instruction-card-inner">
-                    <!-- FRONT: Essence -->
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor">
-                                    <path d="M201.903 0.000143034C204.283 0.00514303 206.61 0.0801441 209.042 0.255144C211.474 0.430144 213.957 0.694143 216.493 1.04814C219.028 1.40214 221.616 1.83114 224.255 2.37814C226.895 2.92614 229.638 3.56814 232.329 4.33214C235.021 5.09614 237.712 5.96014 240.403 6.96514C243.095 7.97014 245.786 9.09314 248.477 10.3631C251.169 11.6321 253.869 13.0241 256.551 14.5811C259.233 16.1381 261.929 17.8461 264.569 19.7061C267.208 21.5651 269.852 23.5941 272.388 25.7361C274.923 27.8781 277.416 30.1861 279.782 32.5591C282.148 34.9331 284.433 37.4391 286.581 39.9771C288.73 42.5161 290.755 45.1541 292.672 47.7911C294.589 50.4291 296.369 53.1241 298.083 55.8041C299.797 58.4841 301.374 61.1831 302.956 63.8731C304.538 66.5621 306.034 69.2521 307.574 71.9421C309.113 74.6311 310.624 77.3211 312.191 80.0111C313.759 82.7001 315.341 85.3901 316.979 88.0801C318.618 90.7691 320.294 93.4591 322.022 96.1491C323.75 98.8381 325.544 101.528 327.348 104.218C329.152 106.907 331.021 109.597 332.844 112.287C334.667 114.976 336.517 117.666 338.283 120.356C340.049 123.045 341.801 125.735 343.439 128.425C345.078 131.114 346.664 133.804 348.114 136.494C349.563 139.183 350.919 141.873 352.137 144.563C353.355 147.252 354.45 149.942 355.423 152.632C356.396 155.321 357.236 158.011 357.973 160.701C358.709 163.39 359.328 166.08 359.843 168.77C360.357 171.459 360.759 174.149 361.061 176.839C361.363 179.528 361.561 182.218 361.656 184.908C361.75 187.597 361.741 190.287 361.627 192.977C361.514 195.666 361.297 198.356 360.976 201.046C360.655 203.735 360.234 206.425 359.701 209.115C359.167 211.804 358.53 214.494 357.774 217.184C357.019 219.873 356.16 222.568 355.168 225.253C354.177 227.938 353.072 230.618 351.825 233.293C350.579 235.969 349.209 238.654 347.689 241.306C346.169 243.958 344.507 246.605 342.703 249.205C340.899 251.805 338.94 254.395 336.867 256.906C334.794 259.416 332.57 261.875 330.266 264.267C327.962 266.659 325.521 268.995 323.042 271.26C320.563 273.525 317.985 275.7 315.393 277.857C312.801 280.013 310.133 282.104 307.489 284.199C304.845 286.294 302.182 288.328 299.528 290.428C296.874 292.527 294.211 294.632 291.567 296.798C288.923 298.964 286.293 301.158 283.663 303.423C281.033 305.688 278.408 308.033 275.787 310.388C273.167 312.742 270.561 315.168 267.94 317.551C265.32 319.934 262.699 322.364 260.064 324.685C257.43 327.007 254.785 329.319 252.132 331.48C249.478 333.641 246.811 335.751 244.143 337.652C241.475 339.554 238.803 341.333 236.125 342.89C233.448 344.447 230.766 345.816 228.08 346.995C225.393 348.175 222.697 349.147 220.006 349.968C217.314 350.789 214.623 351.412 211.932 351.922C209.24 352.431 206.549 352.766 203.858 353.026C201.166 353.285 198.475 353.399 195.784 353.479C193.092 353.559 190.401 353.554 187.71 353.507C185.018 353.46 182.327 353.356 179.635 353.196C176.944 353.035 174.253 352.814 171.561 352.545C168.87 352.276 166.179 351.95 163.487 351.582C160.796 351.214 158.105 350.803 155.413 350.336C152.722 349.869 150.031 349.359 147.339 348.779C144.648 348.199 141.957 347.576 139.265 346.854C136.574 346.132 133.883 345.353 131.191 344.447C128.5 343.541 125.808 342.546 123.117 341.418C120.426 340.29 117.734 339.035 115.043 337.681C112.352 336.326 109.66 334.835 106.969 333.292C104.278 331.749 101.586 330.098 98.8952 328.423C96.2042 326.747 93.5122 324.987 90.8212 323.241C88.1302 321.495 85.4382 319.717 82.7472 317.947C80.0562 316.178 77.3642 314.399 74.6732 312.624C71.9822 310.85 69.2852 309.104 66.5992 307.302C63.9122 305.499 61.2212 303.692 58.5532 301.809C55.8852 299.926 53.2132 298.02 50.5922 296.005C47.9722 293.99 45.3612 291.9 42.8302 289.72C40.2992 287.54 37.7972 285.275 35.4082 282.925C33.0182 280.575 30.6912 278.121 28.4952 275.62C26.2992 273.119 24.1892 270.524 22.2342 267.919C20.2792 265.315 18.4522 262.648 16.7662 259.992C15.0812 257.335 13.5272 254.655 12.1202 251.979C10.7132 249.304 9.46221 246.624 8.32421 243.939C7.18621 241.254 6.17621 238.559 5.29321 235.87C4.41021 233.18 3.67321 230.49 3.02621 227.801C2.37921 225.111 1.84121 222.421 1.41221 219.732C0.982207 217.042 0.680208 214.352 0.448208 211.663C0.217208 208.973 0.0802069 206.283 0.0232069 203.594C-0.0327931 200.904 0.0192079 198.214 0.108208 195.525C0.198208 192.835 0.359208 190.145 0.562208 187.456C0.765208 184.766 1.03921 182.076 1.32721 179.387C1.61521 176.697 1.94521 174.007 2.29021 171.318C2.63421 168.628 3.01221 165.938 3.39521 163.249C3.77721 160.559 4.17421 157.869 4.58421 155.18C4.99521 152.49 5.42021 149.8 5.85921 147.111C6.29821 144.421 6.75221 141.731 7.21921 139.042C7.68721 136.352 8.16421 133.662 8.66421 130.973C9.16421 128.283 9.67421 125.593 10.2222 122.904C10.7702 120.214 11.3322 117.524 11.9502 114.835C12.5692 112.145 13.2112 109.455 13.9332 106.766C14.6562 104.076 15.4212 101.386 16.2852 98.6971C17.1492 96.0071 18.0702 93.3171 19.1182 90.6281C20.1662 87.9381 21.2992 85.2441 22.5742 82.5591C23.8492 79.8741 25.2282 77.1891 26.7672 74.5181C28.3062 71.8471 29.9872 69.1621 31.8102 66.5341C33.6322 63.9061 35.6062 61.2821 37.7022 58.7481C39.7992 56.2141 42.0562 53.7041 44.3882 51.3301C46.7212 48.9571 49.1852 46.6641 51.6972 44.5071C54.2092 42.3511 56.8342 40.2891 59.4602 38.3921C62.0852 36.4951 64.7722 34.7391 67.4492 33.1261C70.1262 31.5121 72.8312 30.0441 75.5232 28.7091C78.2142 27.3731 80.9052 26.2081 83.5972 25.1131C86.2882 24.0181 88.9802 23.0461 91.6712 22.1401C94.3622 21.2341 97.0542 20.4461 99.7452 19.6771C102.436 18.9081 105.128 18.2101 107.819 17.5261C110.51 16.8411 113.202 16.2141 115.893 15.5721C118.584 14.9301 121.276 14.2981 123.967 13.6751C126.658 13.0521 129.35 12.4431 132.041 11.8351C134.732 11.2261 137.424 10.6171 140.115 10.0231C142.806 9.42814 145.498 8.84814 148.189 8.26714C150.881 7.68714 153.572 7.10714 156.263 6.54014C158.955 5.97414 161.646 5.40814 164.337 4.87014C167.029 4.33214 169.772 3.79914 172.411 3.31314C175.051 2.82714 177.638 2.35514 180.174 1.95414C182.709 1.55314 185.193 1.19414 187.625 0.906143C190.056 0.618143 192.384 0.378142 194.764 0.227142C197.143 0.0761423 199.523 -0.00385697 201.903 0.000143034Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">K E S A R I</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Straight from the leaf, almost untouched — 99% pure aloe married with kashmiri kesar. Cool, fresh and quietly soothing. The kind of care your kāya always reaches all the time.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">EFFECT</div>
-                                <div class="attr-values-line"><span>calms</span> <span>soothes</span> <span>heals</span> <span>hydrates</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">USE ON</div>
-                                <div class="attr-values-line"><span>skin</span> <span>hair</span> <span>scalp</span> <span>wounds</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>love, cooling, regenerating</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">100 GM</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- BACK: Ritual Guide -->
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">K E S A R I</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> 99% pure Aloe Vera pulp, gently blended with Kashmiri Kesar, food-grade Potassium Sorbate & edible Xanthan Gum.</p>
-                                <p class="ritual-item"><strong>Ritual:</strong> Apply directly to skin or scalp, or blend with a drizzle of Shoonya Mādhu to use as a cleanser. Whisk with botanical oil for deep scalp care.</p>
-                                <p class="ritual-item"><strong>The Measure:</strong> Use a clean, dry spoon. A small coin measure hydrates and soothes the face.</p>
-                                <p class="ritual-item"><strong>Came to Life:</strong> August 2026 · Finest within 5 months (10 months if refrigerated).</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>sweet</span> <span>floral</span> <span>herbal</span> <span>home</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">EFFECT</div>
+<div class="attr-values-line"><span>calm</span> <span>digestive</span> <span>soothe</span> <span>relax</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">WHEN</div>
+<div class="attr-values-line"><span>evenings</span> <span>burn outs</span> <span>post-meal</span> <span>sleep</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>love &amp; peace</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1500 · 12 SERVINGS</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">S H Ā N T I</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Organic Chamomile from Uttarakhand, roses from Himachal, and a blend of Indian spices. Paired with Shoonya Shānti botanical water and Shoonya Mādhu from Jharkhand’s forests.</p><p class="ritual-item"><strong>Ritual:</strong> for the hour when the day softens. Brew it after a meal or make it the last warm thing you hold before bed.</p><p class="ritual-item"><strong>Finest Within:</strong> 4 months, longer when refrigerated</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="jnana">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">D H Y Ā N</span><span class="card-product-name">T E A &nbsp;&nbsp; R I T U A L</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHOONYA DHYĀN" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_dhyan_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">An Egyptian ritual flower traditionally associated with stillness, meditation, vivid dreaming, and deeper rest. It is meant for evenings, inward moments, and practices that help quiet the senses. Pairs well with Shānti for your sleep rituals.</p>
 
-            <!-- Card 2: SHOONYA ARKĀ -->
-            <div class="instruction-card-item" data-category="kaya">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor">
-                                    <path d="M201.903 0.000143034C204.283 0.00514303 206.61 0.0801441 209.042 0.255144C211.474 0.430144 213.957 0.694143 216.493 1.04814C219.028 1.40214 221.616 1.83114 224.255 2.37814C226.895 2.92614 229.638 3.56814 232.329 4.33214C235.021 5.09614 237.712 5.96014 240.403 6.96514C243.095 7.97014 245.786 9.09314 248.477 10.3631C251.169 11.6321 253.869 13.0241 256.551 14.5811C259.233 16.1381 261.929 17.8461 264.569 19.7061C267.208 21.5651 269.852 23.5941 272.388 25.7361C274.923 27.8781 277.416 30.1861 279.782 32.5591C282.148 34.9331 284.433 37.4391 286.581 39.9771C288.73 42.5161 290.755 45.1541 292.672 47.7911C294.589 50.4291 296.369 53.1241 298.083 55.8041C299.797 58.4841 301.374 61.1831 302.956 63.8731C304.538 66.5621 306.034 69.2521 307.574 71.9421C309.113 74.6311 310.624 77.3211 312.191 80.0111C313.759 82.7001 315.341 85.3901 316.979 88.0801C318.618 90.7691 320.294 93.4591 322.022 96.1491C323.75 98.8381 325.544 101.528 327.348 104.218C329.152 106.907 331.021 109.597 332.844 112.287C334.667 114.976 336.517 117.666 338.283 120.356C340.049 123.045 341.801 125.735 343.439 128.425C345.078 131.114 346.664 133.804 348.114 136.494C349.563 139.183 350.919 141.873 352.137 144.563C353.355 147.252 354.45 149.942 355.423 152.632C356.396 155.321 357.236 158.011 357.973 160.701C358.709 163.39 359.328 166.08 359.843 168.77C360.357 171.459 360.759 174.149 361.061 176.839C361.363 179.528 361.561 182.218 361.656 184.908C361.75 187.597 361.741 190.287 361.627 192.977C361.514 195.666 361.297 198.356 360.976 201.046C360.655 203.735 360.234 206.425 359.701 209.115C359.167 211.804 358.53 214.494 357.774 217.184C357.019 219.873 356.16 222.568 355.168 225.253C354.177 227.938 353.072 230.618 351.825 233.293C350.579 235.969 349.209 238.654 347.689 241.306C346.169 243.958 344.507 246.605 342.703 249.205C340.899 251.805 338.94 254.395 336.867 256.906C334.794 259.416 332.57 261.875 330.266 264.267C327.962 266.659 325.521 268.995 323.042 271.26C320.563 273.525 317.985 275.7 315.393 277.857C312.801 280.013 310.133 282.104 307.489 284.199C304.845 286.294 302.182 288.328 299.528 290.428C296.874 292.527 294.211 294.632 291.567 296.798C288.923 298.964 286.293 301.158 283.663 303.423C281.033 305.688 278.408 308.033 275.787 310.388C273.167 312.742 270.561 315.168 267.94 317.551C265.32 319.934 262.699 322.364 260.064 324.685C257.43 327.007 254.785 329.319 252.132 331.48C249.478 333.641 246.811 335.751 244.143 337.652C241.475 339.554 238.803 341.333 236.125 342.89C233.448 344.447 230.766 345.816 228.08 346.995C225.393 348.175 222.697 349.147 220.006 349.968C217.314 350.789 214.623 351.412 211.932 351.922C209.24 352.431 206.549 352.766 203.858 353.026C201.166 353.285 198.475 353.399 195.784 353.479C193.092 353.559 190.401 353.554 187.71 353.507C185.018 353.46 182.327 353.356 179.635 353.196C176.944 353.035 174.253 352.814 171.561 352.545C168.87 352.276 166.179 351.95 163.487 351.582C160.796 351.214 158.105 350.803 155.413 350.336C152.722 349.869 150.031 349.359 147.339 348.779C144.648 348.199 141.957 347.576 139.265 346.854C136.574 346.132 133.883 345.353 131.191 344.447C128.5 343.541 125.808 342.546 123.117 341.418C120.426 340.29 117.734 339.035 115.043 337.681C112.352 336.326 109.66 334.835 106.969 333.292C104.278 331.749 101.586 330.098 98.8952 328.423C96.2042 326.747 93.5122 324.987 90.8212 323.241C88.1302 321.495 85.4382 319.717 82.7472 317.947C80.0562 316.178 77.3642 314.399 74.6732 312.624C71.9822 310.85 69.2852 309.104 66.5992 307.302C63.9122 305.499 61.2212 303.692 58.5532 301.809C55.8852 299.926 53.2132 298.02 50.5922 296.005C47.9722 293.99 45.3612 291.9 42.8302 289.72C40.2992 287.54 37.7972 285.275 35.4082 282.925C33.0182 280.575 30.6912 278.121 28.4952 275.62C26.2992 273.119 24.1892 270.524 22.2342 267.919C20.2792 265.315 18.4522 262.648 16.7662 259.992C15.0812 257.335 13.5272 254.655 12.1202 251.979C10.7132 249.304 9.46221 246.624 8.32421 243.939C7.18621 241.254 6.17621 238.559 5.29321 235.87C4.41021 233.18 3.67321 230.49 3.02621 227.801C2.37921 225.111 1.84121 222.421 1.41221 219.732C0.982207 217.042 0.680208 214.352 0.448208 211.663C0.217208 208.973 0.0802069 206.283 0.0232069 203.594C-0.0327931 200.904 0.0192079 198.214 0.108208 195.525C0.198208 192.835 0.359208 190.145 0.562208 187.456C0.765208 184.766 1.03921 182.076 1.32721 179.387C1.61521 176.697 1.94521 174.007 2.29021 171.318C2.63421 168.628 3.01221 165.938 3.39521 163.249C3.77721 160.559 4.17421 157.869 4.58421 155.18C4.99521 152.49 5.42021 149.8 5.85921 147.111C6.29821 144.421 6.75221 141.731 7.21921 139.042C7.68721 136.352 8.16421 133.662 8.66421 130.973C9.16421 128.283 9.67421 125.593 10.2222 122.904C10.7702 120.214 11.3322 117.524 11.9502 114.835C12.5692 112.145 13.2112 109.455 13.9332 106.766C14.6562 104.076 15.4212 101.386 16.2852 98.6971C17.1492 96.0071 18.0702 93.3171 19.1182 90.6281C20.1662 87.9381 21.2992 85.2441 22.5742 82.5591C23.8492 79.8741 25.2282 77.1891 26.7672 74.5181C28.3062 71.8471 29.9872 69.1621 31.8102 66.5341C33.6322 63.9061 35.6062 61.2821 37.7022 58.7481C39.7992 56.2141 42.0562 53.7041 44.3882 51.3301C46.7212 48.9571 49.1852 46.6641 51.6972 44.5071C54.2092 42.3511 56.8342 40.2891 59.4602 38.3921C62.0852 36.4951 64.7722 34.7391 67.4492 33.1261C70.1262 31.5121 72.8312 30.0441 75.5232 28.7091C78.2142 27.3731 80.9052 26.2081 83.5972 25.1131C86.2882 24.0181 88.9802 23.0461 91.6712 22.1401C94.3622 21.2341 97.0542 20.4461 99.7452 19.6771C102.436 18.9081 105.128 18.2101 107.819 17.5261C110.51 16.8411 113.202 16.2141 115.893 15.5721C118.584 14.9301 121.276 14.2981 123.967 13.6751C126.658 13.0521 129.35 12.4431 132.041 11.8351C134.732 11.2261 137.424 10.6171 140.115 10.0231C142.806 9.42814 145.498 8.84814 148.189 8.26714C150.881 7.68714 153.572 7.10714 156.263 6.54014C158.955 5.97414 161.646 5.40814 164.337 4.87014C167.029 4.33214 169.772 3.79914 172.411 3.31314C175.051 2.82714 177.638 2.35514 180.174 1.95414C182.709 1.55314 185.193 1.19414 187.625 0.906143C190.056 0.618143 192.384 0.378142 194.764 0.227142C197.143 0.0761423 199.523 -0.00385697 201.903 0.000143034Z"/>
-                                </svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">A R K Ā</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                A cooling floral mist of wild Himalayan Damask rose, peppermint, and botanical glycerites — made to refresh the senses, soften the skin, and bring a quiet moment of calm. Edible food grade.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>sweet</span> <span>fresh</span> <span>floral</span> <span>home</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">USE ON</div>
-                                <div class="attr-values-line"><span>skin</span> <span>orally</span> <span>aura</span> <span>beverages</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>love, awaken, peace</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">100 ML</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">A R K Ā</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Pure edible-grade Damask rose water distilled from wild Himalayan roses, blended with organic peppermint water.</p>
-                                <p class="ritual-item"><strong>Ritual:</strong> Mist under the tongue, spritz into your drinks, over your face or aura and carry it in your bag like a companion you can reach for anytime.</p>
-                                <p class="ritual-item"><strong>Give It a Home:</strong> Keep sealed, dry, and away from direct sunlight. Refrigerate for longer freshness.</p>
-                                <p class="ritual-item"><strong>Came to Life:</strong> August 2026 · Finest within 6 months.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 3: SHĀNTI RITUAL / TEA -->
-            <div class="instruction-card-item" data-category="jnana">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor">
-                                    <path d="M201.903 0.000143034C204.283 0.00514303 206.61 0.0801441 209.042 0.255144C211.474 0.430144 213.957 0.694143 216.493 1.04814C219.028 1.40214 221.616 1.83114 224.255 2.37814C226.895 2.92614 229.638 3.56814 232.329 4.33214C235.021 5.09614 237.712 5.96014 240.403 6.96514C243.095 7.97014 245.786 9.09314 248.477 10.3631C251.169 11.6321 253.869 13.0241 256.551 14.5811C259.233 16.1381 261.929 17.8461 264.569 19.7061C267.208 21.5651 269.852 23.5941 272.388 25.7361C274.923 27.8781 277.416 30.1861 279.782 32.5591C282.148 34.9331 284.433 37.4391 286.581 39.9771C288.73 42.5161 290.755 45.1541 292.672 47.7911C294.589 50.4291 296.369 53.1241 298.083 55.8041C299.797 58.4841 301.374 61.1831 302.956 63.8731C304.538 66.5621 306.034 69.2521 307.574 71.9421C309.113 74.6311 310.624 77.3211 312.191 80.0111C313.759 82.7001 315.341 85.3901 316.979 88.0801C318.618 90.7691 320.294 93.4591 322.022 96.1491C323.75 98.8381 325.544 101.528 327.348 104.218C329.152 106.907 331.021 109.597 332.844 112.287C334.667 114.976 336.517 117.666 338.283 120.356C340.049 123.045 341.801 125.735 343.439 128.425C345.078 131.114 346.664 133.804 348.114 136.494C349.563 139.183 350.919 141.873 352.137 144.563C353.355 147.252 354.45 149.942 355.423 152.632C356.396 155.321 357.236 158.011 357.973 160.701C358.709 163.39 359.328 166.08 359.843 168.77C360.357 171.459 360.759 174.149 361.061 176.839C361.363 179.528 361.561 182.218 361.656 184.908C361.75 187.597 361.741 190.287 361.627 192.977C361.514 195.666 361.297 198.356 360.976 201.046C360.655 203.735 360.234 206.425 359.701 209.115C359.167 211.804 358.53 214.494 357.774 217.184C357.019 219.873 356.16 222.568 355.168 225.253C354.177 227.938 353.072 230.618 351.825 233.293C350.579 235.969 349.209 238.654 347.689 241.306C346.169 243.958 344.507 246.605 342.703 249.205C340.899 251.805 338.94 254.395 336.867 256.906C334.794 259.416 332.57 261.875 330.266 264.267C327.962 266.659 325.521 268.995 323.042 271.26C320.563 273.525 317.985 275.7 315.393 277.857C312.801 280.013 310.133 282.104 307.489 284.199C304.845 286.294 302.182 288.328 299.528 290.428C296.874 292.527 294.211 294.632 291.567 296.798C288.923 298.964 286.293 301.158 283.663 303.423C281.033 305.688 278.408 308.033 275.787 310.388C273.167 312.742 270.561 315.168 267.94 317.551C265.32 319.934 262.699 322.364 260.064 324.685C257.43 327.007 254.785 329.319 252.132 331.48C249.478 333.641 246.811 335.751 244.143 337.652C241.475 339.554 238.803 341.333 236.125 342.89C233.448 344.447 230.766 345.816 228.08 346.995C225.393 348.175 222.697 349.147 220.006 349.968C217.314 350.789 214.623 351.412 211.932 351.922C209.24 352.431 206.549 352.766 203.858 353.026C201.166 353.285 198.475 353.399 195.784 353.479C193.092 353.559 190.401 353.554 187.71 353.507C185.018 353.46 182.327 353.356 179.635 353.196C176.944 353.035 174.253 352.814 171.561 352.545C168.87 352.276 166.179 351.95 163.487 351.582C160.796 351.214 158.105 350.803 155.413 350.336C152.722 349.869 150.031 349.359 147.339 348.779C144.648 348.199 141.957 347.576 139.265 346.854C136.574 346.132 133.883 345.353 131.191 344.447C128.5 343.541 125.808 342.546 123.117 341.418C120.426 340.29 117.734 339.035 115.043 337.681C112.352 336.326 109.66 334.835 106.969 333.292C104.278 331.749 101.586 330.098 98.8952 328.423C96.2042 326.747 93.5122 324.987 90.8212 323.241C88.1302 321.495 85.4382 319.717 82.7472 317.947C80.0562 316.178 77.3642 314.399 74.6732 312.624C71.9822 310.85 69.2852 309.104 66.5992 307.302C63.9122 305.499 61.2212 303.692 58.5532 301.809C55.8852 299.926 53.2132 298.02 50.5922 296.005C47.9722 293.99 45.3612 291.9 42.8302 289.72C40.2992 287.54 37.7972 285.275 35.4082 282.925C33.0182 280.575 30.6912 278.121 28.4952 275.62C26.2992 273.119 24.1892 270.524 22.2342 267.919C20.2792 265.315 18.4522 262.648 16.7662 259.992C15.0812 257.335 13.5272 254.655 12.1202 251.979C10.7132 249.304 9.46221 246.624 8.32421 243.939C7.18621 241.254 6.17621 238.559 5.29321 235.87C4.41021 233.18 3.67321 230.49 3.02621 227.801C2.37921 225.111 1.84121 222.421 1.41221 219.732C0.982207 217.042 0.680208 214.352 0.448208 211.663C0.217208 208.973 0.0802069 206.283 0.0232069 203.594C-0.0327931 200.904 0.0192079 198.214 0.108208 195.525C0.198208 192.835 0.359208 190.145 0.562208 187.456C0.765208 184.766 1.03921 182.076 1.32721 179.387C1.61521 176.697 1.94521 174.007 2.29021 171.318C2.63421 168.628 3.01221 165.938 3.39521 163.249C3.77721 160.559 4.17421 157.869 4.58421 155.18C4.99521 152.49 5.42021 149.8 5.85921 147.111C6.29821 144.421 6.75221 141.731 7.21921 139.042C7.68721 136.352 8.16421 133.662 8.66421 130.973C9.16421 128.283 9.67421 125.593 10.2222 122.904C10.7702 120.214 11.3322 117.524 11.9502 114.835C12.5692 112.145 13.2112 109.455 13.9332 106.766C14.6562 104.076 15.4212 101.386 16.2852 98.6971C17.1492 96.0071 18.0702 93.3171 19.1182 90.6281C20.1662 87.9381 21.2992 85.2441 22.5742 82.5591C23.8492 79.8741 25.2282 77.1891 26.7672 74.5181C28.3062 71.8471 29.9872 69.1621 31.8102 66.5341C33.6322 63.9061 35.6062 61.2821 37.7022 58.7481C39.7992 56.2141 42.0562 53.7041 44.3882 51.3301C46.7212 48.9571 49.1852 46.6641 51.6972 44.5071C54.2092 42.3511 56.8342 40.2891 59.4602 38.3921C62.0852 36.4951 64.7722 34.7391 67.4492 33.1261C70.1262 31.5121 72.8312 30.0441 75.5232 28.7091C78.2142 27.3731 80.9052 26.2081 83.5972 25.1131C86.2882 24.0181 88.9802 23.0461 91.6712 22.1401C94.3622 21.2341 97.0542 20.4461 99.7452 19.6771C102.436 18.9081 105.128 18.2101 107.819 17.5261C110.51 16.8411 113.202 16.2141 115.893 15.5721C118.584 14.9301 121.276 14.2981 123.967 13.6751C126.658 13.0521 129.35 12.4431 132.041 11.8351C134.732 11.2261 137.424 10.6171 140.115 10.0231C142.806 9.42814 145.498 8.84814 148.189 8.26714C150.881 7.68714 153.572 7.10714 156.263 6.54014C158.955 5.97414 161.646 5.40814 164.337 4.87014C167.029 4.33214 169.772 3.79914 172.411 3.31314C175.051 2.82714 177.638 2.35514 180.174 1.95414C182.709 1.55314 185.193 1.19414 187.625 0.906143C190.056 0.618143 192.384 0.378142 194.764 0.227142C197.143 0.0761423 199.523 -0.00385697 201.903 0.000143034Z"/>
-                                </svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H Ā N T I</span>
-                                    <span class="card-product-name">R I T U A L / T E A</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                A calming ritual of herbal tea, Shoonya madhu, and floral waters — made for slower evenings, softer pauses, and a quiet moment of stillness to regulate your nervous system.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>sweet</span> <span>floral</span> <span>herbal</span> <span>home</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">WHEN</div>
-                                <div class="attr-values-line"><span>evenings</span> <span>burn outs</span> <span>post-meal</span> <span>sleep</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>love & peace</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">12 SERVINGS · BREWS 2X</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">S H Ā N T I</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Organic Chamomile from Uttarakhand, roses from Himachal, paired with Shoonya Shānti botanical water & raw Mādhu.</p>
-                                <p class="ritual-item"><strong>The Measure:</strong> Add 1–1½ tsp (2 g) to 250 ml of hot water. Steep for 5 minutes. Finish with 20 sprays of Shānti mist and a spoon of Mādhu.</p>
-                                <p class="ritual-item"><strong>Cold Brew:</strong> 2 tsp in 250 ml of water, rest overnight. Strain over ice.</p>
-                                <p class="ritual-item"><strong>Came to Life:</strong> August 2026 · Finest within 4 months.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 4: SHOONYA MĀDHU -->
-            <div class="instruction-card-item" data-category="prana">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034C204.283 0.00514303...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">M Ā D H U</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Harvested from Karanj blossoms in Jharkhand forests, this single-origin honey is delicate, floral and quietly distinctive. Regarded in Ayurveda for its gentle, cooling nature.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>bitter-sweet</span> <span>earthy</span> <span>woody</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">USE IN</div>
-                                <div class="attr-values-line"><span>skincare</span> <span>warm teas</span> <span>salads</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>grounding, cooling & regenerating</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">145 GM</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">M Ā D H U</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Single-origin Karanj honey, gathered through thoughtful and ethical forest beekeeping.</p>
-                                <p class="ritual-item"><strong>Ritual:</strong> Drizzle into warm teas, or blend with Shoonya Kesari as a purifying facial cleanser and restorative mask.</p>
-                                <p class="ritual-item"><strong>Note:</strong> Natural crystallization and cloudiness are hallmarks of raw, unfiltered wild honey.</p>
-                                <p class="ritual-item"><strong>Harvest:</strong> January 2026 · Naturally long-lasting.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 5: SHOONYA ŪRJĀ -->
-            <div class="instruction-card-item" data-category="prana">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">Ū R J Ā</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Pearls of Vietnamese Oolong carrying the finesse of Taiwan in a cup. Light, floral and quietly energizing. Gives a clean, steady lift without caffeine crash.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>creamy</span> <span>floral</span> <span>fruity</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">EFFECT</div>
-                                <div class="attr-values-line"><span>cooling</span> <span>clarity</span> <span>steady energy</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>awakening with love, clarity</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">12 SERVINGS · BREWS 3X</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">Ū R J Ā</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Si Ji Chun–style Oolong grown in Vietnam without agrochemicals.</p>
-                                <p class="ritual-item"><strong>The Measure:</strong> ½ tsp (10-12 pearls) for 250 ml hot water. Steep for 3-4 minutes. Re-brews 3–4 times.</p>
-                                <p class="ritual-item"><strong>Cold Brew:</strong> 2 g in 500 ml cold water for 6-12 hours.</p>
-                                <p class="ritual-item"><strong>Came to Life:</strong> January 2026 · Ages beautifully over 5 years.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>mildly-bitter</span> <span>earthy</span> <span>floral</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">USE IN</div>
+<div class="attr-values-line"><span>warm teas</span> <span>cold brew</span> <span>aura cleansing</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">BENEFITS</div>
+<div class="attr-values-line"><span>skin health</span> <span>immunity</span> <span>digestion</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>grounding &amp; cooling</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1500 · 12 SERVINGS</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">D H Y Ā N</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Whole Nymphaea nouchali flowers from Thailand— with a long history of traditional ritual use.</p><p class="ritual-item"><strong>Ritual:</strong> Brew before meditation, or whenever you wish to soften into a quieter state of mind. Mist under the tongue, spritz into your drinks, over your face or aura and carry it in your bag like a little companion you can reach for anytime.</p><p class="ritual-item"><strong>Finest Within:</strong> 12 months</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="prana">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">Ū R J Ā</span><span class="card-product-name">T E A &nbsp;&nbsp; R I T U A L</span></div>
+</div>
+<div class="card-image-container">
+<img alt="GONG FU CHA" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_urja_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">Pearls of Vietnamese Oolong carries the finesse of Taiwan in a cup. Light, floral and quietly energising. Smooth through multiple brews, it gives a clean, steady lift without the crash of caffeine.</p>
 
-            <!-- Card 6: SHOONYA DHYĀN -->
-            <div class="instruction-card-item" data-category="jnana">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">D H Y Ā N</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Egyptian ritual whole lotus flower traditionally associated with stillness, meditation, vivid dreaming, and deep rest. Meant for evenings and inward moments.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>mildly-bitter</span> <span>earthy</span> <span>floral</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">USE IN</div>
-                                <div class="attr-values-line"><span>warm teas</span> <span>cold brew</span> <span>aura cleansing</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>grounding & cooling</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">12 SERVINGS · WHOLE BLOSSOMS</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">D H Y Ā N</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Whole Nymphaea nouchali lotus blossoms from Thailand.</p>
-                                <p class="ritual-item"><strong>Ritual:</strong> Brew ¼ to a whole flower in 250 ml of hot water for 4 minutes before meditation. Re-brew up to 3 times. Drizzle with Shoonya Mādhu.</p>
-                                <p class="ritual-item"><strong>Harvest:</strong> July 2026 · Finest within 12 months.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 7: SHOONYA SĀMA -->
-            <div class="instruction-card-item" data-category="kaya">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">S Ā M A</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Rooted in Ayurvedic wisdom, Sāma supports Vāta balance and digestive equilibrium. Classical blend of 14 herbs and water-based botanical extracts.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">WHEN</div>
-                                <div class="attr-values-line"><span>bloating</span> <span>indigestion</span> <span>acidity</span> <span>nausea</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">BENEFITS</div>
-                                <div class="attr-values-line"><span>gut comfort</span> <span>relief</span> <span>vāta balance</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>healing, relief, release</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">60 PCS · APOTHECARY CAPSULES</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">S Ā M A</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> 14 classical Ayurvedic herbs and pure water-based botanical extracts.</p>
-                                <p class="ritual-item"><strong>The Measure:</strong> Take 1 capsule for mild indigestion with warm water. Take 2 capsules for bloating or acidity.</p>
-                                <p class="ritual-item"><strong>Came to Life:</strong> August 2026 · Finest within 6 months.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 8: SONGS OF MEGHALAYA -->
-            <div class="instruction-card-item" data-category="prana">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S O N G S  O F</span>
-                                    <span class="card-product-name">M E G H A L A Y A</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                A spring First Flush from Lakyrsiew Estate beside Umiam Lake in Meghalaya. Lively with white flowers, sweet citrus, and guava notes. Light, uplifting and restorative.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>citrus</span> <span>floral</span> <span>fruity</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">WHEN</div>
-                                <div class="attr-values-line"><span>slow mornings</span> <span>midday pause</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>awakening, luminous, love</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">5 SERVINGS · BREWS 3X</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">M E G H A L A Y A</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Spring First Flush artisan leaf from high elevation hill slopes of Meghalaya.</p>
-                                <p class="ritual-item"><strong>The Measure:</strong> 1.5 tsp (2-2.5 g) for 250 ml warm water. Steep 3 minutes. Sip slowly as it cools.</p>
-                                <p class="ritual-item"><strong>Came to Life:</strong> Spring 2026 · Finest within 1 year.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Card 9: JASMINE'S TOUCH -->
-            <div class="instruction-card-item" data-category="prana">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">J A S M I N E ’ S</span>
-                                    <span class="card-product-name">T O U C H</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Nilgiri black tea scented slowly with fresh hill jasmine flowers. Floral yet grounding, it gently awakens the senses and invites quiet clarity.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">TASTE</div>
-                                <div class="attr-values-line"><span>malt</span> <span>floral</span> <span>woody</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">WHEN</div>
-                                <div class="attr-values-line"><span>creative pause</span> <span>before sunset</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>stimulating, warm, grounded</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">15 SERVINGS · BREWS 2X</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
-                                <span class="card-brand-label">J A S M I N E</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Nilgiris whole black leaf layered with fresh night-blooming jasmine flowers.</p>
-                                <p class="ritual-item"><strong>The Measure:</strong> 1 tsp (2 g) for 250 ml warm water. Steep 3-4 minutes. Cold brew 6-8 hrs.</p>
-                                <p class="ritual-item"><strong>Harvest:</strong> Winter 2025 · Finest within 2 years.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>creamy</span> <span>floral</span> <span>fruity</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">EFFECT</div>
+<div class="attr-values-line"><span>cooling</span> <span>clarity</span> <span>steady energy</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">WHEN</div>
+<div class="attr-values-line"><span>afternoon</span> <span>low energy</span> <span>cognitive load</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>awakening with love, clarity</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1500 · 12 SERVINGS</div>
+<div class="card-weight-center" style="margin-top: -0.4rem;"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>3500 · 36 SERVINGS</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">Ū R J Ā</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> A Si Ji Chun–style Oolong grown in Vietnam, crafted by Taiwanese immigrants without any agrochemicals.</p><p class="ritual-item"><strong>Ritual:</strong> Light, cooling and full of life. It offers a clean, steady lift and can be brewed beautifully 3–4 times.</p><p class="ritual-item"><strong>Finest Within:</strong> 5 years and it ages beautifully.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="kaya">
+<div class="instruction-card-inner">
+<!-- FRONT: Essence -->
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354">
+<path d="M201.903 0.000143034C204.283 0.00514303 206.61 0.0801441 209.042 0.255144C211.474 0.430144 213.957 0.694143 216.493 1.04814C219.028 1.40214 221.616 1.83114 224.255 2.37814C226.895 2.92614 229.638 3.56814 232.329 4.33214C235.021 5.09614 237.712 5.96014 240.403 6.96514C243.095 7.97014 245.786 9.09314 248.477 10.3631C251.169 11.6321 253.869 13.0241 256.551 14.5811C259.233 16.1381 261.929 17.8461 264.569 19.7061C267.208 21.5651 269.852 23.5941 272.388 25.7361C274.923 27.8781 277.416 30.1861 279.782 32.5591C282.148 34.9331 284.433 37.4391 286.581 39.9771C288.73 42.5161 290.755 45.1541 292.672 47.7911C294.589 50.4291 296.369 53.1241 298.083 55.8041C299.797 58.4841 301.374 61.1831 302.956 63.8731C304.538 66.5621 306.034 69.2521 307.574 71.9421C309.113 74.6311 310.624 77.3211 312.191 80.0111C313.759 82.7001 315.341 85.3901 316.979 88.0801C318.618 90.7691 320.294 93.4591 322.022 96.1491C323.75 98.8381 325.544 101.528 327.348 104.218C329.152 106.907 331.021 109.597 332.844 112.287C334.667 114.976 336.517 117.666 338.283 120.356C340.049 123.045 341.801 125.735 343.439 128.425C345.078 131.114 346.664 133.804 348.114 136.494C349.563 139.183 350.919 141.873 352.137 144.563C353.355 147.252 354.45 149.942 355.423 152.632C356.396 155.321 357.236 158.011 357.973 160.701C358.709 163.39 359.328 166.08 359.843 168.77C360.357 171.459 360.759 174.149 361.061 176.839C361.363 179.528 361.561 182.218 361.656 184.908C361.75 187.597 361.741 190.287 361.627 192.977C361.514 195.666 361.297 198.356 360.976 201.046C360.655 203.735 360.234 206.425 359.701 209.115C359.167 211.804 358.53 214.494 357.774 217.184C357.019 219.873 356.16 222.568 355.168 225.253C354.177 227.938 353.072 230.618 351.825 233.293C350.579 235.969 349.209 238.654 347.689 241.306C346.169 243.958 344.507 246.605 342.703 249.205C340.899 251.805 338.94 254.395 336.867 256.906C334.794 259.416 332.57 261.875 330.266 264.267C327.962 266.659 325.521 268.995 323.042 271.26C320.563 273.525 317.985 275.7 315.393 277.857C312.801 280.013 310.133 282.104 307.489 284.199C304.845 286.294 302.182 288.328 299.528 290.428C296.874 292.527 294.211 294.632 291.567 296.798C288.923 298.964 286.293 301.158 283.663 303.423C281.033 305.688 278.408 308.033 275.787 310.388C273.167 312.742 270.561 315.168 267.94 317.551C265.32 319.934 262.699 322.364 260.064 324.685C257.43 327.007 254.785 329.319 252.132 331.48C249.478 333.641 246.811 335.751 244.143 337.652C241.475 339.554 238.803 341.333 236.125 342.89C233.448 344.447 230.766 345.816 228.08 346.995C225.393 348.175 222.697 349.147 220.006 349.968C217.314 350.789 214.623 351.412 211.932 351.922C209.24 352.431 206.549 352.766 203.858 353.026C201.166 353.285 198.475 353.399 195.784 353.479C193.092 353.559 190.401 353.554 187.71 353.507C185.018 353.46 182.327 353.356 179.635 353.196C176.944 353.035 174.253 352.814 171.561 352.545C168.87 352.276 166.179 351.95 163.487 351.582C160.796 351.214 158.105 350.803 155.413 350.336C152.722 349.869 150.031 349.359 147.339 348.779C144.648 348.199 141.957 347.576 139.265 346.854C136.574 346.132 133.883 345.353 131.191 344.447C128.5 343.541 125.808 342.546 123.117 341.418C120.426 340.29 117.734 339.035 115.043 337.681C112.352 336.326 109.66 334.835 106.969 333.292C104.278 331.749 101.586 330.098 98.8952 328.423C96.2042 326.747 93.5122 324.987 90.8212 323.241C88.1302 321.495 85.4382 319.717 82.7472 317.947C80.0562 316.178 77.3642 314.399 74.6732 312.624C71.9822 310.85 69.2852 309.104 66.5992 307.302C63.9122 305.499 61.2212 303.692 58.5532 301.809C55.8852 299.926 53.2132 298.02 50.5922 296.005C47.9722 293.99 45.3612 291.9 42.8302 289.72C40.2992 287.54 37.7972 285.275 35.4082 282.925C33.0182 280.575 30.6912 278.121 28.4952 275.62C26.2992 273.119 24.1892 270.524 22.2342 267.919C20.2792 265.315 18.4522 262.648 16.7662 259.992C15.0812 257.335 13.5272 254.655 12.1202 251.979C10.7132 249.304 9.46221 246.624 8.32421 243.939C7.18621 241.254 6.17621 238.559 5.29321 235.87C4.41021 233.18 3.67321 230.49 3.02621 227.801C2.37921 225.111 1.84121 222.421 1.41221 219.732C0.982207 217.042 0.680208 214.352 0.448208 211.663C0.217208 208.973 0.0802069 206.283 0.0232069 203.594C-0.0327931 200.904 0.0192079 198.214 0.108208 195.525C0.198208 192.835 0.359208 190.145 0.562208 187.456C0.765208 184.766 1.03921 182.076 1.32721 179.387C1.61521 176.697 1.94521 174.007 2.29021 171.318C2.63421 168.628 3.01221 165.938 3.39521 163.249C3.77721 160.559 4.17421 157.869 4.58421 155.18C4.99521 152.49 5.42021 149.8 5.85921 147.111C6.29821 144.421 6.75221 141.731 7.21921 139.042C7.68721 136.352 8.16421 133.662 8.66421 130.973C9.16421 128.283 9.67421 125.593 10.2222 122.904C10.7702 120.214 11.3322 117.524 11.9502 114.835C12.5692 112.145 13.2112 109.455 13.9332 106.766C14.6562 104.076 15.4212 101.386 16.2852 98.6971C17.1492 96.0071 18.0702 93.3171 19.1182 90.6281C20.1662 87.9381 21.2992 85.2441 22.5742 82.5591C23.8492 79.8741 25.2282 77.1891 26.7672 74.5181C28.3062 71.8471 29.9872 69.1621 31.8102 66.5341C33.6322 63.9061 35.6062 61.2821 37.7022 58.7481C39.7992 56.2141 42.0562 53.7041 44.3882 51.3301C46.7212 48.9571 49.1852 46.6641 51.6972 44.5071C54.2092 42.3511 56.8342 40.2891 59.4602 38.3921C62.0852 36.4951 64.7722 34.7391 67.4492 33.1261C70.1262 31.5121 72.8312 30.0441 75.5232 28.7091C78.2142 27.3731 80.9052 26.2081 83.5972 25.1131C86.2882 24.0181 88.9802 23.0461 91.6712 22.1401C94.3622 21.2341 97.0542 20.4461 99.7452 19.6771C102.436 18.9081 105.128 18.2101 107.819 17.5261C110.51 16.8411 113.202 16.2141 115.893 15.5721C118.584 14.9301 121.276 14.2981 123.967 13.6751C126.658 13.0521 129.35 12.4431 132.041 11.8351C134.732 11.2261 137.424 10.6171 140.115 10.0231C142.806 9.42814 145.498 8.84814 148.189 8.26714C150.881 7.68714 153.572 7.10714 156.263 6.54014C158.955 5.97414 161.646 5.40814 164.337 4.87014C167.029 4.33214 169.772 3.79914 172.411 3.31314C175.051 2.82714 177.638 2.35514 180.174 1.95414C182.709 1.55314 185.193 1.19414 187.625 0.906143C190.056 0.618143 192.384 0.378142 194.764 0.227142C197.143 0.0761423 199.523 -0.00385697 201.903 0.000143034Z"></path>
+</svg>
+<div class="card-title-block"><span class="card-brand-label">S H O O N Y A</span><span class="card-product-name">K E S A R I</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHOONYA KESARI" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_kesari_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">Straight from the leaf, almost untouched - 99% pure aloe married with kashmiri kesar. Cool, fresh and quietly soothing. The kind of care your kāya always reaches all the time.</p>
 
-            <!-- Card 10: SHOONYA JHOLA -->
-            <div class="instruction-card-item" data-category="tools">
-                <div class="instruction-card-inner">
-                    <div class="card-face card-face-front">
-                        <div>
-                            <div class="card-top-bar">
-                                <svg class="card-blob-vector" viewBox="0 0 362 354" fill="currentColor"><path d="M201.903 0.000143034...Z"/></svg>
-                                <div class="card-title-block">
-                                    <span class="card-brand-label">S H O O N Y A</span>
-                                    <span class="card-product-name">J H O L A</span>
-                                </div>
-                            </div>
-                            <p class="card-essence-text">
-                                Crafted from richly woven cotton twill, the Shoonya tote accompanies unhurried days and meaningful journeys. Timeless in form, carrying the feeling of intentional living.
-                            </p>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">MATERIAL</div>
-                                <div class="attr-values-line"><span>100% heavy cotton twill</span> <span>unhurried weave</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">CARE</div>
-                                <div class="attr-values-line"><span>dry clean only</span> <span>air dry completely</span></div>
-                            </div>
-                            <div class="card-attr-section">
-                                <div class="attr-heading">PRĀṆA</div>
-                                <div class="attr-values-line"><span>presence, craftsmanship, grace</span></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card-weight-center">UNHURRIED LIVING TOOL</div>
-                            <div class="card-bottom-bar">
-                                <span>www.shoonya.world</span>
-                                <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW RITUAL GUIDE</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-face card-face-back">
-                        <div>
-                            <div class="card-top-bar">
-                                <span class="attr-heading" style="font-size: 0.9rem;">CARE PROTOCOL</span>
-                                <span class="card-brand-label">J H O L A</span>
-                            </div>
-                            <div class="ritual-details-list">
-                                <p class="ritual-item"><strong>From Nature:</strong> Chosen for natural texture, strength, and ease.</p>
-                                <p class="ritual-item"><strong>The Ritual:</strong> Carry what you need, leaving a little room for what the day may bring.</p>
-                                <p class="ritual-item"><strong>Made to Last:</strong> Designed to age gently and accompany you through many journeys.</p>
-                            </div>
-                        </div>
-                        <div class="card-bottom-bar">
-                            <span>+91 99343 11421</span>
-                            <button type="button" class="card-flip-btn" onclick="flipCard(this)">✦ VIEW ESSENCE</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </main>
 
-    <!-- Footer -->
-    <footer class="alchemy-footer">
-        <a href="shoonya_mockup.html">
-            <img src="assets/Shoonya_world_black.svg" alt="SHOONYA WORLD" class="footer-brand-logo">
-        </a>
-        <div style="font-family: var(--font-micrographics); font-size: 0.72rem; letter-spacing: 0.15em; opacity: 0.7;">
-            SHOONYA WORLD · ALL RIGHTS RESERVED · BOTANICAL ALCHEMY ARCHIVE
-        </div>
-    </footer>
+<div class="card-attr-section">
+<div class="attr-heading">EFFECT</div>
+<div class="attr-values-line"><span>calms</span> <span>soothes</span> <span>heals</span> <span>hydrates</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">USE ON</div>
+<div class="attr-values-line"><span>skin</span> <span>hair</span> <span>scalp</span> <span>wounds</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>love, cooling, regenerating</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1450 · 120 GM</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<!-- BACK: Ritual Guide -->
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">K E S A R I</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> 99% pure Aloe Vera pulp, gently blended with Kashmiri Kesar, food-grade preservative (Potassium Sorbate) and edible Xanthan Gum for freshness and texture.</p><p class="ritual-item"><strong>Ritual:</strong> Apply directly to your skin or scalp, or blend with a drizzle of Shoonya Mādhu to use it as a cleanser and facemask. Whisk it with your favourite oil and apply to your scalp, heal your wounds faster.</p><p class="ritual-item"><strong>Finest Within:</strong> 5 months. If refrigerated, it can stay fresh for up to 10 months.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="prana">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034C204.283 0.00514303...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">S H O O N Y A</span><span class="card-product-name">M Ā D H U</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHOONYA MĀDHU" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_madhu_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">Harvested from the Karanj blossoms of Jharkhand, this single-origin honey is delicate, floral and quietly distinctive. In Ayurveda, Karanj is traditionally regarded as comparatively cooling in nature, lending the honey a gentle character.</p>
 
-    <!-- Interactive Scripts -->
-    <script>
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>bitter-sweet</span> <span>earthy</span> <span>woody</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">USE IN</div>
+<div class="attr-values-line"><span>skincare</span> <span>warm teas</span> <span>salads</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">BENEFITS</div>
+<div class="attr-values-line"><span>skin health</span> <span>immunity</span> <span>digestion</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>grounding, cooling &amp; regenerating</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>750 · 145 GM</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">M Ā D H U</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Single-origin Karanj honey, gathered from the forests of Jharkhand, through thoughtful and ethical beekeeping practices.</p><p class="ritual-item"><strong>Ritual:</strong> Drizzle it into warm teas, or use it as your skin cleanser or mask along with Shoonya Kesari</p><p class="ritual-item"><strong>Finest Within:</strong> Honey is naturally long-lasting and, when stored well, can keep beautifully for a very long time.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="kaya">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">S H O O N Y A</span><span class="card-product-name">S Ā M A</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHOONYA SĀMA" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_sama_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">Rooted in Ayurvedic wisdom, Sama is crafted to gently support Vāta balance, digestive comfort. It is a classical ayurvedic blend of 14 herbs and water based botanical extracts.</p>
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">WHEN</div>
+<div class="attr-values-line"><span>bloating</span> <span>vomit</span> <span>indigestion</span> <span>nausea</span> <span>hiccups</span> <span>acidity</span> <span>gas</span> <span>cough</span> <span>breathlessness</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">BENEFITS</div>
+<div class="attr-values-line"><span>gut comfort</span> <span>relief</span> <span>vāta balance</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>healing, relief, release</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>750 · 60 PCS</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">S Ā M A</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> A classical ayurvedic blend of 14 herbs and water based botanical extracts.</p><p class="ritual-item"><strong>Ritual:</strong> Have with warm water, before or after a meal. Not recommended during diarrhoea. If pregnant, breastfeeding, or taking allopathic medication, consult an Ayurvedic physician before use.</p><p class="ritual-item"><strong>Finest Within:</strong> 6 months. Remains suitable beyond this period when stored well.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="kaya">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354">
+<path d="M201.903 0.000143034C204.283 0.00514303 206.61 0.0801441 209.042 0.255144C211.474 0.430144 213.957 0.694143 216.493 1.04814C219.028 1.40214 221.616 1.83114 224.255 2.37814C226.895 2.92614 229.638 3.56814 232.329 4.33214C235.021 5.09614 237.712 5.96014 240.403 6.96514C243.095 7.97014 245.786 9.09314 248.477 10.3631C251.169 11.6321 253.869 13.0241 256.551 14.5811C259.233 16.1381 261.929 17.8461 264.569 19.7061C267.208 21.5651 269.852 23.5941 272.388 25.7361C274.923 27.8781 277.416 30.1861 279.782 32.5591C282.148 34.9331 284.433 37.4391 286.581 39.9771C288.73 42.5161 290.755 45.1541 292.672 47.7911C294.589 50.4291 296.369 53.1241 298.083 55.8041C299.797 58.4841 301.374 61.1831 302.956 63.8731C304.538 66.5621 306.034 69.2521 307.574 71.9421C309.113 74.6311 310.624 77.3211 312.191 80.0111C313.759 82.7001 315.341 85.3901 316.979 88.0801C318.618 90.7691 320.294 93.4591 322.022 96.1491C323.75 98.8381 325.544 101.528 327.348 104.218C329.152 106.907 331.021 109.597 332.844 112.287C334.667 114.976 336.517 117.666 338.283 120.356C340.049 123.045 341.801 125.735 343.439 128.425C345.078 131.114 346.664 133.804 348.114 136.494C349.563 139.183 350.919 141.873 352.137 144.563C353.355 147.252 354.45 149.942 355.423 152.632C356.396 155.321 357.236 158.011 357.973 160.701C358.709 163.39 359.328 166.08 359.843 168.77C360.357 171.459 360.759 174.149 361.061 176.839C361.363 179.528 361.561 182.218 361.656 184.908C361.75 187.597 361.741 190.287 361.627 192.977C361.514 195.666 361.297 198.356 360.976 201.046C360.655 203.735 360.234 206.425 359.701 209.115C359.167 211.804 358.53 214.494 357.774 217.184C357.019 219.873 356.16 222.568 355.168 225.253C354.177 227.938 353.072 230.618 351.825 233.293C350.579 235.969 349.209 238.654 347.689 241.306C346.169 243.958 344.507 246.605 342.703 249.205C340.899 251.805 338.94 254.395 336.867 256.906C334.794 259.416 332.57 261.875 330.266 264.267C327.962 266.659 325.521 268.995 323.042 271.26C320.563 273.525 317.985 275.7 315.393 277.857C312.801 280.013 310.133 282.104 307.489 284.199C304.845 286.294 302.182 288.328 299.528 290.428C296.874 292.527 294.211 294.632 291.567 296.798C288.923 298.964 286.293 301.158 283.663 303.423C281.033 305.688 278.408 308.033 275.787 310.388C273.167 312.742 270.561 315.168 267.94 317.551C265.32 319.934 262.699 322.364 260.064 324.685C257.43 327.007 254.785 329.319 252.132 331.48C249.478 333.641 246.811 335.751 244.143 337.652C241.475 339.554 238.803 341.333 236.125 342.89C233.448 344.447 230.766 345.816 228.08 346.995C225.393 348.175 222.697 349.147 220.006 349.968C217.314 350.789 214.623 351.412 211.932 351.922C209.24 352.431 206.549 352.766 203.858 353.026C201.166 353.285 198.475 353.399 195.784 353.479C193.092 353.559 190.401 353.554 187.71 353.507C185.018 353.46 182.327 353.356 179.635 353.196C176.944 353.035 174.253 352.814 171.561 352.545C168.87 352.276 166.179 351.95 163.487 351.582C160.796 351.214 158.105 350.803 155.413 350.336C152.722 349.869 150.031 349.359 147.339 348.779C144.648 348.199 141.957 347.576 139.265 346.854C136.574 346.132 133.883 345.353 131.191 344.447C128.5 343.541 125.808 342.546 123.117 341.418C120.426 340.29 117.734 339.035 115.043 337.681C112.352 336.326 109.66 334.835 106.969 333.292C104.278 331.749 101.586 330.098 98.8952 328.423C96.2042 326.747 93.5122 324.987 90.8212 323.241C88.1302 321.495 85.4382 319.717 82.7472 317.947C80.0562 316.178 77.3642 314.399 74.6732 312.624C71.9822 310.85 69.2852 309.104 66.5992 307.302C63.9122 305.499 61.2212 303.692 58.5532 301.809C55.8852 299.926 53.2132 298.02 50.5922 296.005C47.9722 293.99 45.3612 291.9 42.8302 289.72C40.2992 287.54 37.7972 285.275 35.4082 282.925C33.0182 280.575 30.6912 278.121 28.4952 275.62C26.2992 273.119 24.1892 270.524 22.2342 267.919C20.2792 265.315 18.4522 262.648 16.7662 259.992C15.0812 257.335 13.5272 254.655 12.1202 251.979C10.7132 249.304 9.46221 246.624 8.32421 243.939C7.18621 241.254 6.17621 238.559 5.29321 235.87C4.41021 233.18 3.67321 230.49 3.02621 227.801C2.37921 225.111 1.84121 222.421 1.41221 219.732C0.982207 217.042 0.680208 214.352 0.448208 211.663C0.217208 208.973 0.0802069 206.283 0.0232069 203.594C-0.0327931 200.904 0.0192079 198.214 0.108208 195.525C0.198208 192.835 0.359208 190.145 0.562208 187.456C0.765208 184.766 1.03921 182.076 1.32721 179.387C1.61521 176.697 1.94521 174.007 2.29021 171.318C2.63421 168.628 3.01221 165.938 3.39521 163.249C3.77721 160.559 4.17421 157.869 4.58421 155.18C4.99521 152.49 5.42021 149.8 5.85921 147.111C6.29821 144.421 6.75221 141.731 7.21921 139.042C7.68721 136.352 8.16421 133.662 8.66421 130.973C9.16421 128.283 9.67421 125.593 10.2222 122.904C10.7702 120.214 11.3322 117.524 11.9502 114.835C12.5692 112.145 13.2112 109.455 13.9332 106.766C14.6562 104.076 15.4212 101.386 16.2852 98.6971C17.1492 96.0071 18.0702 93.3171 19.1182 90.6281C20.1662 87.9381 21.2992 85.2441 22.5742 82.5591C23.8492 79.8741 25.2282 77.1891 26.7672 74.5181C28.3062 71.8471 29.9872 69.1621 31.8102 66.5341C33.6322 63.9061 35.6062 61.2821 37.7022 58.7481C39.7992 56.2141 42.0562 53.7041 44.3882 51.3301C46.7212 48.9571 49.1852 46.6641 51.6972 44.5071C54.2092 42.3511 56.8342 40.2891 59.4602 38.3921C62.0852 36.4951 64.7722 34.7391 67.4492 33.1261C70.1262 31.5121 72.8312 30.0441 75.5232 28.7091C78.2142 27.3731 80.9052 26.2081 83.5972 25.1131C86.2882 24.0181 88.9802 23.0461 91.6712 22.1401C94.3622 21.2341 97.0542 20.4461 99.7452 19.6771C102.436 18.9081 105.128 18.2101 107.819 17.5261C110.51 16.8411 113.202 16.2141 115.893 15.5721C118.584 14.9301 121.276 14.2981 123.967 13.6751C126.658 13.0521 129.35 12.4431 132.041 11.8351C134.732 11.2261 137.424 10.6171 140.115 10.0231C142.806 9.42814 145.498 8.84814 148.189 8.26714C150.881 7.68714 153.572 7.10714 156.263 6.54014C158.955 5.97414 161.646 5.40814 164.337 4.87014C167.029 4.33214 169.772 3.79914 172.411 3.31314C175.051 2.82714 177.638 2.35514 180.174 1.95414C182.709 1.55314 185.193 1.19414 187.625 0.906143C190.056 0.618143 192.384 0.378142 194.764 0.227142C197.143 0.0761423 199.523 -0.00385697 201.903 0.000143034Z"></path>
+</svg>
+<div class="card-title-block"><span class="card-brand-label">S H O O N Y A</span><span class="card-product-name">A R K Ā</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHOONYA ARKĀ" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_arka_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">A cooling floral mist of wild Himalayan Damask rose, peppermint, and botanical glycerites—made to refresh the senses, soften the skin, and bring a quiet moment of calm. Made with edible food grade ingredients only.</p>
+
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>sweet</span> <span>fresh</span> <span>floral</span> <span>home</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">EFFECT</div>
+<div class="attr-values-line"><span>calm</span> <span>clarity</span> <span>awaken</span> <span>cooling</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">USE ON</div>
+<div class="attr-values-line"><span>skin</span> <span>orally</span> <span>aura</span> <span>beverages</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>love, awaken, peace</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1200 · 100 ML</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">A R K Ā</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Pure, edible-grade Damask rose water distilled from wild Himalayan roses, blended with organic peppermint water and botanical glycerites. Naturally cooling and delicately aromatic.</p><p class="ritual-item"><strong>Ritual:</strong> Mist under the tongue, spritz into your drinks, over your face or aura and carry it in your bag like a little companion you can reach for anytime.</p><p class="ritual-item"><strong>Finest Within:</strong> 6 months</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="prana">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">S O N G S  O F</span><span class="card-product-name">M E G H A L A Y A</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SONGS OF MEGHALAYA" class="card-product-img" loading="lazy" src="assets/pdf_product_images/songs_of_meghalaya_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">A tea that feels like a quiet awakening - light, uplifting and gently restorative. Made for moments of pause, it invites you to slow down, arrive in the present, and carry a little more freshness into the day.</p>
+
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>citrus</span> <span>floral</span> <span>fruity</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">EFFECT</div>
+<div class="attr-values-line"><span>uplifting</span> <span>refreshing</span> <span>calming</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">WHEN</div>
+<div class="attr-values-line"><span>slow mornings</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>awakening, luminous, love</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1500 · 5 SERVINGS</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">M E G H A L A Y A</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> A spring First Flush from Lakyrsiew Estate, grown beside Umiam Lake in Meghalaya. Lively with white flowers, sweet citrus and the fresh fruitiness of guava.</p><p class="ritual-item"><strong>Ritual:</strong> For bright mornings and slow afternoons. A lively cup to start the day with, or return to when you need a gentle reset.</p><p class="ritual-item"><strong>Finest Within:</strong> 1 year</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="prana">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">J A S M I N E ’ S</span><span class="card-product-name">T O U C H</span></div>
+</div>
+<div class="card-image-container">
+<img alt="JASMINE'S TOUCH" class="card-product-img" loading="lazy" src="assets/pdf_product_images/jasmines_touch_img_1.jpeg"/>
+</div>
+<p class="card-essence-text">A fragrant ritual of jasmine and quiet uplift. Softly floral yet grounding, this tea gently awakens the senses — inviting a moment of presence, ease and beautiful clarity in the day.</p>
+
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">TASTE</div>
+<div class="attr-values-line"><span>malt</span> <span>floral</span> <span>woody</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">WHEN</div>
+<div class="attr-values-line"><span>creative pause</span> <span>before sunset</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">EFFECT</div>
+<div class="attr-values-line"><span>centering</span> <span>gently energising</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">PRĀNA</div>
+<div class="attr-values-line"><span>stimulating, warm, grounded</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>950 · 15 SERVINGS</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">RITUAL PROTOCOL</span>
+<span class="card-brand-label">JASMINE’S TOUCH</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> A fragrant black tea from the Nilgiris, scented slowly with fresh jasmine flowers grown in the hills. The blossoms are removed after each scenting, leaving their perfume woven gently into the leaf. Deep and softly floral, with jasmine, sweet raisin, orange and warm malt beneath.</p><p class="ritual-item"><strong>Ritual:</strong> For lingering afternoons, quiet conversation and the space between one part of the day and the next. Gently uplifting, but with enough warmth and depth to bring you back to yourself.</p><p class="ritual-item"><strong>Finest Within:</strong> 1 year, while its jasmine perfume is at its most expressive.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="tools">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">S H O O N Y A</span><span class="card-product-name">J H O L A</span></div>
+</div>
+<div class="card-image-container">
+<img alt="SHOONYA JHOLA" class="card-product-img" loading="lazy" src="assets/pdf_product_images/songs_of_meghalaya_fullpage.png"/>
+</div>
+<p class="card-essence-text">Crafted from a richly woven cotton twill, the Shoonya tote is made to accompany unhurried days and meaningful journeys. Timeless in form, it carries not just what you need, but the feeling of living with intention.</p>
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">FROM NATURE</div>
+<div class="attr-values-line"><span>Crafted from richly woven cotton twill, chosen for its natural texture, strength, and ease.</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">CARE</div>
+<div class="attr-values-line"><span>Dry clean only</span> <span>Store in a cool and dry place</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>850 · UNHURRIED TOTE</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">CARE PROTOCOL</span>
+<span class="card-brand-label">J H O L A</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Crafted from richly woven cotton twill, chosen for its natural texture, strength, and ease.</p><p class="ritual-item"><strong>Ritual:</strong> Dry clean only. Store in a cool and dry place.</p><p class="ritual-item"><strong>Finest Within:</strong> Timeless in form</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="tools">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">E M B R O I D E R E D</span><span class="card-product-name">J H O L A</span></div>
+</div>
+<div class="card-image-container">
+<img alt="CLAY TEAPOT MITTI" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shanti_ritual_fullpage.png"/>
+</div>
+<p class="card-essence-text">A hand-embroidered jhola, shaped by the beauty of Indian craft. Thoughtfully made with intricate embroidery and a considered silhouette, it is an everyday object elevated by the hands that made it.</p>
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">FROM NATURE</div>
+<div class="attr-values-line"><span>Crafted from richly woven cotton twill, chosen for its natural texture, strength, and ease.</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">CARE</div>
+<div class="attr-values-line"><span>Dry clean only</span> <span>Store in a cool and dry place</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>2650 · HAND-EMBROIDERED TOTE</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">CARE PROTOCOL</span>
+<span class="card-brand-label">EMBROIDERED JHOLA</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Crafted from richly woven cotton twill, chosen for its natural texture, strength, and ease.</p><p class="ritual-item"><strong>Ritual:</strong> Dry clean only. Store in a cool and dry place.</p><p class="ritual-item"><strong>Finest Within:</strong> A hand-embroidered jhola, shaped by Indian craft.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div><div class="instruction-card-item" data-category="tools">
+<div class="instruction-card-inner">
+<div class="card-face card-face-front">
+<div>
+<div class="card-top-bar">
+<svg class="card-blob-vector" fill="currentColor" viewbox="0 0 362 354"><path d="M201.903 0.000143034...Z"></path></svg>
+<div class="card-title-block"><span class="card-brand-label">E M B R O I D E R E D</span><span class="card-product-name">J H O L A</span></div>
+</div>
+<div class="card-image-container">
+<img alt="STORAGE JAR SMOKE GLASS" class="card-product-img" loading="lazy" src="assets/pdf_product_images/shoonya_dhyan_fullpage.png"/>
+</div>
+<p class="card-essence-text">A hand-embroidered jhola, shaped by the beauty of Indian craft. Thoughtfully made with intricate embroidery and a considered silhouette, it is an everyday object elevated by the hands that made it.</p>
+
+
+
+<div class="card-attr-section">
+<div class="attr-heading">FROM NATURE</div>
+<div class="attr-values-line"><span>Crafted from richly woven cotton twill, chosen for its natural texture, strength, and ease.</span> </div>
+</div>
+<div class="card-attr-section">
+<div class="attr-heading">CARE</div>
+<div class="attr-values-line"><span>Dry clean only</span> <span>Store in a cool and dry place</span> </div>
+</div>
+</div>
+<div>
+<div class="card-weight-center"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>2650 · CRAFT DETAIL</div>
+<div class="card-bottom-bar">
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW RITUAL GUIDE</button>
+</div>
+</div>
+</div>
+<div class="card-face card-face-back">
+<div>
+<div class="card-top-bar">
+<span class="attr-heading" style="font-size: 0.9rem;">CARE PROTOCOL</span>
+<span class="card-brand-label">EMBROIDERED JHOLA</span>
+</div>
+<div class="ritual-details-list"><p class="ritual-item"><strong>From Nature:</strong> Crafted from richly woven cotton twill, chosen for its natural texture, strength, and ease.</p><p class="ritual-item"><strong>Ritual:</strong> Dry clean only. Store in a cool and dry place.</p><p class="ritual-item"><strong>Finest Within:</strong> A hand-embroidered jhola, shaped by Indian craft.</p></div>
+</div>
+<div class="card-bottom-bar">
+<span>+91 99343 11421</span>
+<button class="card-flip-btn" onclick="flipCard(this)" type="button">✦ VIEW ESSENCE</button>
+</div>
+</div>
+</div>
+</div></div>
+</main>
+<!-- Image Lightbox Modal Popup -->
+<div class="image-lightbox-modal" id="image-lightbox-modal" onclick="closeImageLightbox(event)">
+<button aria-label="Close Image" class="lightbox-close-btn" onclick="closeImageLightbox(event)" type="button">✕</button>
+<div class="lightbox-content" onclick="event.stopPropagation()">
+<img alt="Product Showcase" id="lightbox-img" src=""/>
+<div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+</div>
+<!-- Footer (Identical to SHOONYA GHAR) -->
+<footer class="tribe-footer">
+    <a href="/ORIGIN">
+        <img alt="SHOONYA WORLD" class="footer-brand-logo" src="assets/Shoonya_world_black.svg"/>
+    </a>
+    <div>SHOONYA WORLD · ALL RIGHTS RESERVED</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
         // 1. Lenis Smooth Scroll
         const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
 
-        // 2. Scroll-Locked Video Hero Logic
+        // 2. Scroll-Locked Video Hero Logic (Responsive Dual Video)
         const heroWrapper = document.getElementById('hero-locked-wrapper');
-        const heroVideo = document.getElementById('hero-product-video');
+        const heroVideoDesktop = document.getElementById('hero-video-desktop');
+        const heroVideoMobile = document.getElementById('hero-video-mobile');
         const heroContent = document.getElementById('hero-main-content');
         const soundBtn = document.getElementById('hero-sound-btn');
-        const soundStateText = document.getElementById('hero-sound-state');
+
+        function getActiveHeroVideo() {
+            return (window.innerWidth <= 900) ? heroVideoMobile : heroVideoDesktop;
+        }
+
+        function getInactiveHeroVideo() {
+            return (window.innerWidth <= 900) ? heroVideoDesktop : heroVideoMobile;
+        }
 
         function updateHeroScroll() {
             if (!heroWrapper || !heroContent) return;
@@ -1106,29 +2100,321 @@
             heroContent.style.opacity = Math.max(opacity, 0);
             heroContent.style.transform = `scale(${scale}) translateY(${progress * -30}px)`;
 
-            // Viewport pausing to save GPU & battery
-            if (rect.bottom < 0 || rect.top > window.innerHeight) {
-                if (!heroVideo.paused) heroVideo.pause();
-            } else {
-                if (heroVideo.paused) heroVideo.play().catch(() => {});
+            // Header transition when scrolling past hero
+            const siteHeader = document.querySelector('header');
+            if (siteHeader) {
+                const triggerPoint = (window.innerWidth <= 900) ? 60 : (heroWrapper.offsetHeight - 120);
+                if (window.scrollY > triggerPoint) {
+                    siteHeader.classList.add('scrolled');
+                } else {
+                    siteHeader.classList.remove('scrolled');
+                }
+            }
+
+            // Always ensure active video keeps playing continuously
+            const activeVid = getActiveHeroVideo();
+            const inactiveVid = getInactiveHeroVideo();
+            if (inactiveVid && !inactiveVid.paused) inactiveVid.pause();
+            if (activeVid) {
+                if (activeVid.paused) {
+                    activeVid.play().then(() => activeVid.classList.remove('autoplay-blocked')).catch(() => {});
+                } else {
+                    activeVid.classList.remove('autoplay-blocked');
+                }
             }
         }
         window.addEventListener('scroll', updateHeroScroll, { passive: true });
 
-        // 3. Hero Sound Toggle
+        const isMobileDevice = () => (window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent));
+
+        // Robust video setup
+        function setupVideoEl(vid) {
+            if (!vid) return;
+            vid.muted = true;
+            vid.defaultMuted = true;
+            vid.loop = true;
+            vid.playsInline = true;
+            vid.setAttribute('muted', '');
+            vid.setAttribute('playsinline', '');
+            vid.setAttribute('webkit-playsinline', '');
+            vid.setAttribute('x5-playsinline', '');
+            vid.setAttribute('loop', '');
+            vid.setAttribute('autoplay', '');
+            vid.setAttribute('disablepictureinpicture', '');
+            vid.setAttribute('disableremoteplayback', '');
+        }
+
+        function playVideoSafely(vid) {
+            if (!vid) return;
+            vid.muted = true;
+            vid.defaultMuted = true;
+            vid.playsInline = true;
+            const p = vid.play();
+            if (p && typeof p.then === 'function') {
+                p.then(() => {
+                    vid.classList.remove('autoplay-blocked');
+                }).catch(() => {
+                    vid.classList.add('autoplay-blocked');
+                });
+            }
+        }
+
+        // Guaranteed continuous seamless loop engine for all hero and kit videos
+        [heroVideoDesktop, heroVideoMobile].forEach(vid => {
+            if (!vid) return;
+            setupVideoEl(vid);
+            vid.addEventListener('playing', () => {
+                vid.classList.remove('autoplay-blocked');
+                vid.classList.remove('not-playing');
+                vid.classList.add('is-playing');
+            });
+            vid.addEventListener('timeupdate', () => {
+                if (vid.currentTime > 0) {
+                    vid.classList.remove('autoplay-blocked');
+                }
+            });
+            // 1. Rewind and play on ended fallback
+            vid.addEventListener('ended', () => {
+                vid.currentTime = 0;
+                playVideoSafely(vid);
+            });
+            const resumeIfActive = () => {
+                const active = getActiveHeroVideo();
+                if (vid === active && vid.paused) {
+                    playVideoSafely(vid);
+                }
+            };
+            vid.addEventListener('canplay', resumeIfActive);
+            vid.addEventListener('loadeddata', resumeIfActive);
+            vid.addEventListener('canplaythrough', resumeIfActive);
+        });
+
+        // Periodic liveness check: Every 1s ensures active hero video is looping and never stuck
+        setInterval(() => {
+            if (!document.hidden && !window._userExplicitlyPaused) {
+                const activeVid = getActiveHeroVideo();
+                if (activeVid && activeVid.paused) {
+                    playVideoSafely(activeVid);
+                }
+            }
+        }, 1000);
+
+        // 3. Hero Sound & Audio Playback Engine (Lag-Free & Zero-Play-Button)
         const alchemyAudio = document.getElementById('hero-alchemy-audio');
-        if (soundBtn) {
-            soundBtn.addEventListener('click', () => {
-                if (!alchemyAudio) return;
-                if (alchemyAudio.paused) {
-                    alchemyAudio.play().then(() => {
-                        soundStateText.innerText = "SOUND: ON";
-                        soundBtn.classList.add('playing');
-                    }).catch(() => {});
+        let soundIsActive = false;
+        let userExplicitlyMuted = false;
+
+        function setSoundBtnState(isPlaying) {
+            soundIsActive = isPlaying;
+            if (!soundBtn) return;
+            if (isPlaying) {
+                soundBtn.classList.add('playing');
+                soundBtn.setAttribute('aria-label', 'Turn Off Sound');
+                soundBtn.setAttribute('title', 'Sound: On (Click to Mute)');
+            } else {
+                soundBtn.classList.remove('playing');
+                soundBtn.setAttribute('aria-label', 'Turn On Sound');
+                soundBtn.setAttribute('title', 'Sound: Off (Click to Play)');
+            }
+        }
+
+        function unmuteSound() {
+            if (userExplicitlyMuted) return;
+
+            // Videos stay completely muted in the background (no clash with jazz soundtrack)
+            if (heroVideoDesktop) heroVideoDesktop.muted = true;
+            if (heroVideoMobile) heroVideoMobile.muted = true;
+
+            // Unlock Web Audio Context for iOS & Android
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (AudioCtx) {
+                try {
+                    if (!window._shoonyaAudioCtx) {
+                        window._shoonyaAudioCtx = new AudioCtx();
+                    }
+                    if (window._shoonyaAudioCtx.state === 'suspended') {
+                        window._shoonyaAudioCtx.resume().catch(() => {});
+                    }
+                } catch(e) {}
+            }
+
+            // Play the jazz soundtrack element
+            if (alchemyAudio) {
+                alchemyAudio.volume = 1.0;
+                alchemyAudio.muted = false;
+                alchemyAudio.loop = true;
+                const ap = alchemyAudio.play();
+                if (ap && typeof ap.then === 'function') {
+                    ap.then(() => {
+                        soundIsActive = true;
+                        setSoundBtnState(true);
+                    }).catch(() => {
+                        soundIsActive = false;
+                        setSoundBtnState(false);
+                    });
                 } else {
-                    alchemyAudio.pause();
-                    soundStateText.innerText = "SOUND: OFF";
-                    soundBtn.classList.remove('playing');
+                    soundIsActive = true;
+                    setSoundBtnState(true);
+                }
+            }
+        }
+
+        function muteSound() {
+            userExplicitlyMuted = true;
+            soundIsActive = false;
+            if (heroVideoDesktop) heroVideoDesktop.muted = true;
+            if (heroVideoMobile) heroVideoMobile.muted = true;
+            if (alchemyAudio && !alchemyAudio.paused) alchemyAudio.pause();
+            setSoundBtnState(false);
+        }
+
+        // Real-time audio element synchronization to prevent desync
+        if (alchemyAudio) {
+            alchemyAudio.addEventListener('playing', () => {
+                soundIsActive = true;
+                setSoundBtnState(true);
+            });
+            alchemyAudio.addEventListener('pause', () => {
+                if (!alchemyAudio.seeking) {
+                    soundIsActive = false;
+                    setSoundBtnState(false);
+                }
+            });
+            alchemyAudio.addEventListener('ended', () => {
+                soundIsActive = false;
+                setSoundBtnState(false);
+            });
+        }
+
+        function ensureHeroVideoPlayback() {
+            const activeVid = getActiveHeroVideo();
+            const inactiveVid = getInactiveHeroVideo();
+            if (inactiveVid && !inactiveVid.paused) {
+                inactiveVid.pause();
+                inactiveVid.muted = true;
+            }
+
+            if (activeVid) {
+                playVideoSafely(activeVid);
+            }
+
+            // Also ensure kit card videos autoplay immediately (muted)
+            document.querySelectorAll('.kit-card-video').forEach(vid => {
+                vid.muted = true;
+                playVideoSafely(vid);
+            });
+        }
+
+        // Autoplay audio and video automatically on page load across all devices
+        function tryAutoplayMedia() {
+            ensureHeroVideoPlayback();
+            if (!userExplicitlyMuted) {
+                unmuteSound();
+            }
+        }
+
+        // Run autoplay attempt on parse, DOM ready, window load, and pageshow
+        tryAutoplayMedia();
+        document.addEventListener('DOMContentLoaded', tryAutoplayMedia);
+        window.addEventListener('load', tryAutoplayMedia);
+        window.addEventListener('pageshow', tryAutoplayMedia);
+        // Aggressive early autoplay retry (every 200ms for first 3 seconds)
+        let earlyRetryCount = 0;
+        const earlyPlayInterval = setInterval(() => {
+            earlyRetryCount++;
+            const activeVid = getActiveHeroVideo();
+            if (activeVid) {
+                if (activeVid.paused) {
+                    const vp = activeVid.play();
+                    if (vp && typeof vp.then === 'function') {
+                        vp.then(() => {
+                            activeVid.classList.remove('autoplay-blocked');
+                            clearInterval(earlyPlayInterval);
+                        }).catch(() => {});
+                    }
+                } else {
+                    activeVid.classList.remove('autoplay-blocked');
+                    clearInterval(earlyPlayInterval);
+                }
+            }
+            if (earlyRetryCount > 15) clearInterval(earlyPlayInterval);
+        }, 200);
+
+        // Comprehensive micro-signal triggers for mobile browsers
+        const onInstantSignal = () => {
+            const activeVid = getActiveHeroVideo();
+            if (activeVid) {
+                const vp = activeVid.play();
+                if (vp && typeof vp.then === 'function') {
+                    vp.then(() => activeVid.classList.remove('autoplay-blocked')).catch(() => {});
+                }
+            }
+            if (!userExplicitlyMuted && alchemyAudio && alchemyAudio.paused) {
+                unmuteSound();
+            }
+        };
+        ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'pointermove', 'pointerenter', 'mousemove', 'mouseenter', 'scroll', 'wheel', 'click', 'keydown', 'mousedown', 'mouseup', 'focus', 'pageshow'].forEach(evt => {
+            window.addEventListener(evt, onInstantSignal, { passive: true, capture: true });
+            document.addEventListener(evt, onInstantSignal, { passive: true, capture: true });
+        });
+
+        // Clicking anywhere on the hero section unmutes if muted and ensures video plays
+        if (heroWrapper) {
+            ['click', 'touchstart', 'pointerdown'].forEach(ev => {
+                heroWrapper.addEventListener(ev, () => {
+                    const activeVid = getActiveHeroVideo();
+                    if (activeVid) {
+                        const vp = activeVid.play();
+                        if (vp && typeof vp.then === 'function') {
+                            vp.then(() => activeVid.classList.remove('autoplay-blocked')).catch(() => {});
+                        }
+                    }
+                    if (!soundIsActive) {
+                        unmuteSound();
+                    }
+                }, { passive: true });
+            });
+        }
+
+        window.addEventListener('resize', () => {
+            ensureHeroVideoPlayback();
+            updateHeroScroll();
+        });
+
+        // Speaker Icon Click Toggle (Mute / Unmute)
+        if (soundBtn) {
+            soundBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (soundIsActive || (alchemyAudio && !alchemyAudio.paused)) {
+                    muteSound();
+                } else {
+                    userExplicitlyMuted = false;
+                    // Direct user gesture stack execution for Android Chrome & iOS Web Audio unlock
+                    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                    if (AudioCtx) {
+                        try {
+                            if (!window._shoonyaAudioCtx) {
+                                window._shoonyaAudioCtx = new AudioCtx();
+                            }
+                            if (window._shoonyaAudioCtx.state === 'suspended') {
+                                window._shoonyaAudioCtx.resume().catch(() => {});
+                            }
+                        } catch(err) {}
+                    }
+                    if (alchemyAudio) {
+                        alchemyAudio.muted = false;
+                        alchemyAudio.volume = 1.0;
+                        alchemyAudio.loop = true;
+                        alchemyAudio.play().then(() => {
+                            soundIsActive = true;
+                            setSoundBtnState(true);
+                        }).catch(() => {
+                            soundIsActive = false;
+                            setSoundBtnState(false);
+                        });
+                    } else {
+                        unmuteSound();
+                    }
                 }
             });
         }
@@ -1154,6 +2440,104 @@
                 }
             });
         }
+
+        // 6. Image Lightbox Popup Modal
+        function openImageLightbox(src, title, e) {
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            const modal = document.getElementById('image-lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+            if (modal && img) {
+                img.src = src;
+                if (caption) caption.textContent = title || '';
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeImageLightbox(e) {
+            if (e) e.stopPropagation();
+            const modal = document.getElementById('image-lightbox-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeImageLightbox();
+        });
+
+        // Auto-bind click handlers to all product card image containers
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.instruction-card-item').forEach(card => {
+                const imgContainer = card.querySelector('.card-image-container');
+                const img = card.querySelector('.card-product-img');
+                const productName = card.querySelector('.card-product-name');
+                if (imgContainer && img) {
+                    const title = productName ? productName.textContent.replace(/\s+/g, ' ').trim() : 'SHOONYA WORLD';
+                    imgContainer.addEventListener('click', (e) => {
+                        openImageLightbox(img.src, title, e);
+                    });
+                }
+            });
+        });
+
+        // 7. Featured Ritual Kit Cards Scroll Animation & Video Autoplay
+        function initFeaturedKitCards() {
+            const cards = document.querySelectorAll('.ritual-kit-card');
+            if (cards.length > 0) {
+                const cardObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            const video = entry.target.querySelector('video');
+                            if (video && video.paused) {
+                                video.play().catch(() => {});
+                            }
+                        } else {
+                            const video = entry.target.querySelector('video');
+                            if (video && !video.paused) {
+                                video.pause();
+                            }
+                        }
+                    });
+                }, { threshold: 0.12 });
+
+                cards.forEach(card => cardObserver.observe(card));
+            }
+
+            // Universal video autoplay trigger for kit cards
+            const kitVideos = document.querySelectorAll('.kit-card-video');
+            const playKitVideos = () => {
+                kitVideos.forEach(v => {
+                    v.muted = true;
+                    v.defaultMuted = true;
+                    v.playsInline = true;
+                    v.loop = true;
+                    v.addEventListener('ended', () => {
+                        v.currentTime = 0;
+                        v.play().catch(() => {});
+                    });
+                    if (v.paused) v.play().catch(() => {});
+                });
+            };
+            playKitVideos();
+            ['scroll', 'touchstart', 'pointerdown', 'mousemove'].forEach(ev => {
+                window.addEventListener(ev, playKitVideos, { once: true, passive: true });
+            });
+        }
+        document.addEventListener('DOMContentLoaded', initFeaturedKitCards);
+        window.addEventListener('load', initFeaturedKitCards);
+        initFeaturedKitCards();
     </script>
+    <!-- Background Audio Soundtrack (Strictly invisible, zero UI footprint) -->
+    <audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.mp3?v=jazz_20261030" autoplay loop preload="auto" playsinline style="display:none!important;visibility:hidden!important;width:0!important;height:0!important;opacity:0!important;position:absolute!important;pointer-events:none!important;">
+        <source src="assets/alchemy_soundtrack.mp3?v=jazz_20261030" type="audio/mpeg"/>
+        <source src="assets/alchemy_soundtrack.m4a?v=jazz_20261030" type="audio/mp4"/>
+    </audio>
 </body>
 </html>

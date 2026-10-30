@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SHANTI RITUAL · SHOONYA WORLD — Sacred Tea Ceremony</title>
+    <meta content="Shanti brings together wild botanicals, plant waters, forest honey, and thoughtfully crafted tools to create a moment of pause and reconnection." name="description"/>
+    
+    <!-- Google & Brand Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Doto:wght@300;400;600;700;800;900&family=Montserrat:wght@300;400;600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    
+    <!-- Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <style>
+        /* =========================================================
+           AUTHENTIC SHOONYA BRAND TYPOGRAPHY HIERARCHY
+           ========================================================= */
+        @font-face { font-family: 'Proxima Nova Black'; src: local('Proxima Nova Black'), local('ProximaNova-Black'), local('Montserrat'); font-weight: 900; }
+        @font-face { font-family: 'Aamiya Thin'; src: local('Aamiya Thin'), local('Aamiya-Thin'), local('Cormorant Garamond'), serif; font-weight: 300; }
+        @font-face { font-family: 'Gotham Black'; src: local('Gotham Black'), local('Gotham-Black'), local('Montserrat'), sans-serif; font-weight: 900; }
+        @font-face { font-family: 'Gotham RND Light'; src: local('Gotham Rounded Light'), local('Gotham-Light'), local('Plus Jakarta Sans'), sans-serif; font-weight: 300; }
+        @font-face { font-family: 'Advercase'; src: local('Advercase'), local('Cinzel'), serif; font-weight: 400; }
+
+        /* EDITOR TYPEFACE FAMILY (SHOONYA MONO SUITE) */
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Regular.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Regular.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor Regular';
+            src: url('assets/fonts/ShoonyaMono-Regular.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Regular.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Italic.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Italic.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Italic.ttf') format('truetype');
+            font-weight: 400;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor Bold';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor Bold';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Editor';
+            src: url('assets/fonts/ShoonyaMono-Black.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Black.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Black.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Shoonya Mono';
+            src: url('assets/fonts/ShoonyaMono-Regular.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Regular.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Shoonya Mono';
+            src: url('assets/fonts/ShoonyaMono-Bold.woff2') format('woff2'),
+                 url('assets/fonts/ShoonyaMono-Bold.woff') format('woff'),
+                 url('assets/fonts/ShoonyaMono-Bold.ttf') format('truetype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* =========================================================
+           DOTO TYPEFACE (LOCAL WOFF2 + CDN DUAL-SOURCE)
+           ========================================================= */
+        @font-face {
+            font-family: 'Doto';
+            src: url('assets/fonts/Doto-Bold-Ext.woff2') format('woff2');
+            font-weight: 700 900;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        @font-face {
+            font-family: 'Doto';
+            src: url('assets/fonts/Doto-Bold.woff2') format('woff2'),
+                 url('https://fonts.gstatic.com/s/doto/v3/t5t6IRMbNJ6TQG7Il_EKPqP9zTnvqouBWho.woff2') format('woff2');
+            font-weight: 600 900;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Doto';
+            src: url('assets/fonts/Doto-Regular.woff2') format('woff2');
+            font-weight: 300 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg-canvas: #FAF8EB;
+            --color-forest-green: #436B1D;
+            --color-forest-green-light: #5A8F29;
+            --color-forest-dark: #2F4D14;
+            --color-text-dark: #1C1917;
+            --color-text-muted: #57534E;
+            --color-gold: #C89D6B;
+            --color-gold-light: #E0BA9B;
+            --color-card-bg: #FAF8EB;
+            --color-border-subtle: rgba(67, 107, 29, 0.2);
+
+            /* Typography Tokens */
+            --font-editor-bold: 'Editor Bold', 'Editor', 'Shoonya Mono', monospace;
+            --font-editor-regular: 'Editor Regular', 'Editor', 'Shoonya Mono', monospace;
+            --font-logo-proxima: 'Proxima Nova Black', 'Montserrat', sans-serif;
+            --font-heading-aamiya: 'Aamiya Thin', 'Cormorant Garamond', serif;
+            --font-subheading-gotham: 'Gotham Black', 'Montserrat', sans-serif;
+            --font-body-gotham: 'Gotham RND Light', 'Plus Jakarta Sans', sans-serif;
+            --font-micrographics: 'Doto', sans-serif;
+            --font-doto: 'Doto', sans-serif;
+            --font-title-advercase: 'Advercase', 'Cinzel', serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            background-color: var(--bg-canvas);
+            color: var(--color-text-dark);
+            font-family: var(--font-editor-regular);
+            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient Grain Texture */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: radial-gradient(rgba(67, 107, 29, 0.04) 1px, transparent 0);
+            background-size: 26px 26px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* =========================================================
+           GLOBAL NAVIGATION HEADER (Exact Brand Alignment)
+           ========================================================= */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.25rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: linear-gradient(to bottom, rgba(250, 248, 235, 0.96), rgba(250, 248, 235, 0.8));
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(67, 107, 29, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .header-top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .brand-logo-img {
+            height: 24px;
+            width: auto;
+            transition: transform 0.3s ease;
+            filter: none !important;
+            display: block;
+        }
+
+        .brand-logo-img:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.75rem;
+            list-style: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+            margin: 0;
+            pointer-events: auto;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text-dark);
+            font-family: var(--font-editor-bold);
+            font-weight: 700;
+            font-size: 0.76rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.35rem 1.05rem;
+            border-radius: 999px;
+            background: rgba(44, 42, 37, 0.06);
+            border: 1px solid rgba(44, 42, 37, 0.18);
+            transition: all 0.25s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .nav-links a.active {
+            background: rgba(67, 107, 29, 0.12) !important;
+            border-color: var(--color-forest-green) !important;
+            color: var(--color-forest-green) !important;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-forest-green) !important;
+            border-color: var(--color-forest-green) !important;
+        }
+
+        .header-cta {
+            border: 1.5px solid var(--color-forest-green);
+            padding: 0.45rem 1.25rem;
+            border-radius: 50px;
+            color: var(--color-forest-green);
+            font-family: var(--font-micrographics);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.2s ease;
+            background: transparent;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-cta:hover {
+            background: var(--color-forest-green);
+            color: #FAF8EB;
+        }
+
+        /* =========================================================
+           BREADCRUMB & BACK NAVIGATION
+           ========================================================= */
+        .pdp-breadcrumb-wrap {
+            max-width: 1360px;
+            margin: 6.5rem auto 1.5rem;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-editor-regular);
+            font-size: 0.78rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .pdp-breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .pdp-breadcrumbs a {
+            color: var(--color-text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .pdp-breadcrumbs a:hover {
+            color: var(--color-forest-green);
+        }
+
+        .pdp-breadcrumbs span.active {
+            color: var(--color-forest-green);
+            font-family: var(--font-editor-bold);
+            font-weight: 700;
+        }
+
+        .pdp-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--color-forest-green);
+            text-decoration: none;
+            font-family: var(--font-editor-bold);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            transition: transform 0.2s;
+        }
+
+        .pdp-back-link:hover {
+            transform: translateX(-3px);
+        }
+
+        /* =========================================================
+           PRIMARY HERO: LUXURY MEDIA STAGE + BUY BOX
+           ========================================================= */
+        .pdp-hero-section {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0.5rem 5% 5rem;
+            display: grid;
+            grid-template-columns: 1.08fr 0.92fr;
+            gap: 4.5rem;
+            align-items: start;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Left Media Showcase Stage */
+        .pdp-media-stage {
+            display: flex;
+            flex-direction: column;
+            gap: 1.4rem;
+            position: sticky;
+            top: 6.5rem;
+        }
+
+        .pdp-primary-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: #1C1917;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1.5px solid rgba(67, 107, 29, 0.22);
+            box-shadow: 0 20px 55px rgba(67, 107, 29, 0.12), 0 4px 14px rgba(28, 25, 23, 0.05);
+            cursor: zoom-in;
+        }
+
+        .pdp-primary-frame video,
+        .pdp-primary-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            transition: opacity 0.45s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .pdp-primary-frame:hover img {
+            transform: scale(1.03);
+        }
+
+        .pdp-badge-pill {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            z-index: 15;
+            font-family: var(--font-editor-bold);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            padding: 0.42rem 1.1rem;
+            border-radius: 999px;
+            background: rgba(28, 25, 23, 0.74);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            color: #FAF8EB;
+            border: 1px solid rgba(250, 248, 235, 0.28);
+            text-transform: uppercase;
+        }
+
+        .pdp-media-vignette {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 25, 23, 0.4) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        /* Thumbnails Strip */
+        .pdp-thumb-strip {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .pdp-thumb-item {
+            flex: 1;
+            position: relative;
+            aspect-ratio: 1/1;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #1C1917;
+            border: 2px solid transparent;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            outline: none;
+        }
+
+        .pdp-thumb-item img,
+        .pdp-thumb-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+        }
+
+        .pdp-thumb-item.active {
+            border-color: var(--color-forest-green);
+            box-shadow: 0 4px 18px rgba(67, 107, 29, 0.28);
+            transform: translateY(-2px);
+        }
+
+        .pdp-thumb-tag {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            font-family: var(--font-editor-regular);
+            font-size: 0.55rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+            background: rgba(28, 25, 23, 0.78);
+            color: #FAF8EB;
+            padding: 2px 4px;
+            border-radius: 6px;
+        }
+
+        /* Right Column: Editorial Buy Box */
+        .pdp-buy-box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdp-product-kicker {
+            font-family: var(--font-editor-bold);
+            font-size: 0.74rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            color: var(--color-forest-green);
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pdp-product-title {
+            font-family: 'Doto', sans-serif;
+            font-size: clamp(2rem, 3.4vw, 2.75rem);
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--color-text-dark);
+            text-transform: uppercase;
+            line-height: 1.15;
+            margin-bottom: 0.8rem;
+        }
+
+        .pdp-product-tagline {
+            font-family: var(--font-editor-regular);
+            font-style: italic;
+            font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            color: var(--color-forest-green);
+            margin-bottom: 1.4rem;
+            line-height: 1.5;
+        }
+
+        .pdp-price-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .pdp-price {
+            font-family: 'Doto', sans-serif;
+            font-size: 2.35rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            letter-spacing: 0.04em;
+            line-height: 1;
+        }
+
+        .pdp-price-badge {
+            font-family: var(--font-editor-bold);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 0.28rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(67, 107, 29, 0.1);
+            color: var(--color-forest-green);
+            border: 1px solid rgba(67, 107, 29, 0.22);
+        }
+
+        .pdp-tax-notice {
+            font-family: var(--font-editor-regular);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+        }
+
+        .pdp-lead-description {
+            font-family: var(--font-editor-regular);
+            font-size: 0.96rem;
+            line-height: 1.75;
+            color: var(--color-text-dark);
+            margin-bottom: 1.4rem;
+            padding-bottom: 1.4rem;
+            border-bottom: 1px solid rgba(67, 107, 29, 0.16);
+        }
+
+        .pdp-prana-note {
+            background: rgba(67, 107, 29, 0.05);
+            border-left: 3px solid var(--color-forest-green);
+            padding: 1rem 1.25rem;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 2rem;
+            font-family: var(--font-editor-regular);
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: var(--color-text-dark);
+        }
+
+        .pdp-prana-note strong {
+            font-family: var(--font-editor-bold);
+            color: var(--color-forest-green);
+            font-weight: 700;
+            letter-spacing: 0.06em;
+        }
+
+        /* Purchase Action CTA Strip */
+        .pdp-actions-row {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .pdp-qty-control {
+            display: inline-flex;
+            align-items: center;
+            border: 1.5px solid rgba(67, 107, 29, 0.3);
+            border-radius: 999px;
+            background: #FAF8EB;
+            padding: 0.35rem 0.6rem;
+        }
+
+        .pdp-qty-btn {
+            background: none;
+            border: none;
+            color: var(--color-forest-green);
+            font-family: var(--font-editor-bold);
+            font-size: 1.1rem;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .pdp-qty-btn:hover {
+            background: rgba(67, 107, 29, 0.1);
+        }
+
+        .pdp-qty-value {
+            font-family: var(--font-editor-bold);
+            font-size: 1rem;
+            min-width: 36px;
+            text-align: center;
+            color: var(--color-text-dark);
+        }
+
+        .pdp-buy-now-btn {
+            flex: 1;
+            background: var(--color-forest-green);
+            color: #FAF8EB;
+            font-family: 'Doto', sans-serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 1.1rem 2.2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.65rem;
+            box-shadow: 0 10px 30px rgba(67, 107, 29, 0.35);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            border: none;
+            cursor: pointer;
+        }
+
+        .pdp-buy-now-btn:hover {
+            background: #335316;
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 16px 42px rgba(67, 107, 29, 0.5);
+            color: #FAF8EB;
+        }
+
+        /* Trust & Delivery Perks */
+        .pdp-checkout-perks {
+            margin-top: -0.5rem;
+            margin-bottom: 2.2rem;
+            padding: 1.25rem 1.4rem;
+            background: rgba(67, 107, 29, 0.04);
+            border: 1px solid rgba(67, 107, 29, 0.15);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .pdp-perk-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.86rem;
+            line-height: 1.5;
+            color: var(--color-text-muted);
+            font-family: var(--font-editor-regular);
+        }
+
+        .pdp-perk-icon {
+            font-size: 1.15rem;
+            line-height: 1.2;
+            flex-shrink: 0;
+            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.06));
+        }
+
+        .pdp-perk-text {
+            flex: 1;
+        }
+
+        .pdp-perk-text strong {
+            font-family: var(--font-editor-bold);
+            color: var(--color-text-dark);
+            font-weight: 700;
+        }
+
+        .pdp-whatsapp-btn {
+            background: transparent;
+            color: var(--color-forest-green);
+            border: 1.5px solid var(--color-forest-green);
+            font-family: var(--font-editor-bold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 1.05rem 1.6rem;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pdp-whatsapp-btn:hover {
+            background: rgba(67, 107, 29, 0.08);
+            border-color: var(--color-forest-green-light);
+        }
+
+        /* =========================================================
+           SECTION 2: WHAT'S INSIDE THE RITUAL (Deep-Dive Cards)
+           ========================================================= */
+        .pdp-section-wrap {
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 4.5rem 5% 5rem;
+            border-top: 1px solid rgba(67, 107, 29, 0.12);
+        }
+
+        .pdp-section-header {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto 3.8rem;
+        }
+
+        .pdp-section-kicker {
+            font-family: var(--font-editor-bold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            color: var(--color-forest-green);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.6rem;
+        }
+
+        .pdp-section-title {
+            font-family: var(--font-editor-bold);
+            font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-text-dark);
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        .pdp-section-desc {
+            font-family: var(--font-editor-regular);
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .pdp-inside-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+
+        .pdp-inside-card {
+            background: #FAF8EB;
+            border: 1.5px solid rgba(67, 107, 29, 0.2);
+            border-radius: 20px;
+            padding: 2.2rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(67, 107, 29, 0.05);
+            transition: all 0.35s ease;
+            position: relative;
+        }
+
+        .pdp-inside-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(67, 107, 29, 0.45);
+            box-shadow: 0 20px 50px rgba(67, 107, 29, 0.15);
+        }
+
+        .pdp-inside-num {
+            font-family: var(--font-micrographics);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--color-forest-green);
+            margin-bottom: 1.2rem;
+        }
+
+        .pdp-inside-name {
+            font-family: var(--font-editor-bold);
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--color-text-dark);
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .pdp-inside-sub {
+            font-family: var(--font-editor-regular);
+            font-style: italic;
+            font-size: 0.88rem;
+            color: var(--color-forest-green);
+            margin-bottom: 1.2rem;
+        }
+
+        .pdp-inside-body {
+            font-family: var(--font-editor-regular);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+            flex: 1;
+        }
+
+        /* =========================================================
+           SECTION 3: STEP-BY-STEP CEREMONY PROTOCOL
+           ========================================================= */
+        .pdp-ceremony-wrap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .pdp-step-card {
+            background: #F4F0DE;
+            border: 1px solid rgba(67, 107, 29, 0.22);
+            border-radius: 20px;
+            padding: 2.2rem 2rem;
+            position: relative;
+        }
+
+        .pdp-step-number {
+            font-family: var(--font-editor-bold);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--color-forest-green);
+            line-height: 1;
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+
+        .pdp-step-title {
+            font-family: var(--font-editor-bold);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-text-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .pdp-step-body {
+            font-family: var(--font-editor-regular);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+        }
+
+        /* Second Cup Feature Banner */
+        .pdp-second-cup-card {
+            background: #FAF8EB;
+            border: 1.5px solid rgba(67, 107, 29, 0.25);
+            border-radius: 20px;
+            padding: 2rem 2.5rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pdp-second-cup-card h4 {
+            font-family: var(--font-editor-bold);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-forest-green);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdp-second-cup-card p {
+            font-family: var(--font-editor-regular);
+            font-size: 0.94rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+        }
+
+        /* =========================================================
+           SECTION 4: PHILOSOPHY & ARTISAN CRAFT
+           ========================================================= */
+        .pdp-artisan-banner {
+            background: linear-gradient(135deg, rgba(67, 107, 29, 0.08) 0%, rgba(200, 157, 107, 0.12) 100%);
+            border: 1.5px solid rgba(67, 107, 29, 0.28);
+            border-radius: 28px;
+            padding: 3.5rem;
+            text-align: center;
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        .pdp-artisan-title {
+            font-family: var(--font-editor-bold);
+            font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-text-dark);
+            text-transform: uppercase;
+            margin-bottom: 1.1rem;
+        }
+
+        .pdp-artisan-body {
+            font-family: var(--font-editor-regular);
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: var(--color-text-dark);
+            max-width: 820px;
+            margin: 0 auto 1.8rem;
+        }
+
+        .pdp-artisan-disclaimer {
+            display: inline-block;
+            font-family: var(--font-editor-regular);
+            font-style: italic;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--color-forest-green);
+            border-top: 1px dashed rgba(67, 107, 29, 0.35);
+            padding-top: 1.4rem;
+            max-width: 760px;
+        }
+
+        /* =========================================================
+           SECTION 5: SISTER KIT DISCOVERY (Kéṣarī Rūpa Ritual Kit)
+           ========================================================= */
+        .pdp-sister-card {
+            background: #FAF8EB;
+            border: 1.5px solid rgba(67, 107, 29, 0.22);
+            border-radius: 26px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            max-width: 1040px;
+            margin: 0 auto;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            box-shadow: 0 16px 45px rgba(67, 107, 29, 0.08);
+        }
+
+        .pdp-sister-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(67, 107, 29, 0.45);
+            box-shadow: 0 24px 65px rgba(67, 107, 29, 0.18);
+        }
+
+        .pdp-sister-media {
+            position: relative;
+            aspect-ratio: 4/5;
+            background: #1C1917;
+            overflow: hidden;
+        }
+
+        .pdp-sister-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .pdp-sister-body {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pdp-sister-kicker {
+            font-family: var(--font-editor-bold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            color: var(--color-forest-green);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdp-sister-title {
+            font-family: 'Doto', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--color-text-dark);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .pdp-sister-tagline {
+            font-family: var(--font-editor-regular);
+            font-style: italic;
+            font-size: 0.95rem;
+            color: var(--color-forest-green);
+            margin-bottom: 1.1rem;
+        }
+
+        .pdp-sister-desc {
+            font-family: var(--font-editor-regular);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: var(--color-text-muted);
+            margin-bottom: 1.8rem;
+        }
+
+        .pdp-sister-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pdp-sister-price {
+            font-family: 'Doto', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            letter-spacing: 0.04em;
+        }
+
+        .pdp-sister-cta {
+            font-family: 'Doto', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-forest-green);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* =========================================================
+           CHECKOUT MODAL OVERLAY (Quick Order Concierge)
+           ========================================================= */
+        .pdp-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 25, 23, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .pdp-modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .pdp-modal-card {
+            background: #FAF8EB;
+            border: 1.5px solid rgba(67, 107, 29, 0.3);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 540px;
+            padding: 2.5rem;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .pdp-modal-overlay.active .pdp-modal-card {
+            transform: scale(1);
+        }
+
+        .pdp-modal-close {
+            position: absolute;
+            top: 22px;
+            right: 24px;
+            background: rgba(67, 107, 29, 0.08);
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: var(--color-forest-green);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .pdp-modal-close:hover {
+            background: var(--color-forest-green);
+            color: #FAF8EB;
+        }
+
+        .pdp-modal-title {
+            font-family: var(--font-editor-bold);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .pdp-modal-sub {
+            font-family: var(--font-editor-regular);
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1.8rem;
+        }
+
+        .pdp-modal-summary {
+            background: #F4F0DE;
+            border: 1px solid rgba(67, 107, 29, 0.2);
+            border-radius: 14px;
+            padding: 1.2rem 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.6rem;
+            font-family: var(--font-editor-bold);
+        }
+
+        .pdp-modal-form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .pdp-modal-label {
+            display: block;
+            font-family: var(--font-editor-bold);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-forest-green);
+            margin-bottom: 0.4rem;
+        }
+
+        .pdp-modal-input {
+            width: 100%;
+            padding: 0.85rem 1.1rem;
+            border-radius: 10px;
+            border: 1.5px solid rgba(67, 107, 29, 0.25);
+            background: #FAF8EB;
+            font-family: var(--font-editor-regular);
+            font-size: 0.9rem;
+            color: var(--color-text-dark);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .pdp-modal-input:focus {
+            border-color: var(--color-forest-green);
+        }
+
+        .pdp-modal-submit-btn {
+            width: 100%;
+            background: var(--color-forest-green);
+            color: #FAF8EB;
+            font-family: var(--font-editor-bold);
+            font-size: 0.88rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 1.05rem;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.6rem;
+            box-shadow: 0 8px 24px rgba(67, 107, 29, 0.35);
+            transition: all 0.3s;
+        }
+
+        .pdp-modal-submit-btn:hover {
+            background: #335316;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           STICKY MOBILE BUY BAR
+           ========================================================= */
+        .pdp-sticky-mobile-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(250, 248, 235, 0.98);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1.5px solid rgba(67, 107, 29, 0.2);
+            padding: 0.9rem 1.4rem;
+            z-index: 900;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.08);
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pdp-mobile-bar-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdp-mobile-bar-label {
+            font-family: var(--font-editor-regular);
+            font-size: 0.62rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .pdp-mobile-bar-amount {
+            font-family: 'Doto', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+            line-height: 1;
+            letter-spacing: 0.04em;
+        }
+
+        .pdp-mobile-bar-btn {
+            background: var(--color-forest-green);
+            color: #FAF8EB;
+            font-family: 'Doto', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 0.8rem 1.6rem;
+            border-radius: 999px;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* =========================================================
+           GLOBAL FOOTER
+           ========================================================= */
+        .tribe-footer {
+            border-top: 1px solid rgba(67, 107, 29, 0.15);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            font-family: var(--font-editor-regular);
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            color: var(--color-text-muted);
+            background: var(--bg-canvas);
+            margin-top: 4rem;
+        }
+
+        .tribe-footer .footer-brand-logo {
+            height: 20px;
+            margin-bottom: 1.4rem;
+            filter: none !important;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+
+        /* =========================================================
+           RESPONSIVE BREAKPOINTS (Desktop, Tablet & Ultra-Mobile)
+           ========================================================= */
+        @media (max-width: 1180px) {
+            .pdp-hero-section {
+                gap: 3rem;
+            }
+            .pdp-inside-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 960px) {
+            body {
+                padding-bottom: 5.5rem;
+            }
+            header {
+                padding: 1.1rem 1rem 0.6rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            .header-top-row {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                margin-bottom: 1.0rem !important;
+                width: 100% !important;
+            }
+            .brand-logo-img {
+                height: 18px !important;
+            }
+            .nav-links {
+                position: static !important;
+                transform: none !important;
+                display: flex !important;
+                gap: 0.45rem !important;
+                justify-content: center !important;
+                width: 100% !important;
+                padding-top: 0 !important;
+                border-top: none !important;
+                margin: 0 !important;
+            }
+            .nav-links a {
+                font-family: var(--font-editor-bold) !important;
+                font-weight: 700 !important;
+                font-size: 0.72rem !important;
+                letter-spacing: 0.08em !important;
+                padding: 0.28rem 0.75rem !important;
+                border-radius: 999px !important;
+                background: rgba(44, 42, 37, 0.06) !important;
+                border: 1px solid rgba(44, 42, 37, 0.18) !important;
+                color: var(--color-text-dark) !important;
+                white-space: nowrap !important;
+            }
+            .nav-links a.active {
+                background: rgba(67, 107, 29, 0.12) !important;
+                border-color: var(--color-forest-green) !important;
+                color: var(--color-forest-green) !important;
+            }
+            .pdp-hero-section {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+                padding: 0.5rem 4% 3.5rem;
+            }
+            .pdp-media-stage {
+                position: static;
+            }
+            .pdp-primary-frame {
+                border-radius: 22px;
+            }
+            .pdp-thumb-strip {
+                gap: 0.75rem;
+            }
+            .pdp-inside-grid,
+            .pdp-ceremony-wrap {
+                grid-template-columns: 1fr;
+                gap: 1.4rem;
+            }
+            .pdp-sister-card {
+                grid-template-columns: 1fr;
+            }
+            .pdp-sister-body {
+                padding: 2rem 1.5rem;
+            }
+            .pdp-artisan-banner {
+                padding: 2.2rem 1.5rem;
+            }
+            .pdp-sticky-mobile-bar {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .pdp-breadcrumb-wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.65rem;
+                margin-top: 6.5rem;
+                font-size: 0.72rem;
+            }
+            .pdp-product-title {
+                font-size: clamp(1.65rem, 6.8vw, 2.25rem);
+            }
+            .pdp-price {
+                font-size: 2rem;
+            }
+            .pdp-actions-row {
+                gap: 0.75rem;
+            }
+            .pdp-thumb-strip {
+                gap: 0.5rem;
+            }
+            .pdp-thumb-item {
+                border-radius: 10px;
+            }
+            .pdp-modal-box {
+                width: 92%;
+                max-width: 92%;
+                padding: 2rem 1.3rem;
+            }
+            .pdp-section-wrap {
+                padding: 3.5rem 4% 4rem;
+            }
+            .pdp-inside-card {
+                padding: 1.8rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fixed Brand Header -->
+<header>
+    <div class="header-top-row">
+        <a aria-label="SHOONYA WORLD" href="/ORIGIN">
+            <img alt="SHOONYA WORLD" class="brand-logo-img" src="assets/Shoonya_World_pure_vector.svg"/>
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a class="active" href="/ALCHEMY%20SHOP">ALCHEMY SHOP</a></li>
+        <li><a href="/ORIGIN">ORIGIN</a></li>
+        <li><a href="/SHOONYAGHAR">SHOONYA GHAR</a></li>
+    </ul>
+</header>
+
+<!-- Breadcrumb Navigation -->
+<nav class="pdp-breadcrumb-wrap" aria-label="Breadcrumb">
+    <div class="pdp-breadcrumbs">
+        <a href="/ORIGIN">ORIGIN</a>
+        <span>/</span>
+        <a href="/ALCHEMY%20SHOP">ALCHEMY SHOP</a>
+        <span>/</span>
+        <a href="/ALCHEMY%20SHOP#featured-kits">SHOONYA RITUALS</a>
+        <span>/</span>
+        <span class="active">SHANTI RITUAL</span>
+    </div>
+    <a href="/ALCHEMY%20SHOP" class="pdp-back-link">
+        ← BACK TO ALCHEMY
+    </a>
+</nav>
+
+<!-- Main PDP Hero (Interactive Media Stage + Buy Box) -->
+<main class="pdp-hero-section">
+    
+    <!-- Left Column: Media Stage -->
+    <div class="pdp-media-stage">
+        <div class="pdp-primary-frame" id="primary-media-container" onclick="openLightbox()">
+            <!-- Image Stage (Default active: Lead Image) -->
+            <img id="hero-main-img" src="assets/SHOONYA KITS/Shanti Ritual Kit/file_00000000a37c8230867f8bcec620c7ba.png" alt="Shanti Ritual" style="display: block;"/>
+            
+            <!-- Video Stage (Hidden initially) -->
+            <video id="hero-main-video" loop muted playsinline preload="auto" style="display: none;">
+                <source src="assets/SHOONYA KITS/Shanti Ritual Kit/VID_shanti_web.mp4" type="video/mp4"/>
+                <source src="assets/SHOONYA KITS/Shanti Ritual Kit/VID_20261028_063614_705.mp4" type="video/mp4"/>
+            </video>
+            
+            <div class="pdp-media-vignette"></div>
+        </div>
+
+        <!-- Thumbnails Strip -->
+        <div class="pdp-thumb-strip" role="tablist">
+            <!-- Thumb 1: Lead Image -->
+            <button class="pdp-thumb-item active" onclick="switchMedia('img', this, 'assets/SHOONYA KITS/Shanti Ritual Kit/file_00000000a37c8230867f8bcec620c7ba.png')" aria-label="View Main Setup">
+                <img src="assets/SHOONYA KITS/Shanti Ritual Kit/file_00000000a37c8230867f8bcec620c7ba.png" alt="Shanti Ritual Main Setup" loading="lazy"/>
+            </button>
+            
+            <!-- Thumb 2: Full Setup -->
+            <button class="pdp-thumb-item" onclick="switchMedia('img', this, 'assets/SHOONYA KITS/Shanti Ritual Kit/InShot_20261028_161639315.jpg')" aria-label="View Full Setup">
+                <img src="assets/SHOONYA KITS/Shanti Ritual Kit/InShot_20261028_161639315.jpg" alt="Shanti Full Ceremony" loading="lazy"/>
+            </button>
+            
+            <!-- Thumb 3: Botanicals & Honey -->
+            <button class="pdp-thumb-item" onclick="switchMedia('img', this, 'assets/SHOONYA KITS/Shanti Ritual Kit/InShot_20261028_181712313.jpg')" aria-label="View Botanicals & Honey">
+                <img src="assets/SHOONYA KITS/Shanti Ritual Kit/InShot_20261028_181712313.jpg" alt="Rūḥ Botanicals & Madhu Honey" loading="lazy"/>
+            </button>
+            
+            <!-- Thumb 4: Keepsake Box -->
+            <button class="pdp-thumb-item" onclick="switchMedia('img', this, 'assets/SHOONYA KITS/Shanti Ritual Kit/InShot_20261029_012306751.jpg')" aria-label="View Keepsake Box">
+                <img src="assets/SHOONYA KITS/Shanti Ritual Kit/InShot_20261029_012306751.jpg" alt="Bamboo Keepsake Box & Arkā Mist" loading="lazy"/>
+            </button>
+            
+            <!-- Thumb 5: Video -->
+            <button class="pdp-thumb-item" onclick="switchMedia('video', this)" aria-label="Play Ritual Video">
+                <video muted playsinline preload="metadata">
+                    <source src="assets/SHOONYA KITS/Shanti Ritual Kit/VID_shanti_web.mp4#t=0.5" type="video/mp4"/>
+                    <source src="assets/SHOONYA KITS/Shanti Ritual Kit/VID_20261028_063614_705.mp4#t=0.5" type="video/mp4"/>
+                </video>
+            </button>
+        </div>
+    </div>
+
+    <!-- Right Column: Editorial Buy Box -->
+    <div class="pdp-buy-box">
+        <h1 class="pdp-product-title">SHANTI RITUAL</h1>
+        <p class="pdp-product-tagline">“A ritual to slow down and soften into the present.”</p>
+        
+        <div class="pdp-price-wrap">
+            <span class="pdp-price"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>2,550</span>
+        </div>
+        
+        <!-- Verbatim Lead Narrative -->
+        <p class="pdp-lead-description">
+            Shanti brings together wild botanicals, plant waters, forest honey, and thoughtfully crafted tools to create a moment of pause and reconnection.
+        </p>
+        
+        <div class="pdp-prana-note">
+            Every ingredient is agrochemical-free and undergoes energy work, infused with prāna and healing frequencies to amplify the essence of Shanti. Rooted in nature and crafted with intention, every element comes together to bring a little more stillness into your everyday.
+        </div>
+
+        <!-- Purchase Actions -->
+        <div class="pdp-actions-row">
+            <div class="pdp-qty-control">
+                <button class="pdp-qty-btn" onclick="updateQty(-1)" type="button" aria-label="Decrease quantity">−</button>
+                <span class="pdp-qty-value" id="qty-val">1</span>
+                <button class="pdp-qty-btn" onclick="updateQty(1)" type="button" aria-label="Increase quantity">+</button>
+            </div>
+            
+            <button class="pdp-buy-now-btn" onclick="buyNow()" type="button">
+                <span>BUY NOW</span>
+            </button>
+        </div>
+    </div>
+</main>
+
+<!-- SECTION 2: WHAT'S INSIDE -->
+<section class="pdp-section-wrap">
+    <div class="pdp-section-header">
+        <h2 class="pdp-section-title">WHAT'S INSIDE</h2>
+    </div>
+
+    <div class="pdp-inside-grid">
+        <!-- Item 1 -->
+        <article class="pdp-inside-card">
+            <h3 class="pdp-inside-name">Rūḥ | The Herbal Blend</h3>
+            <p class="pdp-inside-body">
+                The heart of the ritual. A floral blend of chamomile from Uttarakhand, rose from Maharashtra, fennel from Gujarat, and cardamom from South India.
+            </p>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="pdp-inside-card">
+            <h3 class="pdp-inside-name">Arkā | The Plant Water Mist</h3>
+            <p class="pdp-inside-body">
+                A blend of rose and chamomile herbal waters with glycerites, infused with prāna and healing frequencies to complement your Shanti ritual.
+            </p>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="pdp-inside-card">
+            <h3 class="pdp-inside-name">Madhu | Forest Honey</h3>
+            <p class="pdp-inside-body">
+                Sourced from the Karanj forests of Jharkhand, Madhu brings the wild sweetness of the forest to your cup. Its distinctive flavour and subtly cooling character complement the floral notes of Rūḥ.
+            </p>
+        </article>
+
+        <!-- Item 4 -->
+        <article class="pdp-inside-card">
+            <h3 class="pdp-inside-name">The Ritual Tools</h3>
+            <p class="pdp-inside-body">
+                A food-grade spoon and a spacious, pyramid-shaped food-grade strainer that allows the herbs room to unfurl as they steep.
+            </p>
+        </article>
+
+        <!-- Item 5 -->
+        <article class="pdp-inside-card">
+            <h3 class="pdp-inside-name">The Bamboo Keepsake Box</h3>
+            <p class="pdp-inside-body">
+                Handwoven by artisans in Dumka village, Jharkhand, this reusable bamboo box celebrates traditional craftsmanship and conscious living. Keep it, reuse it, and give it a new purpose beyond the ritual.
+            </p>
+        </article>
+    </div>
+</section>
+
+<!-- SECTION 3: YOUR SHANTI RITUAL -->
+<section class="pdp-section-wrap" style="background: rgba(67, 107, 29, 0.03);">
+    <div class="pdp-section-header">
+        <h2 class="pdp-section-title">YOUR SHANTI RITUAL</h2>
+    </div>
+
+    <div class="pdp-ceremony-wrap">
+        <div class="pdp-step-card">
+            <div class="pdp-step-number">01</div>
+            <h3 class="pdp-step-title">Let the botanicals unfurl</h3>
+            <p class="pdp-step-body">
+                Place Rūḥ in the strainer and steep in hot water for 5 minutes.
+            </p>
+        </div>
+
+        <div class="pdp-step-card">
+            <div class="pdp-step-number">02</div>
+            <h3 class="pdp-step-title">Infuse and sweeten</h3>
+            <p class="pdp-step-body">
+                Add approximately 10 pumps of Arkā and half a teaspoon of Madhu. Stir gently.
+            </p>
+        </div>
+
+        <div class="pdp-step-card">
+            <div class="pdp-step-number">03</div>
+            <h3 class="pdp-step-title">Savour the moment</h3>
+            <p class="pdp-step-body">
+                Breathe in the florals. Savour each sip. Let the world grow quieter.
+            </p>
+        </div>
+    </div>
+
+    <!-- Second Cup Highlight -->
+    <div class="pdp-second-cup-card">
+        <h4>Made for a second cup</h4>
+        <p>
+            Rūḥ can be brewed twice, letting you return to the ritual once more.
+        </p>
+    </div>
+</section>
+
+<!-- SECTION 4: PHILOSOPHY & ARTISAN CRAFT -->
+<section class="pdp-section-wrap">
+    <div class="pdp-artisan-banner">
+        <h2 class="pdp-artisan-title">Rooted in Nature. Crafted with Intention.</h2>
+        <p class="pdp-artisan-body">
+            From agrochemical-free botanicals and forest-sourced ingredients to prāna energy work and handwoven craftsmanship, every element of Shanti is thoughtfully brought together.
+        </p>
+        <p class="pdp-artisan-body" style="margin-top: -1rem; margin-bottom: 1.8rem;">
+            More than a cup of tea, Shanti is an invitation to slow down, reconnect with the present, and make space for stillness.
+        </p>
+        <span class="pdp-artisan-disclaimer">
+            Disclaimer: The bamboo box is handmade product from the local artisans of Jharkhand and may have some variation in weave, shape and colour.
+        </span>
+    </div>
+</section>
+
+<!-- SECTION 5: DISCOVER SISTER RITUAL (Kéṣarī Rūpa Ritual Kit) -->
+<section class="pdp-section-wrap">
+    <div class="pdp-section-header">
+        <h2 class="pdp-section-title">EXPLORE KÉSARĪ RŪPA</h2>
+    </div>
+
+    <a href="/product_kesari_rupa" class="pdp-sister-card">
+        <div class="pdp-sister-media">
+            <video autoplay loop muted playsinline preload="auto">
+                <source src="assets/SHOONYA KITS/Kéṣarī Rūpa Ritual Kit/IMG_2795_web.mp4" type="video/mp4"/>
+                <source src="assets/SHOONYA KITS/Kéṣarī Rūpa Ritual Kit/IMG_2795.mp4" type="video/mp4"/>
+            </video>
+        </div>
+        <div class="pdp-sister-body">
+            <h3 class="pdp-sister-title">KÉSARĪ RŪPA RITUAL</h3>
+            <p class="pdp-sister-tagline">“Healing in a bowl. Nourishment in a bottle.”</p>
+            <p class="pdp-sister-desc">
+                A botanical ritual bringing together Karanj forest honey from Jharkhand and Kashmiri saffron-infused aloe vera.
+            </p>
+            <div class="pdp-sister-footer">
+                <span class="pdp-sister-price"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>1,750</span>
+                <span class="pdp-sister-cta">EXPLORE RITUAL →</span>
+            </div>
+        </div>
+    </a>
+</section>
+
+<!-- Sticky Mobile Purchase Bar -->
+<aside class="pdp-sticky-mobile-bar" id="mobile-buy-bar">
+    <div class="pdp-mobile-bar-price">
+        <span class="pdp-mobile-bar-label">SHANTI RITUAL</span>
+        <span class="pdp-mobile-bar-amount" id="mobile-total-price"><svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>2,550</span>
+    </div>
+    <button class="pdp-mobile-bar-btn" onclick="buyNow()" type="button">
+        BUY NOW
+    </button>
+</aside>
+
+<!-- Purchase Concierge Modal -->
+<div class="pdp-modal-overlay" id="order-modal" onclick="closeOrderModal(event)">
+    <div class="pdp-modal-card" onclick="event.stopPropagation()">
+        <button class="pdp-modal-close" onclick="closeOrderModal()" type="button" aria-label="Close modal">✕</button>
+        <h3 class="pdp-modal-title">ACQUIRE SHANTI RITUAL</h3>
+        <p class="pdp-modal-sub">Direct consecrated delivery from Shoonya World.</p>
+
+        <div class="pdp-modal-summary">
+            <div>
+                <span style="display: block; font-size: 0.9rem; color: var(--color-forest-green);">SHANTI RITUAL</span>
+                <span style="font-size: 0.75rem; color: var(--color-text-muted);" id="modal-summary-qty">Quantity: 1</span>
+            </div>
+            <div style="font-size: 1.4rem; color: var(--color-text-dark);" id="modal-summary-total">
+                <svg class="doto-rupee" viewBox="0 0 24 24" width="0.75em" height="0.95em" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-0.1em; margin-right:0.04em;" aria-hidden="true"><path d="M6 3h12"/><path d="M6 8h10"/><path d="m6 13 8.5 8"/><path d="M6 13h3"/><path d="M9 13c6.667 0 6.667-10 0-10"/></svg>2,550
+            </div>
+        </div>
+
+        <form id="order-form" onsubmit="handleOrderSubmit(event)">
+            <div class="pdp-modal-form-group">
+                <label class="pdp-modal-label" for="cust-name">Full Name</label>
+                <input class="pdp-modal-input" id="cust-name" required placeholder="Your full name" type="text"/>
+            </div>
+            
+            <div class="pdp-modal-form-group">
+                <label class="pdp-modal-label" for="cust-phone">WhatsApp / Contact Phone</label>
+                <input class="pdp-modal-input" id="cust-phone" required placeholder="+91 99999 99999" type="tel"/>
+            </div>
+            
+            <div class="pdp-modal-form-group">
+                <label class="pdp-modal-label" for="cust-city">Delivery City & State</label>
+                <input class="pdp-modal-input" id="cust-city" required placeholder="e.g. New Delhi, Delhi" type="text"/>
+            </div>
+
+            <button class="pdp-modal-submit-btn" type="submit">
+                CONFIRM ORDER VIA WHATSAPP ✦
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Global Footer -->
+<footer class="tribe-footer">
+    <a href="/ORIGIN">
+        <img alt="SHOONYA WORLD" class="footer-brand-logo" src="assets/Shoonya_world_black.svg"/>
+    </a>
+    <div>SHOONYA WORLD · ALL RIGHTS RESERVED</div>
+</footer>
+
+<script>
+    // Smooth Scroll with Lenis
+    let lenis;
+    if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            touchMultiplier: 2
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+    }
+
+    // Media Switcher
+    const heroVideo = document.getElementById('hero-main-video');
+    const heroImg = document.getElementById('hero-main-img');
+    const thumbItems = document.querySelectorAll('.pdp-thumb-item');
+
+    function switchMedia(type, btnElement, imgSrc) {
+        thumbItems.forEach(b => b.classList.remove('active'));
+        if (btnElement) btnElement.classList.add('active');
+
+        if (type === 'video') {
+            heroImg.style.display = 'none';
+            heroVideo.style.display = 'block';
+            heroVideo.currentTime = 0;
+            heroVideo.play().catch(() => {});
+        } else {
+            heroVideo.pause();
+            heroVideo.style.display = 'none';
+            heroImg.src = imgSrc;
+            heroImg.style.display = 'block';
+        }
+    }
+
+    // Direct Shopify Checkout & Quantity Logic
+    let currentQty = 1;
+    const basePrice = 2550;
+    const SHOPIFY_VARIANT_ID = '68140598231319';
+
+    function updateQty(change) {
+        currentQty = Math.max(1, Math.min(10, currentQty + change));
+        const qtyEl = document.getElementById('qty-val');
+        if (qtyEl) qtyEl.innerText = currentQty;
+        const total = basePrice * currentQty;
+        const mobilePriceEl = document.getElementById('mobile-total-price');
+        if (mobilePriceEl) mobilePriceEl.innerText = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    function buyNow() {
+        const checkoutUrl = `https://shoonya-world.myshopify.com/cart/${SHOPIFY_VARIANT_ID}:${currentQty}`;
+        window.location.href = checkoutUrl;
+    }
+
+    // Lightbox / Zoom
+    function openLightbox() {
+        if (heroImg.style.display !== 'none') {
+            window.open(heroImg.src, '_blank');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,9 +1,101 @@
 {
   "cleanUrls": false,
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
+      "destination": "/ALCHEMY%20SHOP",
+      "permanent": false
+    },
+    {
+      "source": "/shoonya_mockup.html",
+      "destination": "/ORIGIN",
+      "permanent": false
+    },
+    {
+      "source": "/shoonya_tribe.html",
+      "destination": "/SHOONYAGHAR",
+      "permanent": false
+    },
+    {
+      "source": "/tribe",
+      "destination": "/SHOONYAGHAR",
+      "permanent": false
+    },
+    {
+      "source": "/shoonya_alchemy.html",
+      "destination": "/ALCHEMY%20SHOP",
+      "permanent": false
+    },
+    {
+      "source": "/alchemy",
+      "destination": "/ALCHEMY%20SHOP",
+      "permanent": false
+    },
+    {
+      "source": "/product_kesari_rupa.html",
+      "destination": "/product_kesari_rupa",
+      "permanent": false
+    },
+    {
+      "source": "/product_shanti.html",
+      "destination": "/product_shanti",
+      "permanent": false
+    },
+    {
+      "source": "/products/kesari-rupa-ritual-kit.html",
+      "destination": "/products/kesari-rupa-ritual-kit",
+      "permanent": false
+    },
+    {
+      "source": "/products/shanti-ritual-kit.html",
+      "destination": "/products/shanti-ritual-kit",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/ORIGIN",
       "destination": "/index.html"
+    },
+    {
+      "source": "/origin",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/SHOONYAGHAR",
+      "destination": "/shoonya_tribe.html"
+    },
+    {
+      "source": "/shoonyaghar",
+      "destination": "/shoonya_tribe.html"
+    },
+    {
+      "source": "/shoonya-ghar",
+      "destination": "/shoonya_tribe.html"
+    },
+    {
+      "source": "/ALCHEMY%20SHOP",
+      "destination": "/shoonya_alchemy.html"
+    },
+    {
+      "source": "/ALCHEMY SHOP",
+      "destination": "/shoonya_alchemy.html"
+    },
+    {
+      "source": "/alchemy-shop",
+      "destination": "/shoonya_alchemy.html"
+    },
+    {
+      "source": "/ALCHEMY-SHOP",
+      "destination": "/shoonya_alchemy.html"
+    },
+    {
+      "source": "/shop",
+      "destination": "/shoonya_alchemy.html"
+    },
+    {
+      "source": "/",
+      "destination": "/shoonya_alchemy.html"
     },
     {
       "source": "/shopify.html",
@@ -18,12 +110,80 @@
       "destination": "/index.html"
     },
     {
+      "source": "/home.html",
+      "destination": "/home.html"
+    },
+    {
+      "source": "/home",
+      "destination": "/home.html"
+    },
+    {
       "source": "/tribe",
       "destination": "/shoonya_tribe.html"
     },
     {
-      "source": "/alchemy",
-      "destination": "/shoonya_alchemy.html"
+      "source": "/shoonya_tribe.html",
+      "destination": "/shoonya_tribe.html"
+    },
+    {
+      "source": "/TRibe.mp4",
+      "destination": "/TRibe.mp4"
+    },
+    {
+      "source": "/Product_page.mp4",
+      "destination": "/Product_page.mp4"
+    },
+    {
+      "source": "/Dashboard/TRibe.mp4",
+      "destination": "/TRibe.mp4"
+    },
+    {
+      "source": "/Dashboard/Product_page.mp4",
+      "destination": "/Product_page.mp4"
+    },
+    {
+      "source": "/assets/drive_assets/(.*)",
+      "destination": "/Dashboard/assets/drive_assets/$1"
+    },
+    {
+      "source": "/dashboard/assets/drive_assets/(.*)",
+      "destination": "/Dashboard/assets/drive_assets/$1"
+    },
+    {
+      "source": "/preview",
+      "destination": "/live_preview_hub.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/Dashboard/dashboard.html"
+    },
+    {
+      "source": "/dashboard.html",
+      "destination": "/Dashboard/dashboard.html"
+    },
+    {
+      "source": "/products/kesari-rupa-ritual-kit",
+      "destination": "/product_kesari_rupa.html"
+    },
+    {
+      "source": "/products/shanti-ritual-kit",
+      "destination": "/product_shanti.html"
+    },
+    {
+      "source": "/product_kesari_rupa",
+      "destination": "/product_kesari_rupa.html"
+    },
+    {
+      "source": "/product_shanti",
+      "destination": "/product_shanti.html"
+    },
+    {
+      "source": "/kesari-rupa",
+      "destination": "/product_kesari_rupa.html"
+    },
+    {
+      "source": "/shanti",
+      "destination": "/product_shanti.html"
     }
   ]
 }
