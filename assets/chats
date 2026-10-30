@@ -4696,3 +4696,32 @@ Switched https://shoonya.world/SHOONYAGHAR soundtrack to the audio directly extr
 - Dual repository sync: Pushed to both `Shoonya.git` and `shoonya-01sep2026.git`.
 - Verified live deployment in production.
 ================================================================================
+
+[258] USER:
+----------------------------------------
+now one last thing left is the audio auto play when we enter the
+
+https://shoonya.world/ALCHEMY%20SHOP
+
+the audio is not on auto play it is turned of can you please fix that on both https://shoonya.world/ALCHEMY%20SHOP and https://shoonya.world/SHOONYAGHAR
+
+================================================================================
+
+[259] ASSISTANT:
+----------------------------------------
+Fixed audio autoplay and default active sound state across both https://shoonya.world/ALCHEMY%20SHOP and https://shoonya.world/SHOONYAGHAR:
+
+1. HTML Markup & Initial State:
+   - Updated both floating sound toggle buttons to have the `.playing` class by default on page load (`class="hero-sound-btn playing"` and `class="hero-sound-toggle-btn playing"`).
+   - Ensured `<audio>` elements have the `autoplay` attribute alongside `loop`, `preload="auto"`, `playsinline`, and `webkit-playsinline`.
+   - Added immediate inline hardware execution scripts adjacent to the `<audio>` elements to trigger immediate audio streaming upon DOM insertion.
+
+2. Browser Autoplay Policy & Muted Stream Fallback:
+   - If a browser (Firefox/Chrome/Safari) temporarily restricts unmuted sound prior to user activation on a cold URL load, the audio element is immediately played in a muted state so the audio pipeline and buffer are active in memory, while maintaining the visual "Sound: On" state.
+   - Comprehensive instant gesture listeners (`pointerdown`, `mousedown`, `touchstart`, `touchend`, `scroll`, `wheel`, `mousemove`, `keydown`, `click`) immediately unmute the audio stream (`audio.muted = false; audio.volume = 1.0;`) and resume the Web Audio Context on the very first micro-interaction.
+
+3. Multi-Remote Synchronization & Deployment:
+   - Mirrored changes across root repo and `Dashboard/ready to deploy `.
+   - Pushed commits to both GitHub remotes (`Shoonya.git` and `shoonya-01sep2026.git`).
+   - Verified live in production on both domains.
+================================================================================

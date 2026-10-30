@@ -3183,7 +3183,17 @@
                         var v = document.getElementById(isMob ? 'hero-video-mobile' : 'hero-video-desktop');
                         if (v) { v.muted = true; v.defaultMuted = true; v.play().catch(function(){}); }
                         var a = document.getElementById('hero-ambient-audio');
-                        if (a) { a.volume = 1.0; a.play().catch(function(){}); }
+                        if (a) {
+                            a.volume = 1.0;
+                            a.muted = false;
+                            var p = a.play();
+                            if (p && typeof p.then === 'function') {
+                                p.catch(function() {
+                                    a.muted = true;
+                                    a.play().catch(function(){});
+                                });
+                            }
+                        }
                     } catch(e) {}
                 })();
                 </script>
@@ -3192,7 +3202,7 @@
             </div>
 
             <!-- Sound Capsule Toggle for Hero Video -->
-            <button type="button" class="hero-sound-toggle-btn" id="hero-sound-toggle" title="Toggle Sound" aria-label="Toggle Sound">
+            <button type="button" class="hero-sound-toggle-btn playing" id="hero-sound-toggle" title="Mute Sound" aria-label="Toggle Sound">
                 <svg class="hero-sound-icon-muted" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="currentColor" fill-opacity="0.2"></polygon>
                     <line x1="22" y1="9" x2="16" y2="15"></line>
@@ -4092,9 +4102,11 @@
                 heroSoundBtn.title = 'Play Sound';
             }
         }
+        setHeroSoundState(true);
 
         function playHeroAudioInstant() {
             if (heroAudioUserMuted || !heroAudio) return;
+            setHeroSoundState(true);
             const AudioCtx = window.AudioContext || window.webkitAudioContext;
             if (AudioCtx) {
                 try {
@@ -4110,15 +4122,21 @@
             heroAudio.muted = false;
             heroAudio.play().then(() => {
                 setHeroSoundState(true);
-            }).catch(() => {});
+            }).catch(() => {
+                // If browser autoplay blocks unmuted audio on cold load, start muted so stream runs
+                heroAudio.muted = true;
+                heroAudio.play().catch(()=>{});
+                setHeroSoundState(true);
+            });
         }
 
         if (heroSoundBtn) {
             heroSoundBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
                 if (!heroAudio) return;
-                if (heroAudio.paused) {
+                if (heroAudio.paused || heroAudio.muted) {
                     heroAudioUserMuted = false;
+                    heroAudio.muted = false;
                     playHeroAudioInstant();
                 } else {
                     heroAudioUserMuted = true;
@@ -4140,7 +4158,7 @@
             const activeVid = getHeroVideo();
             if (activeVid && activeVid.paused) activeVid.play().catch(()=>{});
             if (!heroAudioUserMuted) playHeroAudioInstant();
-            if ((heroAudio && !heroAudio.paused) || tribeAutoplayRetries > 30) {
+            if ((heroAudio && !heroAudio.paused && !heroAudio.muted) || tribeAutoplayRetries > 30) {
                 clearInterval(tribeAutoplayInterval);
             }
         }, 150);
@@ -4149,11 +4167,20 @@
         const onTribeInstantSignal = () => {
             const activeVid = getHeroVideo();
             if (activeVid && activeVid.paused) activeVid.play().catch(()=>{});
-            if (!heroAudioUserMuted && heroAudio && heroAudio.paused) {
-                playHeroAudioInstant();
+            if (!heroAudioUserMuted && heroAudio) {
+                if (window._shoonyaAudioCtx && window._shoonyaAudioCtx.state === 'suspended') {
+                    window._shoonyaAudioCtx.resume().catch(()=>{});
+                }
+                heroAudio.muted = false;
+                heroAudio.volume = 1.0;
+                if (heroAudio.paused) {
+                    heroAudio.play().then(() => setHeroSoundState(true)).catch(()=>{});
+                } else {
+                    setHeroSoundState(true);
+                }
             }
         };
-        ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'pointermove', 'scroll', 'wheel', 'click', 'keydown', 'mousedown', 'mouseup', 'focus', 'pageshow'].forEach(evt => {
+        ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'pointermove', 'pointerenter', 'mousemove', 'mouseenter', 'scroll', 'wheel', 'click', 'keydown', 'mousedown', 'mouseup', 'focus', 'pageshow'].forEach(evt => {
             window.addEventListener(evt, onTribeInstantSignal, { passive: true, capture: true });
             document.addEventListener(evt, onTribeInstantSignal, { passive: true, capture: true });
         });

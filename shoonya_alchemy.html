@@ -1336,7 +1336,7 @@
 </div>
 <div class="hero-locked-content" id="hero-main-content">
 </div>
-<button aria-label="Turn On Sound" class="hero-sound-btn" id="hero-sound-btn" title="Sound: Off (Click to Play)" type="button">
+<button aria-label="Turn Off Sound" class="hero-sound-btn playing" id="hero-sound-btn" title="Sound: On (Click to Mute)" type="button">
     <!-- Sound Off (Muted) Icon -->
     <svg aria-hidden="true" class="speaker-icon speaker-off" fill="none" height="19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewBox="0 0 24 24" width="19">
         <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
@@ -1351,10 +1351,28 @@
     </svg>
 </button>
 <!-- Background Audio Soundtrack (Strictly invisible, zero UI footprint) -->
-<audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.mp3?v=jazz_cut_20261031_v1" loop preload="auto" playsinline webkit-playsinline style="position:fixed!important;bottom:-9999px!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0.001!important;pointer-events:none!important;z-index:-100!important;">
+<audio id="hero-alchemy-audio" src="assets/alchemy_soundtrack.mp3?v=jazz_cut_20261031_v1" autoplay loop preload="auto" playsinline webkit-playsinline style="position:fixed!important;bottom:-9999px!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0.001!important;pointer-events:none!important;z-index:-100!important;">
     <source src="assets/alchemy_soundtrack.mp3?v=jazz_cut_20261031_v1" type="audio/mpeg"/>
     <source src="assets/alchemy_soundtrack.m4a?v=jazz_cut_20261031_v1" type="audio/mp4"/>
 </audio>
+<script>
+(function() {
+    try {
+        var a = document.getElementById('hero-alchemy-audio');
+        if (a) {
+            a.volume = 1.0;
+            a.muted = false;
+            var p = a.play();
+            if (p && typeof p.then === 'function') {
+                p.catch(function() {
+                    a.muted = true;
+                    a.play().catch(function(){});
+                });
+            }
+        }
+    } catch(e) {}
+})();
+</script>
 </div>
 </div>
 
@@ -2217,7 +2235,7 @@
             }
             return audio;
         }
-        let soundIsActive = false;
+        let soundIsActive = true;
         let userExplicitlyMuted = false;
 
         function setSoundBtnState(isPlaying) {
@@ -2276,7 +2294,10 @@
                     ap.then(() => {
                         setSoundBtnState(true);
                     }).catch(() => {
-                        setSoundBtnState(false);
+                        // If browser autoplay blocks unmuted play on landing, start muted so stream runs
+                        audio.muted = true;
+                        audio.play().catch(() => {});
+                        setSoundBtnState(true);
                     });
                 } else {
                     setSoundBtnState(true);
@@ -2342,7 +2363,7 @@
                 setSoundBtnState(true);
             });
             initAudio.addEventListener('pause', () => {
-                if (!initAudio.seeking) {
+                if (userExplicitlyMuted) {
                     setSoundBtnState(false);
                 }
             });
@@ -2421,8 +2442,15 @@
                 }
             }
             const audio = getAlchemyAudio();
-            if (!userExplicitlyMuted && audio && audio.paused) {
-                unmuteSound();
+            if (!userExplicitlyMuted && audio) {
+                unlockAudioContext();
+                audio.muted = false;
+                audio.volume = 1.0;
+                if (audio.paused) {
+                    audio.play().then(() => setSoundBtnState(true)).catch(() => {});
+                } else {
+                    setSoundBtnState(true);
+                }
             }
         };
         ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'pointermove', 'pointerenter', 'mousemove', 'mouseenter', 'scroll', 'wheel', 'click', 'keydown', 'mousedown', 'mouseup', 'focus', 'pageshow'].forEach(evt => {
