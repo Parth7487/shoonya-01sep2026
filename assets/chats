@@ -4419,3 +4419,31 @@ Extracted core typography architecture learnings, generated a formal learning pr
    - Committed and pushed to root `origin/main` (triggering Vercel deployment for apex domain).
    - Committed and pushed to `Dashboard/ready to deploy ` `origin/main` (triggering Vercel deployment for www domain).
 ================================================================================
+
+[234] USER:
+----------------------------------------
+there is some issue in desktop verision please fix this black area
+/gsd-fast
+
+================================================================================
+
+[235] ASSISTANT:
+----------------------------------------
+Resolved the desktop black gap issue on https://shoonya.world/ALCHEMY%20SHOP:
+
+1. Root Cause Analysis:
+   - Residual Scroll-Locked Hero Height on Desktop: On mobile (), `.hero-locked-wrapper` was set to `100vh`, rendering cleanly. On desktop, however, `.hero-locked-wrapper` was still defined with legacy `height: 200vh; height: 200dvh; background-color: #000;`.
+   - Because the locked title content was previously removed (`hero-main-content` was empty), the extra 100vh of container height served no purpose other than creating a massive 100vh dead pitch-black void under the video before `SHOONYA RITUALS` on the ivory canvas came into view.
+   - In addition, `.hero-video-desktop` lacked `position: absolute; inset: 0;`, preventing the video element from reliably filling the full height on wide desktop viewports.
+
+2. Architecture Fix Implemented in `shoonya_alchemy.html`:
+   - Updated `.hero-locked-wrapper` on desktop to `height: 100vh; height: 100dvh; background-color: var(--bg-canvas); overflow: hidden;`.
+   - Updated `.hero-locked-sticky` to `position: relative; height: 100%; min-height: 100vh; min-height: 100dvh;`.
+   - Explicitly pinned `.hero-video-desktop` with `position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;` so the video fills 100% of the viewport seamlessly across all desktop display aspect ratios.
+   - Refactored `updateHeroScroll()` to use a clean `triggerPoint = 60px` threshold for fixed glassmorphic header transitions upon scrolling.
+   - As a result, the video hero fills 100% of the screen, and scrolling down immediately brings the luxury `SHOONYA RITUALS` cards into view on the warm ivory canvas with zero black gaps.
+
+3. Multi-Remote Synchronization & Deployment:
+   - Mirrored changes to `Dashboard/ready to deploy /shoonya_alchemy.html` and `assets/chats`.
+   - Pushed commit to root `origin/main` and `Dashboard/ready to deploy ` `origin/main`.
+================================================================================
