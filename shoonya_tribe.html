@@ -19,7 +19,8 @@
     <link rel="preload" href="assets/fonts/Doto-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/Doto-Bold-Ext.woff2" as="font" type="font/woff2" crossorigin>
     <!-- High Priority Instant Autoplay Media Preload -->
-    <link rel="preload" href="TRibe.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="assets/IMG_1397.mp4" as="video" type="video/mp4" media="(min-width: 769px)">
+    <link rel="preload" href="TRibe.mp4" as="video" type="video/mp4" media="(max-width: 768px)">
     <link rel="preload" href="assets/tribe_soundtrack.m4a" as="audio" type="audio/mp4">
 
     <!-- Lenis Smooth Inertial Scrolling -->
@@ -440,6 +441,23 @@
             object-position: center;
             display: block;
             opacity: 1; /* 100% crystal clear natural vibrancy */
+        }
+
+        .hero-video-desktop {
+            display: block;
+        }
+
+        .hero-video-mobile {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-video-desktop {
+                display: none !important;
+            }
+            .hero-video-mobile {
+                display: block !important;
+            }
         }
 
         /* Dynamic Cinematic Scrim (Starts at 0 opacity, fades in dynamically with text) */
@@ -3146,7 +3164,12 @@
         <div class="hero-sticky-frame" id="hero-sticky-frame">
             <!-- Fullscreen Video Background -->
             <div class="hero-video-wrapper" id="hero-video-wrapper">
-                <video src="TRibe.mp4" class="hero-locked-video" id="hero-locked-video" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/TRibe_poster.jpg">
+                <!-- Desktop Hero Video (IMG_1397) -->
+                <video src="assets/IMG_1397.mp4" class="hero-locked-video hero-video-desktop" id="hero-video-desktop" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/IMG_1397_poster.jpg">
+                    <source src="assets/IMG_1397.mp4" type="video/mp4">
+                </video>
+                <!-- Mobile Hero Video (TRibe.mp4) -->
+                <video src="TRibe.mp4" class="hero-locked-video hero-video-mobile" id="hero-video-mobile" loop muted playsinline webkit-playsinline x5-playsinline disablePictureInPicture disableremoteplayback preload="auto" poster="assets/TRibe_poster.jpg">
                     <source src="TRibe.mp4" type="video/mp4">
                     <source src="../content/TRibe.mp4" type="video/mp4">
                 </video>
@@ -3154,7 +3177,8 @@
                 <script>
                 (function() {
                     try {
-                        var v = document.getElementById('hero-locked-video');
+                        var isMob = window.innerWidth <= 768;
+                        var v = document.getElementById(isMob ? 'hero-video-mobile' : 'hero-video-desktop');
                         if (v) { v.muted = true; v.defaultMuted = true; v.play().catch(function(){}); }
                         var a = document.getElementById('hero-ambient-audio');
                         if (a) { a.volume = 1.0; a.play().catch(function(){}); }
@@ -3840,48 +3864,58 @@
         const heroElemTitle = id('hero-elem-title');
         const heroElemSubtitle = id('hero-elem-subtitle');
         const heroScrollPrompt = id('hero-scroll-prompt');
-        const heroVideo = id('hero-locked-video');
+        const heroVideoDesktop = id('hero-video-desktop');
+        const heroVideoMobile = id('hero-video-mobile');
+        function getHeroVideo() {
+            return (window.innerWidth <= 768) ? (heroVideoMobile || heroVideoDesktop) : (heroVideoDesktop || heroVideoMobile);
+        }
         const heroSoundBtn = id('hero-sound-toggle');
         let isHeroInViewport = true;
 
-        // Guaranteed Video Playback Engine (Loads full TRibe.mp4 video file and plays smoothly)
+        // Guaranteed Video Playback Engine (Desktop IMG_1397 & Mobile TRibe)
         function ensureHeroVideoPlayback() {
-            if (!heroVideo) return;
-            heroVideo.muted = true;
-            heroVideo.defaultMuted = true;
-            heroVideo.loop = true;
-            heroVideo.playsInline = true;
-            heroVideo.setAttribute('playsinline', '');
-            heroVideo.setAttribute('muted', '');
-            heroVideo.setAttribute('loop', '');
+            [heroVideoDesktop, heroVideoMobile].forEach((v) => {
+                if (!v) return;
+                v.muted = true;
+                v.defaultMuted = true;
+                v.loop = true;
+                v.playsInline = true;
+                v.setAttribute('playsinline', '');
+                v.setAttribute('muted', '');
+                v.setAttribute('loop', '');
+            });
 
             const tryPlay = () => {
-                if (heroVideo.paused) {
-                    heroVideo.muted = true;
-                    heroVideo.play().catch(() => {});
+                const activeV = getHeroVideo();
+                if (activeV && activeV.paused) {
+                    activeV.muted = true;
+                    activeV.play().catch(() => {});
                 }
             };
 
-            // Seamless infinite loop handlers
-            heroVideo.addEventListener('ended', () => {
-                heroVideo.currentTime = 0;
-                heroVideo.play().catch(() => {});
-            });
-            heroVideo.addEventListener('timeupdate', () => {
-                if (heroVideo.duration && heroVideo.currentTime >= (heroVideo.duration - 0.25)) {
-                    heroVideo.currentTime = 0;
-                    heroVideo.play().catch(() => {});
-                }
-            });
-            heroVideo.addEventListener('pause', () => {
-                if (!document.hidden && isHeroInViewport) {
-                    setTimeout(tryPlay, 60);
-                }
+            [heroVideoDesktop, heroVideoMobile].forEach((v) => {
+                if (!v) return;
+                v.addEventListener('ended', () => {
+                    v.currentTime = 0;
+                    v.play().catch(() => {});
+                });
+                v.addEventListener('timeupdate', () => {
+                    if (v.duration && v.currentTime >= (v.duration - 0.25)) {
+                        v.currentTime = 0;
+                        v.play().catch(() => {});
+                    }
+                });
+                v.addEventListener('pause', () => {
+                    if (!document.hidden && isHeroInViewport && (v === getHeroVideo())) {
+                        setTimeout(tryPlay, 60);
+                    }
+                });
             });
 
             // Liveness watchdog
             setInterval(() => {
-                if (!document.hidden && isHeroInViewport && heroVideo.paused) {
+                const activeV = getHeroVideo();
+                if (!document.hidden && isHeroInViewport && activeV && activeV.paused) {
                     tryPlay();
                 }
             }, 1000);
@@ -3910,10 +3944,11 @@
             const heroObs = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     isHeroInViewport = entry.isIntersecting;
+                    const activeVid = getHeroVideo();
                     if (!isHeroInViewport) {
-                        if (heroVideo && !heroVideo.paused) heroVideo.pause();
+                        if (activeVid && !activeVid.paused) activeVid.pause();
                     } else {
-                        if (heroVideo && heroVideo.paused) heroVideo.play().catch(() => {});
+                        if (activeVid && activeVid.paused) activeVid.play().catch(() => {});
                     }
                 });
             }, { threshold: 0.02 });
@@ -4028,11 +4063,12 @@
             }
 
             // Viewport video culling
-            if (heroVideo) {
+            const activeVid = getHeroVideo();
+            if (activeVid) {
                 if (rect.bottom < 0 || rect.top > window.innerHeight) {
-                    if (!heroVideo.paused) heroVideo.pause();
+                    if (!activeVid.paused) activeVid.pause();
                 } else {
-                    if (heroVideo.paused) heroVideo.play().catch(() => {});
+                    if (activeVid.paused) activeVid.play().catch(() => {});
                 }
             }
         }
@@ -4099,7 +4135,8 @@
         let tribeAutoplayRetries = 0;
         const tribeAutoplayInterval = setInterval(() => {
             tribeAutoplayRetries++;
-            if (heroVideo && heroVideo.paused) heroVideo.play().catch(()=>{});
+            const activeVid = getHeroVideo();
+            if (activeVid && activeVid.paused) activeVid.play().catch(()=>{});
             if (!heroAudioUserMuted) playHeroAudioInstant();
             if ((heroAudio && !heroAudio.paused) || tribeAutoplayRetries > 30) {
                 clearInterval(tribeAutoplayInterval);
@@ -4108,7 +4145,8 @@
         setTimeout(() => clearInterval(tribeAutoplayInterval), 6000);
 
         const onTribeInstantSignal = () => {
-            if (heroVideo && heroVideo.paused) heroVideo.play().catch(()=>{});
+            const activeVid = getHeroVideo();
+            if (activeVid && activeVid.paused) activeVid.play().catch(()=>{});
             if (!heroAudioUserMuted && heroAudio && heroAudio.paused) {
                 playHeroAudioInstant();
             }

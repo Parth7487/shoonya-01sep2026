@@ -4574,3 +4574,46 @@ Added Mobile Alchemy as the mobile hero video on https://shoonya.world/ALCHEMY%2
    - Pushed commits to both GitHub remotes (`Shoonya.git` and `shoonya-01sep2026.git`).
    - Verified live deployment at https://shoonya.world/ALCHEMY%20SHOP and https://www.shoonya.world/ALCHEMY%20SHOP.
 ================================================================================
+
+[246] USER:
+----------------------------------------
+can you tell me about https://shoonya.world/SHOONYAGHAR this page first then i will tell you what i want to change
+
+================================================================================
+
+[247] ASSISTANT:
+----------------------------------------
+Detailed architectural breakdown of https://shoonya.world/SHOONYAGHAR (shoonya_tribe.html):
+- Overview of current live visible architecture (Header, Section 01 Scroll-Locked Hero Video, Section 10 "JOIN THE CIRCLE" Blob Portal, and Brand Footer).
+- Overview of preserved hidden sections 02-09 (Shoonyagar Intro & Manifesto, The Sacred Triad, Past Gatherings Timeline, Jam Stories Audio Players, Circular 3D Reel Gallery, Soil Alchemy, and Wall of Love Reviews).
+
+================================================================================
+
+[248] USER:
+----------------------------------------
+Media: Background video 
+
+/Users/parth/Downloads/IMG_1397.mov 
+
+
+can you please update the desktop verison of https://shoonya.world/SHOONYAGHAR with this video
+
+================================================================================
+
+[249] ASSISTANT:
+----------------------------------------
+Updated desktop version of https://shoonya.world/SHOONYAGHAR (shoonya_tribe.html) with IMG_1397:
+
+1. Video Transcoding & Web Optimization:
+   - Converted `/Users/parth/Downloads/IMG_1397.mov` into web-optimized H.264 MP4: `assets/IMG_1397.mp4` (1080x604 widescreen, yuv420p, High Profile, faststart moov atom at file start for instant zero-latency playback across all desktop browsers).
+   - Generated video poster `assets/IMG_1397_poster.jpg`.
+
+2. Structural & JavaScript Engine Separation:
+   - Split hero video architecture in `shoonya_tribe.html` into `.hero-video-desktop` (`assets/IMG_1397.mp4`) and `.hero-video-mobile` (`TRibe.mp4`).
+   - Added responsive preloads with media queries in `<head>` (`media="(min-width: 769px)"` vs `media="(max-width: 768px)"`).
+   - Updated JavaScript playback controller to dynamically attach loop and autoplay watchdogs to the active viewport video.
+
+3. Deployment & Multi-Remote Synchronization:
+   - Mirrored across root repo (`Shoonya.git`) and deploy directory (`shoonya-01sep2026.git`).
+   - Verified live on production at https://shoonya.world/SHOONYAGHAR.
+================================================================================
